@@ -5,6 +5,8 @@
  */
 package isectutorials;
 
+import data.OpenFile;
+
 /**
  *
  * @author simao
@@ -16,7 +18,9 @@ public class ISECTutorials {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println(" test 02");
+        System.out.println(" This is main!");
+        
+        new OpenFile();
     }
     
 }
