@@ -16,6 +16,7 @@ public class ISECTutorials {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        System.out.println("isectutorials.ISECTutorials.main() test");
     }
     
 }
