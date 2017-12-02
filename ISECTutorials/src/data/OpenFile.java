@@ -11,6 +11,7 @@ public class OpenFile {
         File[] content = dir.listFiles();
         for(File f : content)
             System.out.println(f.getAbsolutePath());
+        System.out.println("TEST2");
            
     }   
 }
