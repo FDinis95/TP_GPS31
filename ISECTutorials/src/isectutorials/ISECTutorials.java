@@ -1,5 +1,6 @@
 package isectutorials;
 
+import data.FindPath;
 import data.OpenFile;
 import logic.UpdateProgression;
 
@@ -11,6 +12,7 @@ public class ISECTutorials {
         
         new OpenFile();
         new UpdateProgression();
+        new FindPath();
     }
     
 }
