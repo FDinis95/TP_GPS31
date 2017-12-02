@@ -6,6 +6,7 @@
 package isectutorials;
 
 import data.OpenFile;
+import logic.UpdateProgression;
 
 /**
  *
@@ -18,9 +19,10 @@ public class ISECTutorials {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println(" This is main!");
+        System.out.println("This is main!");
         
         new OpenFile();
+        new UpdateProgression();
     }
     
 }
