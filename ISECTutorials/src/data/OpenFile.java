@@ -5,7 +5,7 @@ import java.io.File;
 public class OpenFile {
 
     public OpenFile() {
-        System.out.println("This is data starting!");
+        //System.out.println("This is data starting!");
         
         File dir = new File("./test");
         File[] content = dir.listFiles();
