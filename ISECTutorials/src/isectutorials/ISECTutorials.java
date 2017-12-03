@@ -9,6 +9,7 @@ public class ISECTutorials {
     public static void main(String[] args) {
         
         int i = 0;
+        int chapt = 0;
         FindPath fp = new FindPath();
         String[] Sfp = new String[fp.getPath().length];
         
@@ -19,7 +20,7 @@ public class ISECTutorials {
         
 //        new UpdateProgression();
 //        LoadQuestions lq = new LoadQuestions(Sfp[i]+ "\\diagnose.txt");
-        LoadTutorial lt = new LoadTutorial(Sfp[i] + "\\chapters", 8);
+        LoadTutorial lt = new LoadTutorial(Sfp[i] + "\\chapters\\chapter" + chapt + ".txt");
     }
     
 }

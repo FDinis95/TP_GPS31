@@ -1,35 +1,31 @@
 package data;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class LoadTutorial {
     String line = null;
-    String chapterNum = null;
-    public LoadTutorial(String path, int chapter){
+    String Texto = "";
+    
+    public LoadTutorial(String path){
         
+        LoadChapter(path);
+    }
+    
+    private String LoadChapter(String path){
         if(path == null){
             System.err.println("LoadTutorial: Invalid path");
-            return;
         }
-        
-        if(chapter < 0 || chapter > 9){
-            System.err.println("Chapter not available!");
-            return;
-        }
-        
-        chapterNum = ("chapter" + chapter + ".txt");
         
         try{
         
-            FileReader fr = new FileReader((path + "\\" + chapterNum));
+            FileReader fr = new FileReader((path));
             BufferedReader br = new BufferedReader(fr);
             
             while((line = br.readLine()) != null){
-                System.out.println(line);
+                Texto += line;
             }
+            
+            System.out.println(Texto);
             
             br.close();
         
@@ -40,6 +36,8 @@ public class LoadTutorial {
         catch(IOException ex){
             System.err.println("Error reading file");
         }
+        
+        return Texto;
     }
     
 }
