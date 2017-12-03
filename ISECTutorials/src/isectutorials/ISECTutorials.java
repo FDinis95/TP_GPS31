@@ -15,12 +15,12 @@ public class ISECTutorials {
         String[] Sfp = new String[fp.getPath().length];
         
         Sfp[i] = fp.getPath()[i];
-        System.out.println(Sfp[i]);
+//        System.out.println(Sfp[i]);
         
         System.out.println("This is main!");
         
-        new OpenFile();
-        new UpdateProgression();
+//        new OpenFile();
+//        new UpdateProgression();
         LoadQuestions lq = new LoadQuestions(Sfp[i]);
     }
     
