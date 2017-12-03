@@ -8,10 +8,10 @@ public class LoadTutorial {
     
     public LoadTutorial(String path){
         
-        LoadChapter(path);
+        loadChapter(path);
     }
     
-    private String LoadChapter(String path){
+    public String loadChapter(String path){
         if(path == null){
             System.err.println("LoadTutorial: Invalid path");
         }
@@ -25,7 +25,7 @@ public class LoadTutorial {
                 Texto += line;
             }
             
-            System.out.println(Texto);
+//            System.out.println(Texto);
             
             br.close();
         
