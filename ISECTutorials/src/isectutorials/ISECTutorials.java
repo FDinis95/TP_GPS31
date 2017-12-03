@@ -17,7 +17,7 @@ public class ISECTutorials {
         System.out.println("This is main!");
         
 //        new UpdateProgression();
-        LoadQuestions lq = new LoadQuestions(Sfp[i]);
+        LoadQuestions lq = new LoadQuestions(Sfp[i]+ "\\diagnose.txt");
     }
     
 }
