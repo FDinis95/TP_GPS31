@@ -2,6 +2,7 @@ package isectutorials;
 
 import data.FindPath;
 import data.OpenFile;
+import java.util.Arrays;
 import logic.UpdateProgression;
 
 public class ISECTutorials {
@@ -12,7 +13,8 @@ public class ISECTutorials {
         
         new OpenFile();
         new UpdateProgression();
-        new FindPath();
+        FindPath fd = new FindPath();
+        System.out.println(Arrays.toString(fd.getPath()));
     }
     
 }
