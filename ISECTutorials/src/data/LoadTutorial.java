@@ -4,11 +4,9 @@ import java.io.*;
 
 public class LoadTutorial {
     String line = null;
-    String Texto = "";
+    String texto = "";
     
-    public LoadTutorial(String path){
-        
-        loadChapter(path);
+    public LoadTutorial(){
     }
     
     public String loadChapter(String path){
@@ -17,16 +15,13 @@ public class LoadTutorial {
         }
         
         try{
-        
             FileReader fr = new FileReader((path));
             BufferedReader br = new BufferedReader(fr);
             
             while((line = br.readLine()) != null){
-                Texto += line;
+                texto += " "+line;
             }
-            
 //            System.out.println(Texto);
-            
             br.close();
         
         }
@@ -37,7 +32,7 @@ public class LoadTutorial {
             System.err.println("Error reading file");
         }
         
-        return Texto;
+        return texto;
     }
     
 }

@@ -22,7 +22,8 @@ public class ISECTutorials {
         
 //        new UpdateProgression();
 //        LoadQuestions lq = new LoadQuestions(Sfp[i]+ "\\diagnose.txt");
-        test2 = new LoadTutorial(Sfp[i] + "\\chapters\\chapter" + chapt + ".txt").loadChapter(Sfp[i] + "\\chapters\\chapter" + chapt + ".txt");
+        test2 = new LoadTutorial().loadChapter(Sfp[i] + "\\chapters\\chapter" + chapt + ".txt");
+        LoadQuestions lq = new LoadQuestions(Sfp[i]+ "\\tests\\chapter"+4+".txt");
         
         System.out.println(test2);
     }
