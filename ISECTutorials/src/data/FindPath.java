@@ -11,6 +11,7 @@ public class FindPath {
         
         File dir = new File("./src/Tutorials");
         File[] content = dir.listFiles();
+        if(content!=null){
         for(File f : content){
         if(f.isDirectory())
             size++;
@@ -29,6 +30,9 @@ public class FindPath {
 //            System.out.println(path[j]);
 //            System.out.println(name[j]);
 //        }
+        }else{
+            System.err.println("Tutorials folder inexistent or empty!");
+        }
     };
 
     public String[] getPath() {
