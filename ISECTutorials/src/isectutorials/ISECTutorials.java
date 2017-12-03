@@ -2,6 +2,7 @@ package isectutorials;
 
 import data.FindPath;
 import data.LoadQuestions;
+import data.LoadTutorial;
 
 public class ISECTutorials {
 
@@ -17,7 +18,8 @@ public class ISECTutorials {
         System.out.println("This is main!");
         
 //        new UpdateProgression();
-        LoadQuestions lq = new LoadQuestions(Sfp[i]+ "\\diagnose.txt");
+//        LoadQuestions lq = new LoadQuestions(Sfp[i]+ "\\diagnose.txt");
+        LoadTutorial lt = new LoadTutorial(Sfp[i] + "\\chapters", 8);
     }
     
 }
