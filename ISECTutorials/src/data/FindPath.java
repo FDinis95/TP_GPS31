@@ -9,7 +9,7 @@ public class FindPath {
     
     public FindPath(){
         
-        File dir = new File("./test");
+        File dir = new File("./src/Tutorials");
         File[] content = dir.listFiles();
         path = new String[content.length];
         name = new String[content.length];
@@ -19,10 +19,10 @@ public class FindPath {
             i++;
         }
 //        verification
-//        for(int j=0;j<path.length; j++){
-//            System.out.println(path[j]);
-//            System.out.println(name[j]);
-//        }
+        for(int j=0;j<path.length; j++){
+            System.out.println(path[j]);
+            System.out.println(name[j]);
+        }
     };
 
     public String[] getPath() {
