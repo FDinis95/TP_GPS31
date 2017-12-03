@@ -2,6 +2,7 @@ package data;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -14,11 +15,23 @@ public class LoadQuestions {
 
         if (path.contains("diagnose")) {
             int n, m = 0;
-            Random rand = new Random();
-            //rand.nextInt((max - min) + 1) + min; sendo que min e max variam a incrementos de 5 entre 0-49
-            for(int i = 1; i<11;i++){
-                n = rand.nextInt((((5*i)-1) - ((5*i)-5)) + 1) + ((5*i)-5);
+            for (int i = 1; i < 11; i++) {
+                n = randomNum(i);
+                m = randomNum(i);
+                while (m == n) {
+                    m = randomNum(i);
+                }
                 loadOne(path, n);
+                loadOne(path, m);
+            }
+        }
+        
+        if(path.contains("chapter")){
+            //seven questions from a pool of twelve
+            int[] array = new Random().ints(0, 11).distinct().limit(7).toArray();
+            for(int i=0;i<7;i++){
+                //System.err.println(array[i]);
+                loadOne(path, array[i]);
             }
             
         }
@@ -62,6 +75,13 @@ public class LoadQuestions {
 
         Question q = new Question(array);
         question.add(q);
+    }
+
+    private int randomNum(int num) {
+        Random rand = new Random();
+        //rand.nextInt((max - min) + 1) + min; sendo que min e max variam a incrementos de 5 entre 0-49
+        int x = rand.nextInt((((5 * num) - 1) - ((5 * num) - 5)) + 1) + ((5 * num) - 5);
+        return x;
     }
 
 }
