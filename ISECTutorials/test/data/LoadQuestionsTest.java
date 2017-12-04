@@ -12,6 +12,12 @@ public class LoadQuestionsTest {
     }
     
     @Test
+    public void notNullPathDiagnose(){
+        LoadQuestions fp = new LoadQuestions(".\\src\\Tutorials\\C#\\diagnose.txt");
+        assertNotNull(fp);        
+    }
+    
+    @Test
     public void nullPath(){
         LoadQuestions fp = new LoadQuestions(null);
         assertNotNull(fp);
@@ -21,14 +27,18 @@ public class LoadQuestionsTest {
     public void nonExistentPath(){
         LoadQuestions fp = new LoadQuestions(".\\src\\Tutorials\\C#\\tests\\chapter20.txt");
         assertNotNull(fp);
-        //included return on exceptions - NOT ALRIGHT
     }
 
-//    don't know how to solve this yet
-//    @Test
-//    public void ExistentPathWrongTypeOfFile(){
-//        LoadQuestions fp = new LoadQuestions(".\\src\\Tutorials\\C#\\chapters\\chapter2.txt");
-//        assertNotNull(fp);        
-//    }
+    @Test
+    public void existentPathWrongTypeOfFile(){
+        LoadQuestions fp = new LoadQuestions(".\\src\\Tutorials\\C#\\chapters\\chapter2.txt");
+        assertNotNull(fp);        
+    }
+    
+    @Test 
+    public void incorrectFormatedFile(){
+        LoadQuestions fp = new LoadQuestions(".\\src\\Tutorials\\C#\\diagnoseTest.txt");
+        assertNotNull(fp);
+    }
 }
 

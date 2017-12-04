@@ -50,7 +50,7 @@ public class LoadQuestions {
 
         try {
             int index = 0;
-  
+
             FileReader fr = new FileReader(path);
             BufferedReader br = new BufferedReader(fr);
 
@@ -64,19 +64,19 @@ public class LoadQuestions {
                         //System.out.println(array[index]);
                         index++;
                     }
+                }if (line.contains("Q" + questionNumber+1+ " ")) {
+                    System.err.println("Invalid questions format");
+                    return;
                 }
             }
+            Question q = new Question(array);
+            question.add(q);
             br.close();
         } catch (FileNotFoundException ex) {
             System.err.println("Unable to open file");
-            return;
         } catch (IOException ex) {
             System.err.println("Error reading file");
-            return;
         }
-
-        Question q = new Question(array);
-        question.add(q);
     }
 
     private int randomNum(int num) {
