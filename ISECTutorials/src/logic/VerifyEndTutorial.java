@@ -1,13 +1,22 @@
 
 package logic;
 
+import data.Progression;
+        
 public class VerifyEndTutorial {
     private int completed[];
     private int done;
+    Progression p() = new Progression;
     
     VerifyEndTutorial(){
         this.completed= new int[10];    }
-    
+
+
+    public VerifyEndTutorial(int[] completed, int done, progression p) {
+        this.completed = completed;
+        this.done = done;
+        this.p = p;
+    }
     public bool isOver(){
         this.completed = .GetChapterTests//get do Progression criado no validate tests
         int done = 0;
