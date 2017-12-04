@@ -36,12 +36,11 @@ public class ValidateTestResult {
         int questCorrect;
         int total;
         
-        
-        if(ValidateResults(i[],j[],k,pro,ques) == 1)
-            
-            for(int i = 0;i< 9 ;i++)
-                if(0==chapter[i])
-                    pro.setChapter(chapter+1);
+//        if(ValidateResults(i[],j[],k,pro,ques) == 1)
+//            
+//            for(int i = 0;i< 9 ;i++)
+//                if(0==chapter[i])
+//                    pro.setChapter(chapter+1);
         
 
 }
