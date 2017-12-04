@@ -6,7 +6,7 @@ public class VerifyChapter {
     
     VerifyChapter(){
         this.unlocked = new int[10];
-        this.unlocked[] = .getChapter()//getChapter do Progression criado no Validate Test result
+//        this.unlocked[] = .getChapter()//getChapter do Progression criado no Validate Test result
     }
     
     public int[] getUnlockedChapters(){
