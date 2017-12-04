@@ -11,6 +11,10 @@ public class LoadQuestions {
     String line = null;
 
     public LoadQuestions(String path) {
+        if (path == null) {
+            System.err.println("LoadQuestions Const: Invalid path");
+            return;
+        }
 
         if (path.contains("diagnose")) {
             int n, m = 0;
@@ -24,15 +28,15 @@ public class LoadQuestions {
                 loadOne(path, m);
             }
         }
-        
-        if(path.contains("chapter")){
+
+        if (path.contains("chapter")) {
             //seven questions from a pool of twelve
             int[] array = new Random().ints(0, 11).distinct().limit(7).toArray();
-            for(int i=0;i<7;i++){
+            for (int i = 0; i < 7; i++) {
                 //System.err.println(array[i]);
                 loadOne(path, array[i]);
             }
-            
+
         }
 
     }
@@ -46,10 +50,7 @@ public class LoadQuestions {
 
         try {
             int index = 0;
-            if (questionNumber < 0 || questionNumber > 49) {
-                System.err.println("Question number invalid");
-            }
-
+  
             FileReader fr = new FileReader(path);
             BufferedReader br = new BufferedReader(fr);
 
@@ -68,8 +69,10 @@ public class LoadQuestions {
             br.close();
         } catch (FileNotFoundException ex) {
             System.err.println("Unable to open file");
+            return;
         } catch (IOException ex) {
             System.err.println("Error reading file");
+            return;
         }
 
         Question q = new Question(array);

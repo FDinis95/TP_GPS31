@@ -13,7 +13,7 @@ public class LoadTutorialTest {
      }
     
     @Test
-    public void NullPath(){
+    public void nullPath(){
         
         LoadTutorial lt = new LoadTutorial();
         
@@ -22,7 +22,7 @@ public class LoadTutorialTest {
     }
     
     @Test
-    public void NotNullPath(){
+    public void notNullPath(){
         LoadTutorial lt = new LoadTutorial();
         
         String a = lt.loadChapter(".\\src\\Tutorials\\C#\\chapters\\chapter0.txt");
@@ -30,7 +30,7 @@ public class LoadTutorialTest {
     }
     
     @Test
-    public void WrongPath(){
+    public void wrongPath(){
         
         LoadTutorial lt = new LoadTutorial();
         lt.loadChapter(".\\src\\Tutorials\\C#\\chapters\\chapter30.txt");
