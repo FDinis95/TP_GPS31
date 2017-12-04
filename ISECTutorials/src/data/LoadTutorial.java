@@ -12,6 +12,7 @@ public class LoadTutorial {
     public String loadChapter(String path){
         if(path == null){
             System.err.println("LoadTutorial: Invalid path");
+            return "ERROR!";
         }
         
         try{
@@ -27,9 +28,11 @@ public class LoadTutorial {
         }
         catch(FileNotFoundException ex){
             System.err.println("Unable to open file");
+            texto = "Unable to open file!";
         }
         catch(IOException ex){
             System.err.println("Error reading file");
+            texto = "Unable to read file!";
         }
         
         return texto;
