@@ -3,6 +3,7 @@ package isectutorials;
 import data.FindPath;
 import data.LoadQuestions;
 import data.LoadTutorial;
+import ui.CreateMainMenu;
 
 public class ISECTutorials {
 
@@ -26,6 +27,11 @@ public class ISECTutorials {
         LoadQuestions lq = new LoadQuestions(Sfp[i]+ "\\tests\\chapter"+4+".txt");
         
         System.out.println(test2);
+        
+        //
+        
+        CreateMainMenu first = new CreateMainMenu();
+        System.err.println("passed");
     }
     
 }
