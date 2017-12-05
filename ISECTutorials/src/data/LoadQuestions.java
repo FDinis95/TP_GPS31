@@ -64,9 +64,6 @@ public class LoadQuestions {
                         //System.out.println(array[index]);
                         index++;
                     }
-                }if (line.contains("Q" + questionNumber+1+ " ")) {
-                    System.err.println("Invalid questions format");
-                    return;
                 }
             }
             Question q = new Question(array);
