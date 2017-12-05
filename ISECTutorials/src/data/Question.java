@@ -7,12 +7,13 @@ public class Question {
     private int correct;
 
     Question(String string[]) {
+        try {
 
         //for testing the strings
         for(int i=0;i<string.length;i++){
         System.out.println(string[i]);
         }
-        try {
+        
             this.question = string[0];
             this.correct = Integer.parseInt(string[5]);
             for (int index = 0; index < 4; index++) {
