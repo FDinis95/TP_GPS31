@@ -5,17 +5,17 @@ public class Question {
     private String question;
     private String answers[] = new String[4];
     private int correct;
+    private int chapter;
 
     Question(String string[]) {
         try {
-
         //for testing the strings
         for(int i=0;i<string.length;i++){
-        System.out.println(string[i]);
+//        System.out.println(string[i]);
         }
-        
             this.question = string[0];
             this.correct = Integer.parseInt(string[5]);
+            this.chapter = Integer.parseInt(string[6]);
             for (int index = 0; index < 4; index++) {
                 this.answers[index] = string[index + 1];
             }
@@ -38,5 +38,9 @@ public class Question {
 
     public int getCorrect() {
         return correct;
+    }
+    
+        public int getChapter(){
+        return chapter;
     }
 }
