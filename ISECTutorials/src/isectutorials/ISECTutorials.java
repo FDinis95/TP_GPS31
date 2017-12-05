@@ -28,10 +28,8 @@ public class ISECTutorials {
         
         System.out.println(test2);
         
-        //
-        
-        CreateMainMenu first = new CreateMainMenu();
-        System.err.println("passed");
+//        CreateMainMenu first = new CreateMainMenu();
+//        System.err.println("passed");
     }
     
 }
