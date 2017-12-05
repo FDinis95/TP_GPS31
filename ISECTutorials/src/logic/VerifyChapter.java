@@ -4,6 +4,8 @@ import data.Progression;
 
 public class VerifyChapter {
 
+    public VerifyChapter() {}
+
     public int[] getUnlockedChapters(Progression pro) {
         int array[] = new int[10];
         try {
