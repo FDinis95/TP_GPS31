@@ -23,8 +23,8 @@ public class LoadQuestions {
                 while (m == n) {
                     m = randomNum(i);
                 }
-                loadOne(path, n, i-1);
-                loadOne(path, m, i-1);
+                loadOne(path, n, i - 1);
+                loadOne(path, m, i - 1);
             }
         }
 
@@ -42,11 +42,6 @@ public class LoadQuestions {
 
     private void loadOne(String path, int questionNumber, int chapterNum) {
         String array[] = new String[7];
-        if (path == null) {
-            System.err.println("LoadQuestions: Invalid path");
-            return;
-        }
-
         try {
             int index = 0;
 
@@ -55,9 +50,13 @@ public class LoadQuestions {
 
             while ((line = br.readLine()) != null) {
                 if (line.contains("Q" + questionNumber + " ")) {
-                    array[6]=Integer.toString(chapterNum);
-                    array[index] = line;
-                    //System.out.println(array[index]);
+                    array[6] = Integer.toString(chapterNum);
+                    if (questionNumber < 10) {
+                        array[index] = line.substring(3, line.length());
+                    } else {
+                        array[index] = line.substring(4, line.length());
+                    }
+//                    System.out.println(array[index]);
                     index++;
                     for (int i = 1; i < 6; i++) {
                         array[index] = br.readLine();
@@ -73,6 +72,8 @@ public class LoadQuestions {
             System.err.println("Unable to open file");
         } catch (IOException ex) {
             System.err.println("Error reading file");
+        } catch (NullPointerException ex) {
+            System.err.println("LoadQuestions: Invalid path");
         }
     }
 
