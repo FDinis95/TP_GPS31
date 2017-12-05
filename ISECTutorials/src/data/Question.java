@@ -7,7 +7,7 @@ public class Question {
     private int correct;
     private int chapter;
 
-    Question(String string[]) {
+    public Question(String string[]) {
         try {
         //for testing the strings
         for(int i=0;i<string.length;i++){

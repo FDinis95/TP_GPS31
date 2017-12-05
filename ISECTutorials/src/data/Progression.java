@@ -6,7 +6,7 @@ public class Progression {
     private int chapter[];
     private int chapterTests[];
     
-    Progression(){
+    public Progression(){
         this.correct = 0;
         this.totalNumberOfQuestionsAnswerd = 0;
         this.chapter = new int[10];
