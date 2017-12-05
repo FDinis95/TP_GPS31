@@ -1,31 +1,39 @@
 package logic;
 
 import data.Progression;
+import java.util.ArrayList;
 
 public class ValidateTestResult {
+    //Array to store chapters done in evaluation test
+    private ArrayList<Integer> chap;
 
     public ValidateTestResult() {
+        chap = new ArrayList<>(10);
+         
+        //fill the array with '0'
+        for (int i = 0; i < 10; i++) {
+                 chap.add(0);
+        }
     }
 
-    public int validateEvaluationTest(int answers[], int corrects[], int chapter[]) {
+    public int validateEvaluationTest(int answers[], int corrects[], int chapter[], Progression pro) {
         int n = 0;
-        int chap[] = null;
+        
         if (answers.length != 20 || corrects.length != 20 || chapter.length != 20) {
             for (int i = 0; i < answers.length; i++) {
                 if (answers[i] == corrects[i]) {
-                    int j = chapter[i];
-                    chap[j]++;
-                    n++;
+                    int value = chap.get(i);//get the value on the chap[i]
+                    chap.add(chapter[i],value++);//increments the value on chap array
                 }
             }
-            
+            updateProgression(pro);
             return n;
-         //   updateProgression(chap);
+            
         } else {
             System.err.println("arrays size incorrect");
             return -1;
         }
-      
+
     }
 
     public int validateChapterTest(int answers[], int corrects[], int chapter, Progression pro) {
@@ -37,7 +45,7 @@ public class ValidateTestResult {
                 }
             }
             if (n > 3) {
-        updateProgressionAfterChapter(chapter, pro); //verify if can be the same funtion or another one
+                updateProgressionAfterChapter(chapter, pro); //verify if can be the same funtion or another one
             }
             return n;
         } else {
@@ -46,20 +54,19 @@ public class ValidateTestResult {
         }
     }
 
-    private void updateProgression(int chapters[]) {
-        int array[] = null;
-        for (int i = 0; i < chapters.length; i++) {
-            //   if(chapters[i]!=0)
-                    
-            //incomplete 
-            
-            //verify if there is a duplicate number in the arrar, 
-            //if there is uses that number to update progression
-                    }
-    }
-    
-    private void updateProgressionAfterChapter(int chapters, Progression pro) {
-         //update the chapter progression array until the chapters done
+    private void updateProgression(Progression pro) {
         
-             pro.setChapter(chapters);}
+        for (int i = 0; i < chap.size(); i++) {
+            //if the number on chap array index 'i' is greater then '1' setChapter done
+              if(chap.get(i) > 1)
+                  pro.setChapter(i);
+        }
+
     }
+
+    private void updateProgressionAfterChapter(int chapters, Progression pro) {
+        //update the chapter progression array until the chapters done
+
+        pro.setChapter(chapters);
+    }
+}
