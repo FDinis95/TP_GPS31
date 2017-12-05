@@ -3,6 +3,8 @@ package logic;
 import data.Progression;
 
 public class VerifyEndTutorial {
+    
+    public VerifyEndTutorial(){}
 
     public boolean verify(Progression pro) {
 
@@ -14,4 +16,5 @@ public class VerifyEndTutorial {
         }
         return true;
     }
+   
 }

@@ -1,7 +1,6 @@
 package logic;
 
 import data.Progression;
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,7 +13,6 @@ public class VerifyEndTutorialTest {
 
     @Test
     public void progressionNotNull() {
-
         assertNotNull(pro);
     }
     
@@ -29,17 +27,22 @@ public class VerifyEndTutorialTest {
        assertNotNull(completedChapters);
     }
     
-    /*@Test
+    @Test
     public void verifyIsFalse(){
-        boolean result = ver.verify(pro);
-        assertFalse(result);
+        assertFalse(ver.verify(pro));
     }
 
     @Test
     public void verifyIsTrue(){
-        boolean result = ver.verify(pro);
         for (int i=0;i<10;i++)
             pro.setChapterTests(i);
-        assertTrue(result);
-    }*/
+        assertTrue(ver.verify(pro));
+    }
+    
+    @Test
+    public void verifyIsIncomplete(){
+        for (int i=0;i<9;i++)
+            pro.setChapterTests(i);
+        assertFalse(ver.verify(pro));
+    }
 }
