@@ -26,7 +26,7 @@ public class ISECTutorials {
         test2 = new LoadTutorial().loadChapter(Sfp[i] + "\\chapters\\chapter" + chapt + ".txt");
         LoadQuestions lq = new LoadQuestions(Sfp[i]+ "\\tests\\chapter"+4+".txt");
         
-//        System.out.println(test2);
+        System.out.println(test2);
         
 //        CreateMainMenu first = new CreateMainMenu();
 //        System.err.println("passed");

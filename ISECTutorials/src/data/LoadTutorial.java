@@ -20,7 +20,7 @@ public class LoadTutorial {
             BufferedReader br = new BufferedReader(fr);
             
             while((line = br.readLine()) != null){
-                texto += " "+line;
+                texto += " "+line + "\n";
             }
 //            System.out.println(Texto);
             br.close();
