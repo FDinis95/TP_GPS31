@@ -1,16 +1,19 @@
-
 package logic;
 
+import data.Progression;
+
 public class VerifyChapter {
-    private int unlocked[];
-    
-    VerifyChapter(){
-        this.unlocked = new int[10];
-//        this.unlocked[] = .getChapter()//getChapter do Progression criado no Validate Test result
+
+    public VerifyChapter() {}
+
+    public int[] getUnlockedChapters(Progression pro) {
+        int array[] = new int[10];
+        try {
+            return pro.getChapterTests();
+        } catch (NullPointerException ex) {
+            System.err.println("Progression chapters is null");
+        }
+        return array;
     }
-    
-    public int[] getUnlockedChapters(){
-        return unlocked;
-    }
-    
+
 }

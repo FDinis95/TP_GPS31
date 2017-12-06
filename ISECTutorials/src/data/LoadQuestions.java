@@ -15,7 +15,6 @@ public class LoadQuestions {
             System.err.println("LoadQuestions Const: Invalid path");
             return;
         }
-
         if (path.contains("diagnose")) {
             int n, m = 0;
             for (int i = 1; i < 11; i++) {
@@ -24,8 +23,8 @@ public class LoadQuestions {
                 while (m == n) {
                     m = randomNum(i);
                 }
-                loadOne(path, n);
-                loadOne(path, m);
+                loadOne(path, n, i - 1);
+                loadOne(path, m, i - 1);
             }
         }
 
@@ -34,20 +33,15 @@ public class LoadQuestions {
             int[] array = new Random().ints(0, 11).distinct().limit(7).toArray();
             for (int i = 0; i < 7; i++) {
                 //System.err.println(array[i]);
-                loadOne(path, array[i]);
+                loadOne(path, array[i], 0); //zero because it's not necessary for the chapter test
             }
 
         }
 
     }
 
-    private void loadOne(String path, int questionNumber) {
-        String array[] = new String[6];
-        if (path == null) {
-            System.err.println("LoadQuestions: Invalid path");
-            return;
-        }
-
+    private void loadOne(String path, int questionNumber, int chapterNum) {
+        String array[] = new String[7];
         try {
             int index = 0;
 
@@ -56,17 +50,19 @@ public class LoadQuestions {
 
             while ((line = br.readLine()) != null) {
                 if (line.contains("Q" + questionNumber + " ")) {
-                    array[index] = line;
-                    //System.out.println(array[index]);
+                    array[6] = Integer.toString(chapterNum);
+                    if (questionNumber < 10) {
+                        array[index] = line.substring(3, line.length());
+                    } else {
+                        array[index] = line.substring(4, line.length());
+                    }
+//                    System.out.println(array[index]);
                     index++;
                     for (int i = 1; i < 6; i++) {
                         array[index] = br.readLine();
                         //System.out.println(array[index]);
                         index++;
                     }
-                }if (line.contains("Q" + questionNumber+1+ " ")) {
-                    System.err.println("Invalid questions format");
-                    return;
                 }
             }
             Question q = new Question(array);
@@ -76,6 +72,8 @@ public class LoadQuestions {
             System.err.println("Unable to open file");
         } catch (IOException ex) {
             System.err.println("Error reading file");
+        } catch (NullPointerException ex) {
+            System.err.println("LoadQuestions: Invalid path");
         }
     }
 

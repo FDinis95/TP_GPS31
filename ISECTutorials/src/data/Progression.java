@@ -2,13 +2,13 @@ package data;
 
 public class Progression {
     private int correct;
-    private int total;
+    private int totalNumberOfQuestionsAnswered;
     private int chapter[];
     private int chapterTests[];
     
-    Progression(){
+    public Progression(){
         this.correct = 0;
-        this.total = 0;
+        this.totalNumberOfQuestionsAnswered = 0;
         this.chapter = new int[10];
         this.chapterTests = new int[10];                
     }
@@ -21,12 +21,12 @@ public class Progression {
         this.correct += correct;
     }
 
-    public int getTotal() {
-        return total;
+    public int getTotalNumberOfQuestionsAnswered() {
+        return totalNumberOfQuestionsAnswered;
     }
 
-    public void setTotal(int total) {
-        this.total += total;
+    public void setTotalNumberOfQuestionsAnswered() {
+        this.totalNumberOfQuestionsAnswered += 7;
     }
 
     //returns the array
