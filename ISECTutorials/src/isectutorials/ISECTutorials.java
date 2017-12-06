@@ -8,9 +8,11 @@ import java.util.Random;
 import logic.ValidateTestResult;
 import ui.CreateMainMenu;
 
-public class ISECTutorials {
+public class ISECTutorials
+{
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
 
         String test2 = null;
 
@@ -28,14 +30,16 @@ public class ISECTutorials {
 //        LoadQuestions lq = new LoadQuestions(Sfp[i]+ "\\diagnose.txt");
         test2 = new LoadTutorial().loadChapter(Sfp[i] + "\\chapters\\chapter" + chapt + ".txt");
         LoadQuestions lq = new LoadQuestions(Sfp[i] + "\\tests\\chapter" + 4 + ".txt");
-        
 
 //        System.out.println(test2);
 //        CreateMainMenu first = new CreateMainMenu();
 //        System.err.println("passed");
         int array1[] = new Random().ints(0, 50).distinct().limit(20).toArray();
         int array2[] = array1;
-        int array3[] = {0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9};
+        int array3[] =
+        {
+            0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+        };
         Progression pro = new Progression();
 
         ValidateTestResult tst = new ValidateTestResult();
