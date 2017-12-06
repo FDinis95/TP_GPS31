@@ -55,7 +55,7 @@ public class ValidateTestResult {
                 }
 
                 pro.setCorrect(n);
-                pro.setTotalNumberOfQuestionsAnswerd();
+                pro.setTotalNumberOfQuestionsAnswered();
 
                 return n;
             } else {

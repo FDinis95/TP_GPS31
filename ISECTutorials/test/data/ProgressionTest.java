@@ -38,8 +38,8 @@ public class ProgressionTest {
     }
 
     @Test
-    public void validatGetTotalNumberOfQuestionsAnswerd() {
-        assertNotNull(pro.getTotalNumberOfQuestionsAnswerd());
+    public void validatGetTotalNumberOfQuestionsAnswered() {
+        assertNotNull(pro.getTotalNumberOfQuestionsAnswered());
     }
 
     @Test
@@ -59,7 +59,7 @@ public class ProgressionTest {
 
     @Test
     public void validatGetTotalIsZeros() {
-        assertEquals(pro.getTotalNumberOfQuestionsAnswerd(), 0);
+        assertEquals(pro.getTotalNumberOfQuestionsAnswered(), 0);
     }
 
     @Test
@@ -97,8 +97,8 @@ public class ProgressionTest {
 
     @Test
     public void validatSetTotalEqual() {
-        pro.setTotalNumberOfQuestionsAnswerd();
-        assertEquals(7, pro.getTotalNumberOfQuestionsAnswerd());
+        pro.setTotalNumberOfQuestionsAnswered();
+        assertEquals(7, pro.getTotalNumberOfQuestionsAnswered());
     }
 
 }
