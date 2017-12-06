@@ -25,8 +25,8 @@ public class Progression {
         return totalNumberOfQuestionsAnswerd;
     }
 
-    public void setTotalNumberOfQuestionsAnswerd(int total) {
-        this.totalNumberOfQuestionsAnswerd += total;
+    public void setTotalNumberOfQuestionsAnswerd() {
+        this.totalNumberOfQuestionsAnswerd += 7;
     }
 
     //returns the array

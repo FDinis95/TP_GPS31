@@ -97,8 +97,8 @@ public class ProgressionTest {
 
     @Test
     public void validatSetTotalEqual() {
-        pro.setTotalNumberOfQuestionsAnswerd(10);
-        assertEquals(10, pro.getTotalNumberOfQuestionsAnswerd());
+        pro.setTotalNumberOfQuestionsAnswerd();
+        assertEquals(7, pro.getTotalNumberOfQuestionsAnswerd());
     }
 
 }

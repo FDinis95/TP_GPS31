@@ -39,7 +39,7 @@ public class ISECTutorials {
 
         ValidateTestResult tst = new ValidateTestResult();
         tst.validateEvaluationTest(array1, array2, array3, pro);
-        int array4[] = pro.getChapterTests();
+        int array4[] = pro.getChapter();
         for (int index = 0; index < array4.length; index++) {
             System.out.println(array4[i]);
         }
