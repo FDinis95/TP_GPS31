@@ -1,37 +1,45 @@
 package logic;
 
 import data.Progression;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class ValidateTestResult {
+
     //Array to store chapters done in evaluation test
-    private ArrayList<Integer> chap;
+    private ArrayList<Integer> chap = new ArrayList<>(10);
+
+    ;
 
     public ValidateTestResult() {
-        chap = new ArrayList<>(10);
-         
         //fill the array with '0'
         for (int i = 0; i < 10; i++) {
-                 chap.add(0);
+            chap.add(0);
         }
     }
 
     public int validateEvaluationTest(int answers[], int corrects[], int chapter[], Progression pro) {
         int n = 0;
-        
-        if (answers.length != 20 || corrects.length != 20 || chapter.length != 20) {
-            for (int i = 0; i < answers.length; i++) {
-                if (answers[i] == corrects[i]) {
-                    int value = chap.get(i);//get the value on the chap[i]
-                    chap.add(chapter[i],value++);//increments the value on chap array
+        try {
+            if (!(answers.length != 20 || corrects.length != 20 || chapter.length != 20)) {
+                for (int i = 0; i < answers.length; i++) {
+                    if (answers[i] == corrects[i]) {
+                        chap.set(chapter[i], chap.get(chapter[i]) + 1);//increments the value on chap array
+                        n++;
+                    }
                 }
+//            System.out.println(chap);
+                updateProgression(pro);
+                return n;
+
+            } else {
+                System.err.println("Array size is incorrect");
+                return -1;
             }
-            updateProgression(pro);
-            return n;
-            
-        } else {
-            System.err.println("arrays size incorrect");
-            return -1;
+        } catch (NullPointerException ex) {
+            System.err.println("Null array");
+            return -2;
         }
 
     }
@@ -55,11 +63,12 @@ public class ValidateTestResult {
     }
 
     private void updateProgression(Progression pro) {
-        
+
         for (int i = 0; i < chap.size(); i++) {
             //if the number on chap array index 'i' is greater then '1' setChapter done
-              if(chap.get(i) > 1)
-                  pro.setChapter(i);
+            if (chap.get(i) > 1) {
+                pro.setChapter(i);
+            }
         }
 
     }
