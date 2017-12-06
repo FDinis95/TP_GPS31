@@ -28,6 +28,7 @@ public class ISECTutorials {
 //        LoadQuestions lq = new LoadQuestions(Sfp[i]+ "\\diagnose.txt");
         test2 = new LoadTutorial().loadChapter(Sfp[i] + "\\chapters\\chapter" + chapt + ".txt");
         LoadQuestions lq = new LoadQuestions(Sfp[i] + "\\tests\\chapter" + 4 + ".txt");
+        
 
 //        System.out.println(test2);
 //        CreateMainMenu first = new CreateMainMenu();
@@ -40,9 +41,9 @@ public class ISECTutorials {
         ValidateTestResult tst = new ValidateTestResult();
         tst.validateEvaluationTest(array1, array2, array3, pro);
         int array4[] = pro.getChapter();
-        for (int index = 0; index < array4.length; index++) {
-            System.out.println(array4[i]);
-        }
+//        for (int index = 0; index < array4.length; index++) {
+//            System.out.println(array4[i]);
+//        }
     }
 
 }

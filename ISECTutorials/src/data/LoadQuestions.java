@@ -2,6 +2,7 @@ package data;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -23,8 +24,8 @@ public class LoadQuestions {
                 while (m == n) {
                     m = randomNum(i);
                 }
-                loadOne(path, n, i - 1);
-                loadOne(path, m, i - 1);
+                createOne(path, n, i - 1);
+                createOne(path, m, i - 1);
             }
         }
 
@@ -33,14 +34,14 @@ public class LoadQuestions {
             int[] array = new Random().ints(0, 11).distinct().limit(7).toArray();
             for (int i = 0; i < 7; i++) {
                 //System.err.println(array[i]);
-                loadOne(path, array[i], 0); //zero because it's not necessary for the chapter test
+                createOne(path, array[i], 0); //zero because it's not necessary for the chapter test
             }
 
         }
 
     }
 
-    private void loadOne(String path, int questionNumber, int chapterNum) {
+    private void createOne(String path, int questionNumber, int chapterNum) {
         String array[] = new String[7];
         try {
             int index = 0;
@@ -84,4 +85,8 @@ public class LoadQuestions {
         return x;
     }
 
+    public List<Question> getQuestions() {
+        Collections.shuffle(question);
+        return question;
+    }
 }
