@@ -29,7 +29,7 @@ public class CreateMainMenu extends JFrame
     CardLayout cards;
     String layoutName = "";
     String path = "";
-    List<Question> quests;
+    
 
     public CreateMainMenu()
     {
@@ -94,51 +94,53 @@ public class CreateMainMenu extends JFrame
             centralPanel.add(btn);
         }
 
-        //Evaluation test card
-        JPanel firstCard = new JPanel();
-        firstCard.setBackground(Color.GREEN);
-        LoadQuestions lq = new LoadQuestions(fp.getPath()[0] + "\\diagnose.txt");
-        quests = lq.getQuestions();
-        for (Question q : quests)
-        {
-            firstCard.add(new JLabel(q.getQuestion()));
-            for (String s : q.getAnswers())
-            {
-                firstCard.add(new JRadioButton(s));
-            }
-        }
-        JButton jj = new JButton("Next");
-        jj.addActionListener(new ActionListener()
-        {
-            @Override
-            public void actionPerformed(ActionEvent event)
-            {
-                cards.next(cardPanel);
-            }
-
-        });
-        firstCard.add(jj);
+//        Evaluation test card
+//        JPanel firstCard = new JPanel();
+//        firstCard.setBackground(Color.GREEN);
+//        LoadQuestions lq = new LoadQuestions(fp.getPath()[0] + "\\diagnose.txt");
+//        quests = lq.getQuestions();
+//        for (Question q : quests)
+//        {
+//            firstCard.add(new JLabel(q.getQuestion()));
+//            for (String s : q.getAnswers())
+//            {
+//                firstCard.add(new JRadioButton(s));
+//            }
+//        }
+//        JButton jj = new JButton("Next");
+//        jj.addActionListener(new ActionListener()
+//        {
+//            @Override
+//            public void actionPerformed(ActionEvent event)
+//            {
+//                cards.next(cardPanel);
+//            }
+//
+//        });
+//        firstCard.add(jj);
 
         //Tutorial card
-        JPanel secondCard = new JPanel();
-        secondCard.setBackground(Color.GREEN);
-        LoadTutorial lt = new LoadTutorial();
-        String texto = lt.loadChapter(fp.getPath()[0]+"\\chapters\\chapter0.txt");
-        secondCard.add(new JLabel(texto));
-        JButton jT = new JButton("Next");
-        jT.addActionListener(new ActionListener()
-        {
-            @Override
-            public void actionPerformed(ActionEvent event)
-            {
-                cards.next(cardPanel);
-            }
-
-        });
-        secondCard.add(jT);
-
-        cardPanel.add(firstCard, "Fruits");
-        cardPanel.add(secondCard, "Veggies");
+//        JPanel secondCard = new JPanel();
+//        secondCard.setBackground(Color.GREEN);
+//        LoadTutorial lt = new LoadTutorial();
+//        String texto = lt.loadChapter(fp.getPath()[0]+"\\chapters\\chapter0.txt");
+//        secondCard.add(new JLabel(texto));
+//        JButton jT = new JButton("Next");
+//        jT.addActionListener(new ActionListener()
+//        {
+//            @Override
+//            public void actionPerformed(ActionEvent event)
+//            {
+//                cards.next(cardPanel);
+//            }
+//
+//        });
+//        secondCard.add(jT);
+        
+        path = fp.getPath()[0];
+        cardPanel.add(new EvaluationTest().evaluation(path, cards, cardPanel), "Veggies");
+        cardPanel.add(new ShowTutorial().tutorial(path, cards, cardPanel), "Fruits");
+        
         cardPanel.add(centralPanel, layoutName);
 
         frame.add(tabsPanel, BorderLayout.NORTH);
