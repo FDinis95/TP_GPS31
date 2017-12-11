@@ -1,6 +1,9 @@
 package ui;
 
 import data.FindPath;
+import data.LoadQuestions;
+import data.LoadTutorial;
+import data.Question;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -9,12 +12,14 @@ import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 
 public class CreateMainMenu extends JFrame
 {
@@ -23,6 +28,8 @@ public class CreateMainMenu extends JFrame
     JPanel cardPanel;
     CardLayout cards;
     String layoutName = "";
+    String path = "";
+    List<Question> quests;
 
     public CreateMainMenu()
     {
@@ -66,6 +73,7 @@ public class CreateMainMenu extends JFrame
         cardPanel.setLayout(cards);
         cards.show(cardPanel, "main");
 
+        //Main menu card
         JPanel centralPanel = new JPanel();
         FindPath fp = new FindPath();
         centralPanel.setBackground(Color.red);
@@ -79,24 +87,55 @@ public class CreateMainMenu extends JFrame
                 {
                     layoutName = buttons;
                     System.out.println(layoutName);
-                    cards.show(cardPanel, layoutName);
+                    cards.show(cardPanel, "Fruits");
                 }
             });
 
             centralPanel.add(btn);
         }
 
+        //Evaluation test card
         JPanel firstCard = new JPanel();
         firstCard.setBackground(Color.GREEN);
-        addButton(firstCard, "APPLES");
-        addButton(firstCard, "ORANGES");
-        addButton(firstCard, "BANANAS");
+        LoadQuestions lq = new LoadQuestions(fp.getPath()[0] + "\\diagnose.txt");
+        quests = lq.getQuestions();
+        for (Question q : quests)
+        {
+            firstCard.add(new JLabel(q.getQuestion()));
+            for (String s : q.getAnswers())
+            {
+                firstCard.add(new JRadioButton(s));
+            }
+        }
+        JButton jj = new JButton("Next");
+        jj.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent event)
+            {
+                cards.next(cardPanel);
+            }
 
+        });
+        firstCard.add(jj);
+
+        //Tutorial card
         JPanel secondCard = new JPanel();
-        secondCard.setBackground(Color.BLUE);
-        addButton(secondCard, "LEEKS");
-        addButton(secondCard, "TOMATOES");
-        addButton(secondCard, "PEAS");
+        secondCard.setBackground(Color.GREEN);
+        LoadTutorial lt = new LoadTutorial();
+        String texto = lt.loadChapter(fp.getPath()[0]+"\\chapters\\chapter0.txt");
+        secondCard.add(new JLabel(texto));
+        JButton jT = new JButton("Next");
+        jT.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent event)
+            {
+                cards.next(cardPanel);
+            }
+
+        });
+        secondCard.add(jT);
 
         cardPanel.add(firstCard, "Fruits");
         cardPanel.add(secondCard, "Veggies");
