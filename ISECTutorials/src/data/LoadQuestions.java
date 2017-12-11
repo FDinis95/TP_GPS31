@@ -83,7 +83,9 @@ public class LoadQuestions
             }
             Question q = new Question(array);
             question.add(q);
+//            question.add(new Question(array));
             br.close();
+            fr.close();
         } catch (FileNotFoundException ex)
         {
             System.err.println("Unable to open file");

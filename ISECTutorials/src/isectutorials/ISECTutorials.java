@@ -7,6 +7,7 @@ import data.Progression;
 import java.util.Random;
 import logic.ValidateTestResult;
 import ui.CreateMainMenu;
+import ui.TestingCardLayout;
 
 public class ISECTutorials
 {
@@ -32,8 +33,7 @@ public class ISECTutorials
         LoadQuestions lq = new LoadQuestions(Sfp[i] + "\\tests\\chapter" + 4 + ".txt");
 
 //        System.out.println(test2);
-//        CreateMainMenu first = new CreateMainMenu();
-//        System.err.println("passed");
+
         int array1[] = new Random().ints(0, 50).distinct().limit(20).toArray();
         int array2[] = array1;
         int array3[] =
@@ -48,6 +48,14 @@ public class ISECTutorials
 //        for (int index = 0; index < array4.length; index++) {
 //            System.out.println(array4[i]);
 //        }
+
+//        Testing interface
+        CreateMainMenu first = new CreateMainMenu();
+        System.err.println("Menu");
+
+//        TestingCardLayout testLayout =  new TestingCardLayout();
+
+
     }
 
 }

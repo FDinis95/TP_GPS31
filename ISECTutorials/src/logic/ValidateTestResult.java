@@ -67,7 +67,7 @@ public class ValidateTestResult
                 }
                 if (n > 3)
                 {
-                    updateProgressionAfterChapter(chapter, pro); //verify if can be the same funtion or another one
+                    updateProgressionAfterChapter(chapter, pro); 
                 }
 
                 pro.setCorrect(n);
@@ -101,7 +101,9 @@ public class ValidateTestResult
     private void updateProgressionAfterChapter(int chapter, Progression pro)
     {
         //update the chapter progression array until the chapters done
+        if(chapter >=0 && chapter<7){
         pro.setChapterTests(chapter);
         pro.setChapter(chapter);
+        }
     }
 }
