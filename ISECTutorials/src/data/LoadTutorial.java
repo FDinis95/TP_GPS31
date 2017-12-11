@@ -31,6 +31,7 @@ public class LoadTutorial
             }
 //            System.out.println(Texto);
             br.close();
+            fr.close();
 
         } catch (FileNotFoundException ex)
         {

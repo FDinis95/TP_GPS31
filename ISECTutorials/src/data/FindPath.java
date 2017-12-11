@@ -45,9 +45,7 @@ public class FindPath
             System.err.println("Tutorials folder inexistent or empty!");
         }
     }
-
-    ;
-
+    
     public String[] getPath()
     {
         return path;
