@@ -1,160 +1,101 @@
 package ui;
 
 import data.FindPath;
-import data.LoadQuestions;
-import data.LoadTutorial;
-import data.Question;
+import data.Progression;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
 import javax.swing.BorderFactory;
-import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JRadioButton;
 
-public class CreateMainMenu extends JFrame
+public final class CreateMainMenu
 {
 
     JFrame frame;
-    JPanel cardPanel;
-    CardLayout cards;
+
+    JPanel northCardPanel;
+    JPanel centralCardPanel;
+
+    CardLayout northCard;
+    CardLayout centralCard;
+
     String layoutName = "";
     String path = "";
     
+    // TEMPORARIO
+    Progression pro = new Progression();
+    //
 
     public CreateMainMenu()
     {
-
         buildWindow();
-
     }
 
     public void buildWindow()
     {
         frame = new JFrame();
-
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("ISEC Tutorials");
         frame.setSize(new Dimension(800, 600));
-
         frame.setLocationRelativeTo(null);
         frame.setLayout(new BorderLayout());
 
-        JPanel tabsPanel = new JPanel();
-        tabsPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        tabsPanel.add(new JLabel("Select a language: "));
-        JButton switchCards = new JButton("Switch Card");
-        switchCards.setActionCommand("Switch Card");
-        switchCards.addActionListener(new ActionListener()
-        {
-            @Override
-            public void actionPerformed(ActionEvent event)
-            {
-                cards.next(cardPanel);
-            }
+        northCardPanel = new JPanel();
+        northCard = new CardLayout();
 
-        });
-        tabsPanel.add(switchCards);
+        //TopPanel
+        northCardPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
-        frame.add(tabsPanel, BorderLayout.NORTH);
+        //TopPanel version One
+        JPanel greetings = new JPanel();
+        greetings.add(new JLabel("Wellcome to ISEC Tutorials!"));
+        northCardPanel.setLayout(northCard);
+        northCardPanel.add(greetings, "greetings");
+        frame.add(northCardPanel, BorderLayout.NORTH);
 
-        cardPanel = new JPanel();
-        cards = new CardLayout();
+        //CentralPanel
+        centralCardPanel = new JPanel();
+        centralCard = new CardLayout();
+        centralCardPanel.setLayout(centralCard);
 
-        cardPanel.setLayout(cards);
-        cards.show(cardPanel, "main");
-
-        //Main menu card
-        JPanel centralPanel = new JPanel();
+        //MainMenuPanel
+        JPanel menuPanel = new JPanel();
         FindPath fp = new FindPath();
-        centralPanel.setBackground(Color.red);
+        menuPanel.setBackground(Color.DARK_GRAY);
         for (String buttons : fp.getName())
         {
             JButton btn = new JButton(buttons);
-            btn.addActionListener(new ActionListener()
+            btn.addActionListener((ActionEvent e) ->
             {
-                @Override
-                public void actionPerformed(ActionEvent e)
-                {
-                    layoutName = buttons;
-                    System.out.println(layoutName);
-                    cards.show(cardPanel, "Fruits");
+                for(String s : fp.getPath()){
+                    if(s.contains(buttons))
+                        path=s;
                 }
+                centralCardPanel.add(new EvaluationTest().evaluation(path, centralCard, centralCardPanel, pro), "evaluation");//, answers, corrects, chapter
+                centralCard.show(centralCardPanel, "evaluation");
             });
-
-            centralPanel.add(btn);
+            menuPanel.add(btn);
         }
 
-//        Evaluation test card
-//        JPanel firstCard = new JPanel();
-//        firstCard.setBackground(Color.GREEN);
-//        LoadQuestions lq = new LoadQuestions(fp.getPath()[0] + "\\diagnose.txt");
-//        quests = lq.getQuestions();
-//        for (Question q : quests)
-//        {
-//            firstCard.add(new JLabel(q.getQuestion()));
-//            for (String s : q.getAnswers())
-//            {
-//                firstCard.add(new JRadioButton(s));
-//            }
-//        }
-//        JButton jj = new JButton("Next");
-//        jj.addActionListener(new ActionListener()
-//        {
-//            @Override
-//            public void actionPerformed(ActionEvent event)
-//            {
-//                cards.next(cardPanel);
-//            }
-//
-//        });
-//        firstCard.add(jj);
-
-        //Tutorial card
-//        JPanel secondCard = new JPanel();
-//        secondCard.setBackground(Color.GREEN);
-//        LoadTutorial lt = new LoadTutorial();
-//        String texto = lt.loadChapter(fp.getPath()[0]+"\\chapters\\chapter0.txt");
-//        secondCard.add(new JLabel(texto));
-//        JButton jT = new JButton("Next");
-//        jT.addActionListener(new ActionListener()
-//        {
-//            @Override
-//            public void actionPerformed(ActionEvent event)
-//            {
-//                cards.next(cardPanel);
-//            }
-//
-//        });
-//        secondCard.add(jT);
+        centralCardPanel.add(menuPanel, "menu");
+        centralCard.show(centralCardPanel, "menu");
+        System.err.println("Igot here before path" + path);
         
-        path = fp.getPath()[0];
-        cardPanel.add(new EvaluationTest().evaluation(path, cards, cardPanel), "Veggies");
-        cardPanel.add(new ShowTutorial().tutorial(path, cards, cardPanel), "Fruits");
-        
-        cardPanel.add(centralPanel, layoutName);
+//        problem here, its grabing the path before we have it...
+//        i think it's adding the panels before activating the buttons
+//        so must be passed through the buttons ActionEvents
+//        centralCardPanel.add(new EvaluationTest().evaluation(path, centralCard, centralCardPanel), "evaluation");
+//        centralCardPanel.add(new ShowTutorial().tutorial(path, centralCard, centralCardPanel), "tutorial");
 
-        frame.add(tabsPanel, BorderLayout.NORTH);
-        frame.add(cardPanel, BorderLayout.CENTER);
 
+        frame.add(centralCardPanel, BorderLayout.CENTER);
         frame.setVisible(true);
 
-    }
-
-    private void addButton(Container parent, String name)
-    {
-        JButton but = new JButton(name);
-        but.setActionCommand(name);
-        parent.add(but);
     }
 
 }
@@ -189,3 +130,64 @@ public class CreateMainMenu extends JFrame
 //        setVisible(true);
 //
 //    }
+//        Evaluation test card
+//        JPanel firstCard = new JPanel();
+//        firstCard.setBackground(Color.GREEN);
+//        LoadQuestions lq = new LoadQuestions(fp.getPath()[0] + "\\diagnose.txt");
+//        quests = lq.getQuestions();
+//        for (Question q : quests)
+//        {
+//            firstCard.add(new JLabel(q.getQuestion()));
+//            for (String s : q.getAnswers())
+//            {
+//                firstCard.add(new JRadioButton(s));
+//            }
+//        }
+//        JButton jj = new JButton("Next");
+//        jj.addActionListener(new ActionListener()
+//        {
+//            @Override
+//            public void actionPerformed(ActionEvent event)
+//            {
+//                cards.next(cardPanel);
+//            }
+//
+//        });
+//        firstCard.add(jj);
+//Tutorial card
+//        JPanel secondCard = new JPanel();
+//        secondCard.setBackground(Color.GREEN);
+//        LoadTutorial lt = new LoadTutorial();
+//        String texto = lt.loadChapter(fp.getPath()[0]+"\\chapters\\chapter0.txt");
+//        secondCard.add(new JLabel(texto));
+//        JButton jT = new JButton("Next");
+//        jT.addActionListener(new ActionListener()
+//        {
+//            @Override
+//            public void actionPerformed(ActionEvent event)
+//            {
+//                cards.next(cardPanel);
+//            }
+//
+//        });
+//        secondCard.add(jT);
+//
+//    private void addButton(Container parent, String name)
+//    {
+//        JButton but = new JButton(name);
+//        but.setActionCommand(name);
+//        parent.add(but);
+//    }
+//        JButton switchCards = new JButton("Switch Card");
+//        switchCards.setActionCommand("Switch Card");
+//        switchCards.addActionListener(new ActionListener()
+//        {
+//            @Override
+//            public void actionPerformed(ActionEvent event)
+//            {
+//                cards.next(cardPanel);
+//            }
+//
+//        });
+//        tabsPanel.add(switchCards);
+
