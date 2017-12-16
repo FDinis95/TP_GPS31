@@ -8,10 +8,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import javax.swing.BorderFactory;
-import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -57,7 +55,7 @@ public final class CreateMainMenu
 
         //TopPanel version One
         JPanel greetings = new JPanel();
-        greetings.add(new JLabel("Wellcome to ISEC Tutorials!"));
+        greetings.add(new JLabel("Welcome to ISEC Tutorials!"));
         northCardPanel.setLayout(northCard);
         northCardPanel.add(greetings, "greetings");
         frame.add(northCardPanel, BorderLayout.NORTH);

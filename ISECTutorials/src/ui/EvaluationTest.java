@@ -120,7 +120,7 @@ public class EvaluationTest extends JPanel
         scrollable.add(new JLabel("\n"));
         
         
-        System.err.println("Evauliatio path: " + path);
+        System.err.println("Evaluation path: " + path);
         LoadQuestions lq = new LoadQuestions(path + "\\diagnose.txt");
         List<Question> quests = lq.getQuestions();
         for (int i = 0; i < quests.size(); i++)
