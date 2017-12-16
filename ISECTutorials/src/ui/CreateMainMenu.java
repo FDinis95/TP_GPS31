@@ -6,8 +6,12 @@ import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -26,7 +30,7 @@ public final class CreateMainMenu
 
     String layoutName = "";
     String path = "";
-    
+
     // TEMPORARIO
     Progression pro = new Progression();
     //
@@ -63,36 +67,42 @@ public final class CreateMainMenu
         centralCard = new CardLayout();
         centralCardPanel.setLayout(centralCard);
 
-        //MainMenuPanel
         JPanel menuPanel = new JPanel();
         FindPath fp = new FindPath();
         menuPanel.setBackground(Color.DARK_GRAY);
+        menuPanel.setLayout(new GridBagLayout());
+
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = GridBagConstraints.RELATIVE;
+
         for (String buttons : fp.getName())
         {
             JButton btn = new JButton(buttons);
             btn.addActionListener((ActionEvent e) ->
             {
-                for(String s : fp.getPath()){
-                    if(s.contains(buttons))
-                        path=s;
+                for (String s : fp.getPath())
+                {
+                    if (s.contains(buttons))
+                    {
+                        path = s;
+                    }
                 }
                 centralCardPanel.add(new EvaluationTest().evaluation(path, centralCard, centralCardPanel, pro), "evaluation");//, answers, corrects, chapter
                 centralCard.show(centralCardPanel, "evaluation");
             });
-            menuPanel.add(btn);
+            menuPanel.add(btn, gbc);
         }
 
         centralCardPanel.add(menuPanel, "menu");
         centralCard.show(centralCardPanel, "menu");
         System.err.println("Igot here before path" + path);
-        
+
 //        problem here, its grabing the path before we have it...
 //        i think it's adding the panels before activating the buttons
 //        so must be passed through the buttons ActionEvents
 //        centralCardPanel.add(new EvaluationTest().evaluation(path, centralCard, centralCardPanel), "evaluation");
 //        centralCardPanel.add(new ShowTutorial().tutorial(path, centralCard, centralCardPanel), "tutorial");
-
-
         frame.add(centralCardPanel, BorderLayout.CENTER);
         frame.setVisible(true);
 
