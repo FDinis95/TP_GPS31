@@ -13,19 +13,20 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.ScrollPaneConstants;
 public class ShowTutorial extends JPanel
 {
 
-    JButton bnt1 = new JButton("Chapter  1");
-    JButton bnt2 = new JButton("Chapter  2");
-    JButton bnt3 = new JButton("Chapter  3");
-    JButton bnt4 = new JButton("Chapter  4");
-    JButton bnt5 = new JButton("Chapter  5");
-    JButton bnt6 = new JButton("Chapter  6");
-    JButton bnt7 = new JButton("Chapter  7");
-    JButton bnt8 = new JButton("Chapter  8");
-    JButton bnt9 = new JButton("Chapter  9");
-    JButton bnt10 = new JButton("Chapter 10");
+    JButton bnt0 = new JButton("Chapter  1");
+    JButton bnt1 = new JButton("Chapter  2");
+    JButton bnt2 = new JButton("Chapter  3");
+    JButton bnt3 = new JButton("Chapter  4");
+    JButton bnt4 = new JButton("Chapter  5");
+    JButton bnt5 = new JButton("Chapter  6");
+    JButton bnt6 = new JButton("Chapter  7");
+    JButton bnt7 = new JButton("Chapter  8");
+    JButton bnt8 = new JButton("Chapter  9");
+    JButton bnt9 = new JButton("Chapter 10");
 
     
     public ShowTutorial()
@@ -105,7 +106,7 @@ public class ShowTutorial extends JPanel
         gbcPanel0.gridwidth = 7;
         gbcPanel0.gridheight = 4;
         gbcPanel0.fill = GridBagConstraints.BOTH;
-        gbcPanel0.weightx = 1;
+        gbcPanel0.weightx = 0;
         gbcPanel0.weighty = 1;
         gbcPanel0.anchor = GridBagConstraints.NORTH;
         gbPanel0.setConstraints(ChapText, gbcPanel0);
@@ -124,7 +125,7 @@ public class ShowTutorial extends JPanel
         gbcPanel0.gridwidth = 7;
         gbcPanel0.gridheight = 21;
         gbcPanel0.fill = GridBagConstraints.BOTH;
-        gbcPanel0.weightx = 1;
+        gbcPanel0.weightx = 0;
         gbcPanel0.weighty = 10;
         gbcPanel0.anchor = GridBagConstraints.NORTH;
         gbPanel0.setConstraints(ChapterList, gbcPanel0);
@@ -140,8 +141,17 @@ public class ShowTutorial extends JPanel
         gbcChapterList.weighty = 1;
         gbcChapterList.anchor = GridBagConstraints.NORTH;
         gbcChapterList.insets = new Insets(2, 1, 2, 1);
-        gbChapterList.setConstraints(bnt1, gbcChapterList);        
-        ChapterList.add(bnt1);
+        
+        bnt0.addActionListener((ActionEvent event) ->
+        {
+            System.err.println("CHEGUEI AQUI!");
+            cardPanel.add(new ShowTutorial().tutorial(path, 0,  cards, cardPanel), "tutorials");
+            cards.show(cardPanel, "tutorials");
+
+        });
+        
+        gbChapterList.setConstraints(bnt0, gbcChapterList);        
+        ChapterList.add(bnt0);
         
         gbcChapterList.gridx = 1;
         gbcChapterList.gridy = 4;
@@ -151,8 +161,17 @@ public class ShowTutorial extends JPanel
         gbcChapterList.weightx = 1;
         gbcChapterList.weighty = 1;
         gbcChapterList.anchor = GridBagConstraints.NORTH;
-        gbChapterList.setConstraints(bnt2, gbcChapterList);
-        ChapterList.add(bnt2);
+        
+        bnt1.addActionListener((ActionEvent event) ->
+        {
+            System.err.println("CHEGUEI AQUI!");
+            cardPanel.add(new ShowTutorial().tutorial(path, 1,  cards, cardPanel), "tutorials");
+            cards.show(cardPanel, "tutorials");
+
+        });
+        
+        gbChapterList.setConstraints(bnt1, gbcChapterList);
+        ChapterList.add(bnt1);
 
         gbcChapterList.gridx = 1;
         gbcChapterList.gridy = 7;
@@ -162,8 +181,17 @@ public class ShowTutorial extends JPanel
         gbcChapterList.weightx = 1;
         gbcChapterList.weighty = 1;
         gbcChapterList.anchor = GridBagConstraints.NORTH;
-        gbChapterList.setConstraints(bnt3, gbcChapterList);
-        ChapterList.add(bnt3);
+        
+        bnt2.addActionListener((ActionEvent event) ->
+        {
+            System.err.println("CHEGUEI AQUI!");
+            cardPanel.add(new ShowTutorial().tutorial(path, 2,  cards, cardPanel), "tutorials");
+            cards.show(cardPanel, "tutorials");
+
+        });
+        
+        gbChapterList.setConstraints(bnt2, gbcChapterList);
+        ChapterList.add(bnt2);
 
         gbcChapterList.gridx = 1;
         gbcChapterList.gridy = 10;
@@ -173,8 +201,17 @@ public class ShowTutorial extends JPanel
         gbcChapterList.weightx = 1;
         gbcChapterList.weighty = 1;
         gbcChapterList.anchor = GridBagConstraints.NORTH;
-        gbChapterList.setConstraints(bnt4, gbcChapterList);
-        ChapterList.add(bnt4);
+        
+        bnt3.addActionListener((ActionEvent event) ->
+        {
+            System.err.println("CHEGUEI AQUI!");
+            cardPanel.add(new ShowTutorial().tutorial(path, 3,  cards, cardPanel), "tutorials");
+            cards.show(cardPanel, "tutorials");
+
+        });
+        
+        gbChapterList.setConstraints(bnt3, gbcChapterList);
+        ChapterList.add(bnt3);
         
         gbcChapterList.gridx = 1;
         gbcChapterList.gridy = 13;
@@ -184,8 +221,17 @@ public class ShowTutorial extends JPanel
         gbcChapterList.weightx = 1;
         gbcChapterList.weighty = 1;
         gbcChapterList.anchor = GridBagConstraints.NORTH;
-        gbChapterList.setConstraints(bnt5, gbcChapterList);
-        ChapterList.add(bnt5);
+        
+        bnt4.addActionListener((ActionEvent event) ->
+        {
+            System.err.println("CHEGUEI AQUI!");
+            cardPanel.add(new ShowTutorial().tutorial(path, 4,  cards, cardPanel), "tutorials");
+            cards.show(cardPanel, "tutorials");
+
+        });
+        
+        gbChapterList.setConstraints(bnt4, gbcChapterList);
+        ChapterList.add(bnt4);
         
         gbcChapterList.gridx = 1;
         gbcChapterList.gridy = 16;
@@ -195,8 +241,17 @@ public class ShowTutorial extends JPanel
         gbcChapterList.weightx = 1;
         gbcChapterList.weighty = 1;
         gbcChapterList.anchor = GridBagConstraints.NORTH;
-        gbChapterList.setConstraints(bnt6, gbcChapterList);
-        ChapterList.add(bnt6);
+        
+        bnt5.addActionListener((ActionEvent event) ->
+        {
+            System.err.println("CHEGUEI AQUI!");
+            cardPanel.add(new ShowTutorial().tutorial(path, 5,  cards, cardPanel), "tutorials");
+            cards.show(cardPanel, "tutorials");
+
+        });
+        
+        gbChapterList.setConstraints(bnt5, gbcChapterList);
+        ChapterList.add(bnt5);
         
         gbcChapterList.gridx = 1;
         gbcChapterList.gridy = 19;
@@ -206,8 +261,17 @@ public class ShowTutorial extends JPanel
         gbcChapterList.weightx = 1;
         gbcChapterList.weighty = 1;
         gbcChapterList.anchor = GridBagConstraints.NORTH;
-        gbChapterList.setConstraints(bnt7, gbcChapterList);
-        ChapterList.add(bnt7);
+        
+        bnt6.addActionListener((ActionEvent event) ->
+        {
+            System.err.println("CHEGUEI AQUI!");
+            cardPanel.add(new ShowTutorial().tutorial(path, 6,  cards, cardPanel), "tutorials");
+            cards.show(cardPanel, "tutorials");
+
+        });
+        
+        gbChapterList.setConstraints(bnt6, gbcChapterList);
+        ChapterList.add(bnt6);
         
         gbcChapterList.gridx = 1;
         gbcChapterList.gridy = 21;
@@ -217,8 +281,17 @@ public class ShowTutorial extends JPanel
         gbcChapterList.weightx = 1;
         gbcChapterList.weighty = 1;
         gbcChapterList.anchor = GridBagConstraints.NORTH;
-        gbChapterList.setConstraints(bnt8, gbcChapterList);
-        ChapterList.add(bnt8);
+        
+        bnt7.addActionListener((ActionEvent event) ->
+        {
+            System.err.println("CHEGUEI AQUI!");
+            cardPanel.add(new ShowTutorial().tutorial(path, 7,  cards, cardPanel), "tutorials");
+            cards.show(cardPanel, "tutorials");
+
+        });
+        
+        gbChapterList.setConstraints(bnt7, gbcChapterList);
+        ChapterList.add(bnt7);
         
         gbcChapterList.gridx = 1;
         gbcChapterList.gridy = 24;
@@ -229,7 +302,7 @@ public class ShowTutorial extends JPanel
         gbcChapterList.weighty = 1;
         gbcChapterList.anchor = GridBagConstraints.NORTH;
         
-        bnt9.addActionListener((ActionEvent event) ->
+        bnt8.addActionListener((ActionEvent event) ->
         {
             System.err.println("CHEGUEI AQUI!");
             cardPanel.add(new ShowTutorial().tutorial(path, 8,  cards, cardPanel), "tutorials");
@@ -237,8 +310,8 @@ public class ShowTutorial extends JPanel
 
         });
         
-        gbChapterList.setConstraints(bnt9, gbcChapterList);
-        ChapterList.add(bnt9);
+        gbChapterList.setConstraints(bnt8, gbcChapterList);
+        ChapterList.add(bnt8);
         
         gbcChapterList.gridx = 1;
         gbcChapterList.gridy = 27;
@@ -249,15 +322,15 @@ public class ShowTutorial extends JPanel
         gbcChapterList.weighty = 1;
         gbcChapterList.anchor = GridBagConstraints.NORTH;
         
-        bnt10.addActionListener((ActionEvent event) ->
+        bnt9.addActionListener((ActionEvent event) ->
         {
             cardPanel.add(new ShowTutorial().tutorial(path, 9 , cards, cardPanel), "tutorials");
             cards.show(cardPanel, "tutorials");
 
         });
         
-        gbChapterList.setConstraints(bnt10, gbcChapterList);
-        ChapterList.add(bnt10);
+        gbChapterList.setConstraints(bnt9, gbcChapterList);
+        ChapterList.add(bnt9);
         
 //        gbcPanel0.gridx = 0;
 //        gbcPanel0.gridy = 7;
@@ -300,6 +373,7 @@ public class ShowTutorial extends JPanel
         TutorialText.add(jta);
         
         JScrollPane jsp = new JScrollPane(TutorialText);
+        jsp.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
               
         gbcPanel0.gridx = 7;
         gbcPanel0.gridy = 5;
