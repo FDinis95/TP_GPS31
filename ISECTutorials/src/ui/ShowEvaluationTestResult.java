@@ -13,8 +13,7 @@ import javax.swing.JProgressBar;
 
 public class ShowEvaluationTestResult extends JPanel {
 
-    public ShowEvaluationTestResult()
-    {
+    public ShowEvaluationTestResult() {
     }
 
     public JPanel results(String path, CardLayout cards, JPanel cardPanel, Progression pro, int result) {
@@ -22,7 +21,7 @@ public class ShowEvaluationTestResult extends JPanel {
         resultCard.setBackground(Color.GREEN);
         Helper help = new Helper();
 
-        ShowStars(resultCard, pro,help);
+        ShowStars(resultCard, pro, help);
         resultCard.add(new JLabel("this will be resutls!"));
         JProgressBar progress = new JProgressBar(0, 20);
         progress.setValue(result);
@@ -34,7 +33,7 @@ public class ShowEvaluationTestResult extends JPanel {
         JButton btn = new JButton("Next");
         btn.addActionListener((ActionEvent event)
                 -> {
-            cardPanel.add(new ShowTutorial().tutorial(path, 0, cards, cardPanel), "tutorial"); //CHECK CHAPTER LOCKED
+            cardPanel.add(new ShowTutorial().tutorial(path, 0, cards, cardPanel, pro), "tutorial"); //CHECK CHAPTER LOCKED
             cards.next(cardPanel);
         });
 
@@ -59,12 +58,11 @@ public class ShowEvaluationTestResult extends JPanel {
         JLabel str5 = new JLabel("");
         str5.setBounds(25, 15, 5, 5);
 
-        
-            str1.setIcon(new ImageIcon(stars[0]));
-            str2.setIcon(new ImageIcon(stars[1]));
-            str3.setIcon(new ImageIcon(stars[2]));
-            str4.setIcon(new ImageIcon(stars[3]));
-            str5.setIcon(new ImageIcon(stars[4]));
+        str1.setIcon(new ImageIcon(stars[0]));
+        str2.setIcon(new ImageIcon(stars[1]));
+        str3.setIcon(new ImageIcon(stars[2]));
+        str4.setIcon(new ImageIcon(stars[3]));
+        str5.setIcon(new ImageIcon(stars[4]));
 //             System.out.println(stars[0]);
 //              System.out.println(stars[1]);
 //               System.out.println(stars[2]);
