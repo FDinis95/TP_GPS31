@@ -6,6 +6,7 @@ import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -31,7 +32,7 @@ public class ShowTutorial extends JPanel
     {
     }
     
-    public JPanel tutorial(String path, CardLayout cards, JPanel cardPanel){
+    public JPanel tutorial(String path, int index, CardLayout cards, JPanel cardPanel){
             //Tutorial card
         JPanel tutorialCard = new JPanel();
         
@@ -129,6 +130,7 @@ public class ShowTutorial extends JPanel
         gbPanel0.setConstraints(ChapterList, gbcPanel0);
         ChapterList.setBackground(Color.WHITE);
         
+        //BUTTONS!
         gbcChapterList.gridx = 1;
         gbcChapterList.gridy = 1;
         gbcChapterList.gridwidth = 4;
@@ -226,6 +228,15 @@ public class ShowTutorial extends JPanel
         gbcChapterList.weightx = 1;
         gbcChapterList.weighty = 1;
         gbcChapterList.anchor = GridBagConstraints.NORTH;
+        
+        bnt9.addActionListener((ActionEvent event) ->
+        {
+            System.err.println("CHEGUEI AQUI!");
+            cardPanel.add(new ShowTutorial().tutorial(path, 8,  cards, cardPanel), "tutorials");
+            cards.show(cardPanel, "tutorials");
+
+        });
+        
         gbChapterList.setConstraints(bnt9, gbcChapterList);
         ChapterList.add(bnt9);
         
@@ -237,6 +248,14 @@ public class ShowTutorial extends JPanel
         gbcChapterList.weightx = 1;
         gbcChapterList.weighty = 1;
         gbcChapterList.anchor = GridBagConstraints.NORTH;
+        
+        bnt10.addActionListener((ActionEvent event) ->
+        {
+            cardPanel.add(new ShowTutorial().tutorial(path, 9 , cards, cardPanel), "tutorials");
+            cards.show(cardPanel, "tutorials");
+
+        });
+        
         gbChapterList.setConstraints(bnt10, gbcChapterList);
         ChapterList.add(bnt10);
         
@@ -257,7 +276,7 @@ public class ShowTutorial extends JPanel
         
         //TRATAMENTO DO TEXTO DO TUTORIAL
         LoadTutorial lt = new LoadTutorial();
-        String texto = lt.loadChapter(path + "\\chapters\\chapter0.txt");
+        String texto = lt.loadChapter(path + "\\chapters\\chapter" + index +".txt");
         
         TutorialText = new JPanel();
         GridBagLayout gbTutorialText = new GridBagLayout();

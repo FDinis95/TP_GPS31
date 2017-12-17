@@ -24,6 +24,7 @@ public class EvaluationTest extends JPanel
     int[] answers = new int[20];
     int[] corrects = new int[20];
     int[] chapters = new int[20];
+    int index = 0;
 
     public EvaluationTest()
     {
@@ -39,24 +40,76 @@ public class EvaluationTest extends JPanel
         GridBagConstraints gbcPanel0 = new GridBagConstraints();
         evalCard.setLayout(gbPanel0);
 
+        JPanel Menu = new JPanel();
+        GridBagLayout gbMenu = new GridBagLayout();
+        GridBagConstraints gbcMenu = new GridBagConstraints();
+        Menu.setLayout(gbMenu);
+
+        JButton Button = new JButton("SKIP");
+        gbcMenu.gridx = 0;
+        gbcMenu.gridy = 0;
+        gbcMenu.gridwidth = 6;
+        gbcMenu.gridheight = 5;
+        gbcMenu.fill = GridBagConstraints.BOTH;
+        gbcMenu.weightx = 1;
+        gbcMenu.weighty = 1;
+        gbcMenu.anchor = GridBagConstraints.WEST;
+      
+        Button.addActionListener((ActionEvent event) ->
+        {
+            cardPanel.add(new ShowTutorial().tutorial(path, index, cards, cardPanel), "tutorials");
+            cards.show(cardPanel, "tutorials");
+
+        });
+        
+        gbMenu.setConstraints(Button, gbcMenu);
+        Menu.add(Button);
+
+//        JButton Button1 = new JButton("Progress");
+//        gbcMenu.gridx = 7;
+//        gbcMenu.gridy = 0;
+//        gbcMenu.gridwidth = 6;
+//        gbcMenu.gridheight = 5;
+//        gbcMenu.fill = GridBagConstraints.BOTH;
+//        gbcMenu.weightx = 1;
+//        gbcMenu.weighty = 1;
+//        gbcMenu.anchor = GridBagConstraints.WEST;
+//        gbMenu.setConstraints(Button1, gbcMenu);
+//        Menu.add(Button1);
+        
+        gbcPanel0.gridx = 0;
+        gbcPanel0.gridy = 0;
+        gbcPanel0.gridwidth = 30;
+        gbcPanel0.gridheight = 5;
+        gbcPanel0.fill = GridBagConstraints.BOTH;
+        gbcPanel0.weightx = 1;
+        gbcPanel0.weighty = 0;
+        gbcPanel0.anchor = GridBagConstraints.NORTH;
+        gbPanel0.setConstraints(Menu, gbcPanel0);
+        
+        evalCard.add(Menu);
+        
         pnCentral = new JPanel();
         GridBagLayout gbCentral = new GridBagLayout();
         GridBagConstraints gbcCentral = new GridBagConstraints();
         pnCentral.setLayout(gbCentral);
         JScrollPane scpCentral = new JScrollPane(pnCentral);
+        
         gbcPanel0.gridx = 5;
-        gbcPanel0.gridy = 0;
+        gbcPanel0.gridy = GridBagConstraints.RELATIVE;
         gbcPanel0.gridwidth = 10;
         gbcPanel0.gridheight = 20;
         gbcPanel0.fill = GridBagConstraints.BOTH;
         gbcPanel0.weightx = 2;
         gbcPanel0.weighty = 1;
         gbcPanel0.anchor = GridBagConstraints.NORTH;
-        gbPanel0.setConstraints(scpCentral, gbcPanel0);
 
+
+        
         JPanel scrollable = new JPanel();
         scrollable.setLayout(new BoxLayout(scrollable, BoxLayout.Y_AXIS));
 
+        scrollable.add(new JLabel("\n"));
         scrollable.add(new JLabel("Answer the following questions to validate your knowledge\n"));
         scrollable.add(new JLabel("\n"));
 
@@ -128,14 +181,7 @@ public class EvaluationTest extends JPanel
 
 
         JPanel btnPanel = new JPanel();
-        JButton btn = new JButton("Skip");
-        btn.addActionListener((ActionEvent event) ->
-        {
-            cardPanel.add(new ShowTutorial().tutorial(path, cards, cardPanel), "tutorials");
-            cards.show(cardPanel, "tutorials");
 
-        });
-        btnPanel.add(btn);
 
         JButton btnNext = new JButton("Next");
         btnNext.addActionListener((ActionEvent event) ->
@@ -152,6 +198,7 @@ public class EvaluationTest extends JPanel
         scrollable.add(btnPanel);
         pnCentral.add(scrollable);
 
+        gbPanel0.setConstraints(scpCentral, gbcPanel0);
         evalCard.add(scpCentral);
 
         return evalCard;

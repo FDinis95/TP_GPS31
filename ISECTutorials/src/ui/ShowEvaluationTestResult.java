@@ -30,7 +30,7 @@ public class ShowEvaluationTestResult extends JPanel
         JButton btn = new JButton("Next");
         btn.addActionListener((ActionEvent event) ->
         {
-            cardPanel.add(new ShowTutorial().tutorial(path, cards, cardPanel), "tutorial");
+            cardPanel.add(new ShowTutorial().tutorial(path, 0, cards, cardPanel), "tutorial"); //CHECK CHAPTER LOCKED
             cards.next(cardPanel);
         });
         resultCard.add(btn);
