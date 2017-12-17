@@ -86,6 +86,10 @@ public final class CreateMainMenu
                         path = s;
                     }
                 }
+                
+//                centralCardPanel.add(new ChapterTest().chapEvaluation(path, centralCard, centralCardPanel, pro, 0), "chapterevaluation");//, answers, corrects, chapter
+//                centralCard.show(centralCardPanel, "chapterevaluation");
+                
                 centralCardPanel.add(new EvaluationTest().evaluation(path, centralCard, centralCardPanel, pro), "evaluation");//, answers, corrects, chapter
                 centralCard.show(centralCardPanel, "evaluation");
             });

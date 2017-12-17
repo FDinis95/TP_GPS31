@@ -57,7 +57,7 @@ public class EvaluationTest extends JPanel
       
         Button.addActionListener((ActionEvent event) ->
         {
-            cardPanel.add(new ShowTutorial().tutorial(path, index, cards, cardPanel), "tutorials");
+            cardPanel.add(new ShowTutorial().tutorial(path, index, cards, cardPanel, pro), "tutorials");
             cards.show(cardPanel, "tutorials");
 
         });

@@ -1,6 +1,7 @@
 package ui;
 
 import data.LoadTutorial;
+import data.Progression;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
@@ -27,14 +28,17 @@ public class ShowTutorial extends JPanel
     JButton bnt7 = new JButton("Chapter  8");
     JButton bnt8 = new JButton("Chapter  9");
     JButton bnt9 = new JButton("Chapter 10");
+    int chapter;
 
     
     public ShowTutorial()
     {
     }
     
-    public JPanel tutorial(String path, int index, CardLayout cards, JPanel cardPanel){
+    public JPanel tutorial(String path, int index, CardLayout cards, JPanel cardPanel, Progression pro){
             //Tutorial card
+        chapter = index;
+        
         JPanel tutorialCard = new JPanel();
         
         JPanel Menu;
@@ -67,6 +71,13 @@ public class ShowTutorial extends JPanel
         gbcMenu.weightx = 1;
         gbcMenu.weighty = 1;
         gbcMenu.anchor = GridBagConstraints.WEST;
+        
+        Button.addActionListener((ActionEvent event) ->
+        {
+            cardPanel.add(new ChapterTest().chapEvaluation(path, cards, cardPanel, pro, chapter), "chapterevaluation");//, answers, corrects, chapter
+            cards.show(cardPanel, "chapterevaluation");
+        });
+        
         gbMenu.setConstraints(Button, gbcMenu);
         Menu.add(Button);
 
@@ -144,8 +155,8 @@ public class ShowTutorial extends JPanel
         
         bnt0.addActionListener((ActionEvent event) ->
         {
-            System.err.println("CHEGUEI AQUI!");
-            cardPanel.add(new ShowTutorial().tutorial(path, 0,  cards, cardPanel), "tutorials");
+            chapter = 0;
+            cardPanel.add(new ShowTutorial().tutorial(path, 0,  cards, cardPanel, pro), "tutorials");
             cards.show(cardPanel, "tutorials");
 
         });
@@ -164,8 +175,8 @@ public class ShowTutorial extends JPanel
         
         bnt1.addActionListener((ActionEvent event) ->
         {
-            System.err.println("CHEGUEI AQUI!");
-            cardPanel.add(new ShowTutorial().tutorial(path, 1,  cards, cardPanel), "tutorials");
+            chapter = 1;
+            cardPanel.add(new ShowTutorial().tutorial(path, 1,  cards, cardPanel, pro), "tutorials");
             cards.show(cardPanel, "tutorials");
 
         });
@@ -184,8 +195,8 @@ public class ShowTutorial extends JPanel
         
         bnt2.addActionListener((ActionEvent event) ->
         {
-            System.err.println("CHEGUEI AQUI!");
-            cardPanel.add(new ShowTutorial().tutorial(path, 2,  cards, cardPanel), "tutorials");
+            chapter = 2;
+            cardPanel.add(new ShowTutorial().tutorial(path, 2,  cards, cardPanel, pro), "tutorials");
             cards.show(cardPanel, "tutorials");
 
         });
@@ -204,8 +215,8 @@ public class ShowTutorial extends JPanel
         
         bnt3.addActionListener((ActionEvent event) ->
         {
-            System.err.println("CHEGUEI AQUI!");
-            cardPanel.add(new ShowTutorial().tutorial(path, 3,  cards, cardPanel), "tutorials");
+            chapter = 3;
+            cardPanel.add(new ShowTutorial().tutorial(path, 3,  cards, cardPanel, pro), "tutorials");
             cards.show(cardPanel, "tutorials");
 
         });
@@ -224,8 +235,8 @@ public class ShowTutorial extends JPanel
         
         bnt4.addActionListener((ActionEvent event) ->
         {
-            System.err.println("CHEGUEI AQUI!");
-            cardPanel.add(new ShowTutorial().tutorial(path, 4,  cards, cardPanel), "tutorials");
+            chapter = 4;
+            cardPanel.add(new ShowTutorial().tutorial(path, 4,  cards, cardPanel, pro), "tutorials");
             cards.show(cardPanel, "tutorials");
 
         });
@@ -244,8 +255,8 @@ public class ShowTutorial extends JPanel
         
         bnt5.addActionListener((ActionEvent event) ->
         {
-            System.err.println("CHEGUEI AQUI!");
-            cardPanel.add(new ShowTutorial().tutorial(path, 5,  cards, cardPanel), "tutorials");
+            chapter = 5;
+            cardPanel.add(new ShowTutorial().tutorial(path, 5,  cards, cardPanel, pro), "tutorials");
             cards.show(cardPanel, "tutorials");
 
         });
@@ -264,8 +275,8 @@ public class ShowTutorial extends JPanel
         
         bnt6.addActionListener((ActionEvent event) ->
         {
-            System.err.println("CHEGUEI AQUI!");
-            cardPanel.add(new ShowTutorial().tutorial(path, 6,  cards, cardPanel), "tutorials");
+            chapter = 6;
+            cardPanel.add(new ShowTutorial().tutorial(path, 6,  cards, cardPanel, pro), "tutorials");
             cards.show(cardPanel, "tutorials");
 
         });
@@ -284,8 +295,8 @@ public class ShowTutorial extends JPanel
         
         bnt7.addActionListener((ActionEvent event) ->
         {
-            System.err.println("CHEGUEI AQUI!");
-            cardPanel.add(new ShowTutorial().tutorial(path, 7,  cards, cardPanel), "tutorials");
+            chapter = 7;
+            cardPanel.add(new ShowTutorial().tutorial(path, 7,  cards, cardPanel, pro), "tutorials");
             cards.show(cardPanel, "tutorials");
 
         });
@@ -304,8 +315,8 @@ public class ShowTutorial extends JPanel
         
         bnt8.addActionListener((ActionEvent event) ->
         {
-            System.err.println("CHEGUEI AQUI!");
-            cardPanel.add(new ShowTutorial().tutorial(path, 8,  cards, cardPanel), "tutorials");
+            chapter = 8;
+            cardPanel.add(new ShowTutorial().tutorial(path, 8,  cards, cardPanel, pro), "tutorials");
             cards.show(cardPanel, "tutorials");
 
         });
@@ -324,7 +335,8 @@ public class ShowTutorial extends JPanel
         
         bnt9.addActionListener((ActionEvent event) ->
         {
-            cardPanel.add(new ShowTutorial().tutorial(path, 9 , cards, cardPanel), "tutorials");
+            chapter = 9;
+            cardPanel.add(new ShowTutorial().tutorial(path, 9 , cards, cardPanel, pro), "tutorials");
             cards.show(cardPanel, "tutorials");
 
         });

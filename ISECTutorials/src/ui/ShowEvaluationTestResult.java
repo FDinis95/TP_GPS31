@@ -13,7 +13,8 @@ import javax.swing.JProgressBar;
 
 public class ShowEvaluationTestResult extends JPanel {
 
-    public ShowEvaluationTestResult() {
+    public ShowEvaluationTestResult()
+    {
     }
 
     public JPanel results(String path, CardLayout cards, JPanel cardPanel, Progression pro, int result) {
