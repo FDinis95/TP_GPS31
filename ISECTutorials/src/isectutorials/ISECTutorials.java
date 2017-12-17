@@ -7,7 +7,6 @@ import data.Progression;
 import java.util.Random;
 import logic.ValidateTestResult;
 import ui.CreateMainMenu;
-import ui.TestingCardLayout;
 
 public class ISECTutorials
 {
