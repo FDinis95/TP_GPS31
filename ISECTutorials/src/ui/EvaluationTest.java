@@ -4,12 +4,13 @@ import data.LoadQuestions;
 import data.Progression;
 import data.Question;
 import java.awt.CardLayout;
-import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
+import java.util.Arrays;
 import java.util.List;
 import javax.swing.BoxLayout;
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -23,7 +24,6 @@ public class EvaluationTest extends JPanel
     int[] answers = new int[20];
     int[] corrects = new int[20];
     int[] chapters = new int[20];
-    int tempx;
 
     public EvaluationTest()
     {
@@ -31,72 +31,13 @@ public class EvaluationTest extends JPanel
 
     public JPanel evaluation(String path, CardLayout cards, JPanel cardPanel, Progression pro)
     {
+        Arrays.fill(answers, -1);
         JPanel evalCard = new JPanel();
-        evalCard.setBackground(Color.DARK_GRAY);
-
-        JPanel pnBorderW;
-        JLabel lbLabel2;
-        JPanel pnBorderE;
-        JLabel lbLabel3;
         JPanel pnCentral;
 
         GridBagLayout gbPanel0 = new GridBagLayout();
         GridBagConstraints gbcPanel0 = new GridBagConstraints();
         evalCard.setLayout(gbPanel0);
-
-        pnBorderW = new JPanel();
-        GridBagLayout gbBorderW = new GridBagLayout();
-        GridBagConstraints gbcBorderW = new GridBagConstraints();
-        pnBorderW.setLayout(gbBorderW);
-
-        lbLabel2 = new JLabel();
-        gbcBorderW.gridx = 0;
-        gbcBorderW.gridy = 0;
-        gbcBorderW.gridwidth = 5;
-        gbcBorderW.gridheight = 3;
-        gbcBorderW.fill = GridBagConstraints.BOTH;
-        gbcBorderW.weightx = 1;
-        gbcBorderW.weighty = 1;
-        gbcBorderW.anchor = GridBagConstraints.NORTH;
-        gbBorderW.setConstraints(lbLabel2, gbcBorderW);
-        pnBorderW.add(lbLabel2);
-        gbcPanel0.gridx = 0;
-        gbcPanel0.gridy = 0;
-        gbcPanel0.gridwidth = 5;
-        gbcPanel0.gridheight = 20;
-        gbcPanel0.fill = GridBagConstraints.BOTH;
-        gbcPanel0.weightx = 1;
-        gbcPanel0.weighty = 0;
-        gbcPanel0.anchor = GridBagConstraints.NORTH;
-        gbPanel0.setConstraints(pnBorderW, gbcPanel0);
-        evalCard.add(pnBorderW);
-
-        pnBorderE = new JPanel();
-        GridBagLayout gbBorderE = new GridBagLayout();
-        GridBagConstraints gbcBorderE = new GridBagConstraints();
-        pnBorderE.setLayout(gbBorderE);
-
-        lbLabel3 = new JLabel();
-        gbcBorderE.gridx = 0;
-        gbcBorderE.gridy = 0;
-        gbcBorderE.gridwidth = 5;
-        gbcBorderE.gridheight = 3;
-        gbcBorderE.fill = GridBagConstraints.BOTH;
-        gbcBorderE.weightx = 1;
-        gbcBorderE.weighty = 1;
-        gbcBorderE.anchor = GridBagConstraints.NORTH;
-        gbBorderE.setConstraints(lbLabel3, gbcBorderE);
-        pnBorderE.add(lbLabel3);
-        gbcPanel0.gridx = 15;
-        gbcPanel0.gridy = 0;
-        gbcPanel0.gridwidth = 5;
-        gbcPanel0.gridheight = 20;
-        gbcPanel0.fill = GridBagConstraints.BOTH;
-        gbcPanel0.weightx = 1;
-        gbcPanel0.weighty = 0;
-        gbcPanel0.anchor = GridBagConstraints.NORTH;
-        gbPanel0.setConstraints(pnBorderE, gbcPanel0);
-        evalCard.add(pnBorderE);
 
         pnCentral = new JPanel();
         GridBagLayout gbCentral = new GridBagLayout();
@@ -115,43 +56,78 @@ public class EvaluationTest extends JPanel
 
         JPanel scrollable = new JPanel();
         scrollable.setLayout(new BoxLayout(scrollable, BoxLayout.Y_AXIS));
-        
-        scrollable.add(new JLabel("Answer the following questionsAnswer the following questionsAnswer the following questionsAnswer the following questions\n"));
+
+        scrollable.add(new JLabel("Answer the following questions to validate your knowledge\n"));
         scrollable.add(new JLabel("\n"));
-        
-        
+
         System.err.println("Evaluation path: " + path);
         LoadQuestions lq = new LoadQuestions(path + "\\diagnose.txt");
         List<Question> quests = lq.getQuestions();
         for (int i = 0; i < quests.size(); i++)
-//            for (Question q : quests)
         {
+            int questionNumber = i;
             Question q = quests.get(i);
+            String s[] = q.getAnswers();
             scrollable.add(new JLabel(q.getQuestion()));
-            for (String s : q.getAnswers())
             {
-                JRadioButton radioBtn = new JRadioButton(s);
-                //this must be group buttons
-                radioBtn.addActionListener((e) ->
+                ButtonGroup radioMenu = new ButtonGroup();
+                JRadioButton radioBtn0 = new JRadioButton(s[0]);
+                radioBtn0.addActionListener((e) ->
                 {
-                    if (radioBtn.isSelected())
-                    //codigo para escolher um dos botoes
+                    if (radioBtn0.isSelected())
                     {
-                        tempx = 1;
+                        radioMenu.clearSelection();
+                        radioBtn0.setSelected(true);
+                        answers[questionNumber]=0;
                     }
-
                 });
-                scrollable.add(radioBtn);
+                JRadioButton radioBtn1 = new JRadioButton(s[1]);
+                radioBtn1.addActionListener((e) ->
+                {
+                    if (radioBtn1.isSelected())
+                    {
+                        radioMenu.clearSelection();
+                        radioBtn1.setSelected(true);
+                        answers[questionNumber] = 1;
+                    }
+                });
+                JRadioButton radioBtn2 = new JRadioButton(s[2]);
+                radioBtn2.addActionListener((e) ->
+                {
+                    if (radioBtn2.isSelected())
+                    {
+                        radioMenu.clearSelection();
+                        radioBtn2.setSelected(true);
+                        answers[questionNumber] = 2;
+                    }
+                });
+                JRadioButton radioBtn3 = new JRadioButton(s[3]);
+                radioBtn3.addActionListener((e) ->
+                {
+                    if (radioBtn3.isSelected())
+                    {
+                        radioMenu.clearSelection();
+                        radioBtn3.setSelected(true);
+                        answers[questionNumber] = 3;
+                    }
+                });
+                
+                radioMenu.add(radioBtn0);
+                radioMenu.add(radioBtn1);
+                radioMenu.add(radioBtn2);
+                radioMenu.add(radioBtn3);
+                scrollable.add(radioBtn0);
+                scrollable.add(radioBtn1);
+                scrollable.add(radioBtn2);
+                scrollable.add(radioBtn3);
 
             }
-
             corrects[i] = q.getCorrect();
             chapters[i] = q.getChapter();
-            answers[i] = 2;
         }
 
 
-
+        JPanel btnPanel = new JPanel();
         JButton btn = new JButton("Skip");
         btn.addActionListener((ActionEvent event) ->
         {
@@ -159,21 +135,25 @@ public class EvaluationTest extends JPanel
             cards.show(cardPanel, "tutorials");
 
         });
-        scrollable.add(btn);
+        btnPanel.add(btn);
 
         JButton btnNext = new JButton("Next");
         btnNext.addActionListener((ActionEvent event) ->
         {
+            for (int j = 0; j < quests.size(); j++)
+            {
+                System.out.println(answers[j]+" "+ corrects[j] +" "+chapters[j]);
+            }
             int temp = new ValidateTestResult().validateEvaluationTest(answers, corrects, chapters, pro);
             cardPanel.add(new ShowEvaluationTestResult().results(path, cards, cardPanel, pro, temp), "evaluationresults");
             cards.show(cardPanel, "evaluationresults");
         });
-        scrollable.add(btnNext);
+        btnPanel.add(btnNext);
+        scrollable.add(btnPanel);
         pnCentral.add(scrollable);
 
         evalCard.add(scpCentral);
 
         return evalCard;
     }
-
 }
