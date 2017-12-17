@@ -26,16 +26,16 @@ public class Helper
         {
             if (var == 0)
             {
-                stars[j] = "images/star-outline.png";
+                stars[j] = "src/logic/images/star-outline.png";
             }
             if (var == 1)
             {
-                stars[j] = "images/star-half.png";
+                stars[j] = "src/logic/images/star-half.png";
                 var -= 1;
             }
             else if (var >= 2)
             {
-                stars[j] = "images/star.png";
+                stars[j] = "src/logic/images/star.png";
                 var -= 2;
             }
 //            System.out.println(stars[j]);
