@@ -10,6 +10,8 @@ import java.awt.Insets;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 public class ShowTutorial extends JPanel
 {
 
@@ -253,11 +255,33 @@ public class ShowTutorial extends JPanel
 
         //FIM DO TRATAMENTO DA LISTAGEM DOS CAPITULOS
         
-        //TRATAMENTO DO TEXTO DO TUTORIAL        
+        //TRATAMENTO DO TEXTO DO TUTORIAL
+        LoadTutorial lt = new LoadTutorial();
+        String texto = lt.loadChapter(path + "\\chapters\\chapter0.txt");
+        
         TutorialText = new JPanel();
         GridBagLayout gbTutorialText = new GridBagLayout();
         GridBagConstraints gbcTutorialText = new GridBagConstraints();
         TutorialText.setLayout(gbTutorialText);
+        
+        JTextArea jta = new JTextArea(texto);
+        jta.setEditable(false);
+        jta.setWrapStyleWord(true);
+        jta.setLineWrap(true);
+        
+        gbcTutorialText.gridx = 7;
+        gbcTutorialText.gridy = 5;
+        gbcTutorialText.gridwidth = 23;
+        gbcTutorialText.gridheight = 25;
+        gbcTutorialText.fill = GridBagConstraints.BOTH;
+        gbcTutorialText.weightx = 8;
+        gbcTutorialText.weighty = 1;
+        gbcTutorialText.anchor = GridBagConstraints.NORTH;
+        gbTutorialText.setConstraints(jta, gbcTutorialText);
+        TutorialText.add(jta);
+        
+        JScrollPane jsp = new JScrollPane(TutorialText);
+              
         gbcPanel0.gridx = 7;
         gbcPanel0.gridy = 5;
         gbcPanel0.gridwidth = 23;
@@ -266,13 +290,12 @@ public class ShowTutorial extends JPanel
         gbcPanel0.weightx = 8;
         gbcPanel0.weighty = 1;
         gbcPanel0.anchor = GridBagConstraints.NORTH;
-        gbPanel0.setConstraints(TutorialText, gbcPanel0);
-        TutorialText.setBackground(Color.BLUE);
-        JLabel tutText = new JLabel("Some Text!");
-        TutorialText.add(tutText);
         
-        tutorialCard.add(TutorialText);
-
+        gbPanel0.setConstraints(jsp, gbcPanel0);
+        
+        tutorialCard.add(jsp);
+        
+        
         //FIM DO TRATAMENTO DO TEXTO DO TUTORIAL
 
         
