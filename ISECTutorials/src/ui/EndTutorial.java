@@ -11,15 +11,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import logic.Helper;
 
-public class EndTutorial
-{
+public class EndTutorial {
 
-    public EndTutorial()
-    {
+    public EndTutorial() {
     }
 
-    public JPanel endScreen(Progression pro)
-    {
+    public JPanel endScreen(Progression pro) {
 //        Verificar capítulos concluídos Helper
 
         JPanel pnEndCard;
@@ -129,8 +126,8 @@ public class EndTutorial
         gbcBotao.weighty = 1;
         gbcBotao.anchor = GridBagConstraints.SOUTH;
 
-        btExit.addActionListener((ActionEvent event) ->
-        {
+        btExit.addActionListener((ActionEvent event)
+                -> {
             System.exit(0);
         });
 

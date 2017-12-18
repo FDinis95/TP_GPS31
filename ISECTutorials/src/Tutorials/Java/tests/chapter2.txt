@@ -52,7 +52,7 @@ short
 enum
 int
 3
-Q9 Which of the folloying is the smallest integer data type
+Q9 Which of the following is the smallest integer data type
 int
 long
 byte

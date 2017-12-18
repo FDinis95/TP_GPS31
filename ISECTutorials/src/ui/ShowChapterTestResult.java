@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import logic.Helper;
+import logic.ValidateTestResult;
 import logic.VerifyEndTutorial;
 
 public class ShowChapterTestResult

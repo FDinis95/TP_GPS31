@@ -18,19 +18,17 @@ import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import logic.ValidateTestResult;
 
-public class ChapterTest
-{
+public class ChapterTest {
 
     int[] answers = new int[7];
     int[] corrects = new int[7];
     int index = 0;
 
-    public ChapterTest()
-    {
+    public ChapterTest() {
     }
 
-    public JPanel chapEvaluation(String path, CardLayout cards, JPanel cardPanel, Progression pro, int index)
-    {
+    public JPanel chapEvaluation(String path, CardLayout cards, JPanel cardPanel, Progression pro, int index) {
+
         Arrays.fill(answers, -1);
         JPanel chapCard = new JPanel();
         JPanel pnCentral;
@@ -64,8 +62,7 @@ public class ChapterTest
 //        System.err.println("chapter path: " + path);
         LoadQuestions lq = new LoadQuestions(path + "\\tests\\chapter" + index + ".txt");
         List<Question> quests = lq.getQuestions();
-        for (int i = 0; i < quests.size(); i++)
-        {
+        for (int i = 0; i < quests.size(); i++) {
             int questionNumber = i;
             Question q = quests.get(i);
             String s[] = q.getAnswers();
@@ -74,10 +71,8 @@ public class ChapterTest
                 ButtonGroup radioMenu = new ButtonGroup();
                 JRadioButton radioBtn0 = new JRadioButton(s[0]);
                 radioBtn0.addActionListener((e)
-                        ->
-                {
-                    if (radioBtn0.isSelected())
-                    {
+                        -> {
+                    if (radioBtn0.isSelected()) {
                         radioMenu.clearSelection();
                         radioBtn0.setSelected(true);
                         answers[questionNumber] = 1;
@@ -85,10 +80,8 @@ public class ChapterTest
                 });
                 JRadioButton radioBtn1 = new JRadioButton(s[1]);
                 radioBtn1.addActionListener((e)
-                        ->
-                {
-                    if (radioBtn1.isSelected())
-                    {
+                        -> {
+                    if (radioBtn1.isSelected()) {
                         radioMenu.clearSelection();
                         radioBtn1.setSelected(true);
                         answers[questionNumber] = 2;
@@ -96,10 +89,8 @@ public class ChapterTest
                 });
                 JRadioButton radioBtn2 = new JRadioButton(s[2]);
                 radioBtn2.addActionListener((e)
-                        ->
-                {
-                    if (radioBtn2.isSelected())
-                    {
+                        -> {
+                    if (radioBtn2.isSelected()) {
                         radioMenu.clearSelection();
                         radioBtn2.setSelected(true);
                         answers[questionNumber] = 3;
@@ -107,10 +98,8 @@ public class ChapterTest
                 });
                 JRadioButton radioBtn3 = new JRadioButton(s[3]);
                 radioBtn3.addActionListener((e)
-                        ->
-                {
-                    if (radioBtn3.isSelected())
-                    {
+                        -> {
+                    if (radioBtn3.isSelected()) {
                         radioMenu.clearSelection();
                         radioBtn3.setSelected(true);
                         answers[questionNumber] = 4;
@@ -134,8 +123,7 @@ public class ChapterTest
 
         JButton btnNext = new JButton("Submit");
         btnNext.addActionListener((ActionEvent event)
-                ->
-        {
+                -> {
 //            for (int j = 0; j < quests.size(); j++) {
 //                System.out.println(answers[j] + " " + corrects[j] + " " + index);
 //            }
@@ -147,8 +135,7 @@ public class ChapterTest
 
         JButton btnCancel = new JButton("Cancel");
         btnCancel.addActionListener((ActionEvent event)
-                ->
-        {
+                -> {
 
             cardPanel.add(new ShowTutorial().tutorial(path, index, cards, cardPanel, pro), "tutorial");
             cards.show(cardPanel, "tutorial");
