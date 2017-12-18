@@ -1,9 +1,80 @@
-Teste 8
+Methods
 
- Lorem ipsum dolor sit amet, aliquet donec, natoque vulputate pretium erat pede, turpis sed est faucibus mi aenean. Aliquet mauris in, ipsum convallis lobortis sed. Ut libero natoque leo viverra feugiat, quos erat venenatis tortor vel nisl consequat, tempus dui, sed wisi vestibulum in gravida vivamus suspendisse, quam convallis quis vel quam sed eleifend. In praesent ullamcorper cras, dapibus sed felis justo, egestas in. Arcu et vitae pellentesque parturient dictum, lobortis mauris mauris tortor tincidunt vestibulum mollis, ornare integer hendrerit eget ac at. Nulla aliquet enim vitae arcu, dolor nec litora blandit mauris, mattis vestibulum et ut nisi, morbi pede, scelerisque pellentesque justo nonummy.
+A Java method is a collection of statements that are grouped together to perform an operation. When you call the System.out.println() method, for example, the system actually executes several statements in order to display a message on the console.
+Now you will learn how to create your own methods with or without return values, invoke a method with or without parameters, and apply method abstraction in the program design.
+Creating Method
+Considering the following example to explain the syntax of a method −
+Syntax
+public static int methodName(int a, int b) {
+   // body
+}
 
-In felis arcu quisque, nunc erat scelerisque neque nostra velit augue, tellus vel nonummy nonummy fusce a. Scelerisque vel vel. Sequi pharetra sed eu morbi leo, tellus aenean, ac fusce vehicula est eget, quisque porttitor ultricies mauris fringilla elementum eget, vel integer feugiat praesent mi. Quam nec nunc suspendisse tortor eleifend. Sed morbi libero pede habitant interdum, neque et in aenean at molestie, placerat mi augue justo, eu iaculis accumsan sit eget phasellus arcu, eget in ipsum. Donec in nullam ipsum, gravida magna, turpis auctor a eleifend, nec eget, sed tempus interdum eros non massa vitae. Senectus elit, sodales magna phasellus quia nunc, elit tincidunt odio euismod ultrices rutrum eleifend, vitae taciti eros fusce. Justo eros, velit gravida iusto augue id, volutpat nulla aenean donec magna consectetuer non.
 
-Aliquam elit ac adipiscing aliquet, lacus enim rutrum tincidunt, pharetra quis quisque sem lacinia aliquet varius. Erat tellus. Pulvinar amet risus, ante feugiat sapien sed scelerisque, consequat cras sociis sapien sollicitudin, nec lacus orci. Augue lacinia donec quis mus urna, duis accumsan at at facilisis, faucibus volutpat duis felis. Luctus vel duis ante viverra aliquam, est condimentum duis.
+Here,
+public static − modifier
+int − return type
+methodName − name of the method
+a, b − formal parameters
+int a, int b − list of parameters
+Method definition consists of a method header and a method body. The same is shown in the following syntax −
+Syntax
+modifier returnType nameOfMethod (Parameter List) {
+   // method body
+}
 
-Semper wisi id nisl sodales consequat nobis, ligula sociis aenean diam wisi, feugiat purus placerat ac sodales consequat lorem. Ut fusce euismod ut vitae purus, nunc ipsum vestibulum, vestibulum suscipit mauris eros libero sed odio. Viverra consequat quis erat, dis mauris sed non adipiscing natoque nunc, mauris ligula turpis consectetuer aliquam rhoncus quis, odio mauris vehicula montes at. Nec in totam, quis ad mi id odio justo viverra, dis wisi nullam odio imperdiet sociis porttitor. Risus eu, eros id, erat elit molestie lorem, cras per quam, aptent metus vulputate tempor veniam. Felis odio nec curabitur eu sed aenean, nulla parturient magnis fringilla fugiat ligula, lorem habitasse conubia feugiat torquent feugiat. Praesent dolore feugiat sapien. At provident ante pellentesque id luctus, odio nascetur diam quis, lacus dolor tellus pharetra, cursus ultrices maecenas condimentum odio ridiculus, proin ac non in mauris.
+
+The syntax shown above includes −
+modifier − It defines the access type of the method and it is optional to use.
+returnType − Method may return a value.
+nameOfMethod − This is the method name. The method signature consists of the method name and the parameter list.
+Parameter List − The list of parameters, it is the type, order, and number of parameters of a method. These are optional, method may contain zero parameters.
+method body − The method body defines what the method does with the statements.
+Example
+Here is the source code of the above defined method called min(). This method takes two parameters num1 and num2 and returns the maximum between the two −
+/** the snippet returns the minimum between two numbers */
+
+public static int minFunction(int n1, int n2) {
+   int min;
+   if (n1 > n2)
+      min = n2;
+   else
+      min = n1;
+
+   return min; 
+}
+Method Calling
+For using a method, it should be called. There are two ways in which a method is called i.e., method returns a value or returning nothing (no return value).
+The process of method calling is simple. When a program invokes a method, the program control gets transferred to the called method. This called method then returns control to the caller in two conditions, when −
+the return statement is executed.
+it reaches the method ending closing brace.
+The methods returning void is considered as call to a statement. Lets consider an example −
+System.out.println("This is tutorialspoint.com!");
+The method returning value can be understood by the following example −
+int result = sum(6, 9);
+Following is the example to demonstrate how to define a method and how to call it −
+
+Example
+public class ExampleMinNumber {
+   
+   public static void main(String[] args) {
+      int a = 11;
+      int b = 6;
+      int c = minFunction(a, b);
+      System.out.println("Minimum Value = " + c);
+   }
+
+   /** returns the minimum of two numbers */
+   public static int minFunction(int n1, int n2) {
+      int min;
+      if (n1 > n2)
+         min = n2;
+      else
+         min = n1;
+
+      return min; 
+   }
+}
+This will produce the following result −
+Output
+Minimum value = 6
+
