@@ -125,6 +125,9 @@ public class ShowProgression
         gbcProgression.weightx = 1;
         gbcProgression.weighty = 1;
         gbcProgression.anchor = GridBagConstraints.NORTH;
+        
+        
+        
         gbProgression.setConstraints(pnPanel5, gbcProgression);
         pnProgression.add(pnPanel5);
 

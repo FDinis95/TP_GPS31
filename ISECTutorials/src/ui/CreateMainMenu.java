@@ -17,7 +17,7 @@ import javax.swing.JPanel;
 
 public final class CreateMainMenu
 {
-
+    
     JFrame frame;
 
     JPanel northCardPanel;

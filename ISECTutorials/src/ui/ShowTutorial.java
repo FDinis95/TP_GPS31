@@ -71,6 +71,9 @@ public class ShowTutorial extends JPanel
         
         Button.addActionListener((ActionEvent event) ->
         {
+//            cardPanel.add(new EndTutorial().EndScreen(tutorialCard, pro), "tutorial");//, answers, corrects, chapter
+//            cards.show(cardPanel, "tutorial");
+            
             cardPanel.add(new ChapterTest().chapEvaluation(path, cards, cardPanel, pro, chapter), "chapterevaluation");//, answers, corrects, chapter
             cards.show(cardPanel, "chapterevaluation");
         });
