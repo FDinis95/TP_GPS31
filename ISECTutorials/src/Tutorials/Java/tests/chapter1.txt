@@ -3,7 +3,7 @@ Local Variables, Instance Variables , Object Variables
 Local Variables, Object Variables, Instance Variables
 Local Variables, Instance Variables, Class Variables
 Instance variables, Object Variables, Class Variables
-3 
+3
 Q1 Instance variables 
 Are variables within a class but outside any method. Instance variables can be accessed from inside any method, constructor or blocks of that particular class.
 Are variables in many methods. Instance variables can be accessed from inside any method, particular class.
