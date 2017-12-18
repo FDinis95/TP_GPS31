@@ -54,29 +54,17 @@ public class EvaluationTest extends JPanel
         gbcMenu.weightx = 1;
         gbcMenu.weighty = 1;
         gbcMenu.anchor = GridBagConstraints.WEST;
-      
+
         Button.addActionListener((ActionEvent event) ->
         {
             cardPanel.add(new ShowTutorial().tutorial(path, index, cards, cardPanel, pro), "tutorials");
             cards.show(cardPanel, "tutorials");
 
         });
-        
+
         gbMenu.setConstraints(Button, gbcMenu);
         Menu.add(Button);
 
-//        JButton Button1 = new JButton("Progress");
-//        gbcMenu.gridx = 7;
-//        gbcMenu.gridy = 0;
-//        gbcMenu.gridwidth = 6;
-//        gbcMenu.gridheight = 5;
-//        gbcMenu.fill = GridBagConstraints.BOTH;
-//        gbcMenu.weightx = 1;
-//        gbcMenu.weighty = 1;
-//        gbcMenu.anchor = GridBagConstraints.WEST;
-//        gbMenu.setConstraints(Button1, gbcMenu);
-//        Menu.add(Button1);
-        
         gbcPanel0.gridx = 0;
         gbcPanel0.gridy = 0;
         gbcPanel0.gridwidth = 30;
@@ -86,15 +74,15 @@ public class EvaluationTest extends JPanel
         gbcPanel0.weighty = 0;
         gbcPanel0.anchor = GridBagConstraints.NORTH;
         gbPanel0.setConstraints(Menu, gbcPanel0);
-        
+
         evalCard.add(Menu);
-        
+
         pnCentral = new JPanel();
         GridBagLayout gbCentral = new GridBagLayout();
         GridBagConstraints gbcCentral = new GridBagConstraints();
         pnCentral.setLayout(gbCentral);
         JScrollPane scpCentral = new JScrollPane(pnCentral);
-        
+
         gbcPanel0.gridx = 5;
         gbcPanel0.gridy = GridBagConstraints.RELATIVE;
         gbcPanel0.gridwidth = 10;
@@ -104,8 +92,6 @@ public class EvaluationTest extends JPanel
         gbcPanel0.weighty = 1;
         gbcPanel0.anchor = GridBagConstraints.NORTH;
 
-
-        
         JPanel scrollable = new JPanel();
         scrollable.setLayout(new BoxLayout(scrollable, BoxLayout.Y_AXIS));
 
@@ -113,7 +99,6 @@ public class EvaluationTest extends JPanel
         scrollable.add(new JLabel("Answer the following questions to validate your knowledge\n"));
         scrollable.add(new JLabel("\n"));
 
-        System.err.println("Evaluation path: " + path);
         LoadQuestions lq = new LoadQuestions(path + "\\diagnose.txt");
         List<Question> quests = lq.getQuestions();
         for (int i = 0; i < quests.size(); i++)
@@ -131,7 +116,7 @@ public class EvaluationTest extends JPanel
                     {
                         radioMenu.clearSelection();
                         radioBtn0.setSelected(true);
-                        answers[questionNumber]=1;
+                        answers[questionNumber] = 1;
                     }
                 });
                 JRadioButton radioBtn1 = new JRadioButton(s[1]);
@@ -164,7 +149,7 @@ public class EvaluationTest extends JPanel
                         answers[questionNumber] = 4;
                     }
                 });
-                
+
                 radioMenu.add(radioBtn0);
                 radioMenu.add(radioBtn1);
                 radioMenu.add(radioBtn2);
@@ -179,16 +164,13 @@ public class EvaluationTest extends JPanel
             chapters[i] = q.getChapter();
         }
 
-
         JPanel btnPanel = new JPanel();
-
-
         JButton btnNext = new JButton("Next");
         btnNext.addActionListener((ActionEvent event) ->
         {
             for (int j = 0; j < quests.size(); j++)
             {
-                System.out.println(answers[j]+" "+ corrects[j] +" "+chapters[j]);
+                System.out.println(answers[j] + " " + corrects[j] + " " + chapters[j]);
             }
             int temp = new ValidateTestResult().validateEvaluationTest(answers, corrects, chapters, pro);
             cardPanel.add(new ShowEvaluationTestResult().results(path, cards, cardPanel, pro, temp), "evaluationresults");

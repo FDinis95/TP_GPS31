@@ -11,28 +11,25 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import logic.Helper;
 
-public class EndTutorial {
+public class EndTutorial
+{
 
-    public EndTutorial() {
+    public EndTutorial()
+    {
     }
 
-    public JPanel endScreen(Progression pro) {
+    public JPanel endScreen(Progression pro)
+    {
 //        Verificar capítulos concluídos Helper
 
         JPanel pnEndCard;
-
         JPanel pnBlank;
         JLabel lbTEXT;
-
         JPanel pnBlankEsq;
-
         JPanel pnBlankDir;
-
         JPanel pnBlankTOP;
-
         JPanel pnBotao;
         JButton btExit;
-
         JPanel pnCentral;
         JLabel lbLabel4;
 
@@ -131,12 +128,12 @@ public class EndTutorial {
         gbcBotao.weightx = 1;
         gbcBotao.weighty = 1;
         gbcBotao.anchor = GridBagConstraints.SOUTH;
-        
+
         btExit.addActionListener((ActionEvent event) ->
         {
-            System.exit(0);           
+            System.exit(0);
         });
-        
+
         gbBotao.setConstraints(btExit, gbcBotao);
         pnBotao.add(btExit);
         gbcEndCard.gridx = 9;
@@ -157,9 +154,9 @@ public class EndTutorial {
 
         Helper help = new Helper();
 
-        String stars[] =  new String[5];
+        String stars[] = new String[5];
         stars = help.fillStars(pro);
-        
+
         //Criar labels das imagens
         JLabel str1 = new JLabel("");
         str1.setBounds(5, 5, 5, 5);
@@ -182,13 +179,13 @@ public class EndTutorial {
         str4.setIcon(new ImageIcon(stars[3]));
         stars[4] = "src/logic/images/star.png";
         str5.setIcon(new ImageIcon(stars[4]));
-        
+
         pnCentral.add(str1);
         pnCentral.add(str2);
         pnCentral.add(str3);
         pnCentral.add(str4);
-        pnCentral.add(str5);        
-        
+        pnCentral.add(str5);
+
         gbcEndCard.gridx = 0;
         gbcEndCard.gridy = 5;
         gbcEndCard.gridwidth = 30;
