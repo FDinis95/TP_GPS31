@@ -41,24 +41,24 @@ public class ShowTutorial extends JPanel
         chapter = index;
         JPanel tutorialCard = new JPanel();
 
-        JPanel Menu;
-        JButton Button;
-        JButton Button1;
-        JPanel ChapText;
-        JPanel ChapterList;
-        JPanel TutorialText;
+        JPanel menu;
+        JButton button;
+        JButton button1;
+        JPanel chapText;
+        JPanel chapterList;
+        JPanel tutorialText;
 
         GridBagLayout gbPanel0 = new GridBagLayout();
         GridBagConstraints gbcPanel0 = new GridBagConstraints();
         tutorialCard.setLayout(gbPanel0);
 
         //TRATAMENTO DO MENU DE CIMA
-        Menu = new JPanel();
+        menu = new JPanel();
         GridBagLayout gbMenu = new GridBagLayout();
         GridBagConstraints gbcMenu = new GridBagConstraints();
-        Menu.setLayout(gbMenu);
+        menu.setLayout(gbMenu);
 
-        Button = new JButton("Do Test");
+        button = new JButton("Do Test");
         gbcMenu.gridx = 0;
         gbcMenu.gridy = 0;
         gbcMenu.gridwidth = 6;
@@ -68,7 +68,7 @@ public class ShowTutorial extends JPanel
         gbcMenu.weighty = 1;
         gbcMenu.anchor = GridBagConstraints.WEST;
 
-        Button.addActionListener((ActionEvent event) ->
+        button.addActionListener((ActionEvent event) ->
         {
 //            cardPanel.add(new EndTutorial().EndScreen(tutorialCard, pro), "tutorial");//, answers, corrects, chapter
 //            cards.show(cardPanel, "tutorial");
@@ -77,10 +77,10 @@ public class ShowTutorial extends JPanel
             cards.show(cardPanel, "chapterevaluation");
         });
 
-        gbMenu.setConstraints(Button, gbcMenu);
-        Menu.add(Button);
+        gbMenu.setConstraints(button, gbcMenu);
+        menu.add(button);
 
-        Button1 = new JButton("Progress");
+        button1 = new JButton("Progress");
         gbcMenu.gridx = 7;
         gbcMenu.gridy = 0;
         gbcMenu.gridwidth = 6;
@@ -89,8 +89,8 @@ public class ShowTutorial extends JPanel
         gbcMenu.weightx = 1;
         gbcMenu.weighty = 1;
         gbcMenu.anchor = GridBagConstraints.WEST;
-        gbMenu.setConstraints(Button1, gbcMenu);
-        Menu.add(Button1);
+        gbMenu.setConstraints(button1, gbcMenu);
+        menu.add(button1);
         gbcPanel0.gridx = 0;
         gbcPanel0.gridy = 0;
         gbcPanel0.gridwidth = 30;
@@ -100,22 +100,22 @@ public class ShowTutorial extends JPanel
         gbcPanel0.weighty = 0;
         gbcPanel0.anchor = GridBagConstraints.NORTH;
 
-        Button1.addActionListener((ActionEvent event) ->
+        button1.addActionListener((ActionEvent event) ->
         {
             cardPanel.add(new ShowProgression().showPro(path, index, cards, cardPanel, pro), "progression");
             cards.show(cardPanel, "progression");
         });
 
-        gbPanel0.setConstraints(Menu, gbcPanel0);
+        gbPanel0.setConstraints(menu, gbcPanel0);
 
-        tutorialCard.add(Menu);
+        tutorialCard.add(menu);
 
         //FIM DO TRATAMENTO DO MENU DE CIMA
         //TRATAMENTO DA LISTAGEM DOS CAPITULOS
-        ChapText = new JPanel();
+        chapText = new JPanel();
         GridBagLayout gbChapText = new GridBagLayout();
         GridBagConstraints gbcChapText = new GridBagConstraints();
-        ChapText.setLayout(gbChapText);
+        chapText.setLayout(gbChapText);
         gbcPanel0.gridx = 0;
         gbcPanel0.gridy = 5;
         gbcPanel0.gridwidth = 7;
@@ -124,17 +124,17 @@ public class ShowTutorial extends JPanel
         gbcPanel0.weightx = 0;
         gbcPanel0.weighty = 1;
         gbcPanel0.anchor = GridBagConstraints.NORTH;
-        gbPanel0.setConstraints(ChapText, gbcPanel0);
-        ChapText.setBackground(Color.BLACK);
+        gbPanel0.setConstraints(chapText, gbcPanel0);
+        chapText.setBackground(Color.BLACK);
         JLabel chapTextList = new JLabel("Chapter List");
-        ChapText.add(chapTextList);
+        chapText.add(chapTextList);
 
-        tutorialCard.add(ChapText);
+        tutorialCard.add(chapText);
 
-        ChapterList = new JPanel();
+        chapterList = new JPanel();
         GridBagLayout gbChapterList = new GridBagLayout();
         GridBagConstraints gbcChapterList = new GridBagConstraints();
-        ChapterList.setLayout(gbChapterList);
+        chapterList.setLayout(gbChapterList);
         gbcPanel0.gridx = 0;
         gbcPanel0.gridy = 9;
         gbcPanel0.gridwidth = 7;
@@ -143,8 +143,8 @@ public class ShowTutorial extends JPanel
         gbcPanel0.weightx = 0;
         gbcPanel0.weighty = 10;
         gbcPanel0.anchor = GridBagConstraints.NORTH;
-        gbPanel0.setConstraints(ChapterList, gbcPanel0);
-        ChapterList.setBackground(Color.WHITE);
+        gbPanel0.setConstraints(chapterList, gbcPanel0);
+        chapterList.setBackground(Color.WHITE);
 
         //BUTTONS!
         gbcChapterList.gridx = 1;
@@ -166,7 +166,7 @@ public class ShowTutorial extends JPanel
         });
 
         gbChapterList.setConstraints(bnt0, gbcChapterList);
-        ChapterList.add(bnt0);
+        chapterList.add(bnt0);
 
         gbcChapterList.gridx = 1;
         gbcChapterList.gridy = 4;
@@ -186,7 +186,7 @@ public class ShowTutorial extends JPanel
         });
 
         gbChapterList.setConstraints(bnt1, gbcChapterList);
-        ChapterList.add(bnt1);
+        chapterList.add(bnt1);
 
         gbcChapterList.gridx = 1;
         gbcChapterList.gridy = 7;
@@ -206,7 +206,7 @@ public class ShowTutorial extends JPanel
         });
 
         gbChapterList.setConstraints(bnt2, gbcChapterList);
-        ChapterList.add(bnt2);
+        chapterList.add(bnt2);
 
         gbcChapterList.gridx = 1;
         gbcChapterList.gridy = 10;
@@ -226,7 +226,7 @@ public class ShowTutorial extends JPanel
         });
 
         gbChapterList.setConstraints(bnt3, gbcChapterList);
-        ChapterList.add(bnt3);
+        chapterList.add(bnt3);
 
         gbcChapterList.gridx = 1;
         gbcChapterList.gridy = 13;
@@ -246,7 +246,7 @@ public class ShowTutorial extends JPanel
         });
 
         gbChapterList.setConstraints(bnt4, gbcChapterList);
-        ChapterList.add(bnt4);
+        chapterList.add(bnt4);
 
         gbcChapterList.gridx = 1;
         gbcChapterList.gridy = 16;
@@ -266,7 +266,7 @@ public class ShowTutorial extends JPanel
         });
 
         gbChapterList.setConstraints(bnt5, gbcChapterList);
-        ChapterList.add(bnt5);
+        chapterList.add(bnt5);
 
         gbcChapterList.gridx = 1;
         gbcChapterList.gridy = 19;
@@ -286,7 +286,7 @@ public class ShowTutorial extends JPanel
         });
 
         gbChapterList.setConstraints(bnt6, gbcChapterList);
-        ChapterList.add(bnt6);
+        chapterList.add(bnt6);
 
         gbcChapterList.gridx = 1;
         gbcChapterList.gridy = 21;
@@ -306,7 +306,7 @@ public class ShowTutorial extends JPanel
         });
 
         gbChapterList.setConstraints(bnt7, gbcChapterList);
-        ChapterList.add(bnt7);
+        chapterList.add(bnt7);
 
         gbcChapterList.gridx = 1;
         gbcChapterList.gridy = 24;
@@ -326,7 +326,7 @@ public class ShowTutorial extends JPanel
         });
 
         gbChapterList.setConstraints(bnt8, gbcChapterList);
-        ChapterList.add(bnt8);
+        chapterList.add(bnt8);
 
         gbcChapterList.gridx = 1;
         gbcChapterList.gridy = 27;
@@ -346,7 +346,7 @@ public class ShowTutorial extends JPanel
         });
 
         gbChapterList.setConstraints(bnt9, gbcChapterList);
-        ChapterList.add(bnt9);
+        chapterList.add(bnt9);
 
 //        gbcPanel0.gridx = 0;
 //        gbcPanel0.gridy = 7;
@@ -358,17 +358,17 @@ public class ShowTutorial extends JPanel
 //        gbcPanel0.anchor = GridBagConstraints.NORTH;
 //        gbPanel0.setConstraints(pnPanel1, gbcPanel0);
 //        pnPanel0.add(pnPanel1);
-        tutorialCard.add(ChapterList);
+        tutorialCard.add(chapterList);
 
         //FIM DO TRATAMENTO DA LISTAGEM DOS CAPITULOS
         //TRATAMENTO DO TEXTO DO TUTORIAL
         LoadTutorial lt = new LoadTutorial();
         String texto = lt.loadChapter(path + "\\chapters\\chapter" + index + ".txt");
 
-        TutorialText = new JPanel();
+        tutorialText = new JPanel();
         GridBagLayout gbTutorialText = new GridBagLayout();
         GridBagConstraints gbcTutorialText = new GridBagConstraints();
-        TutorialText.setLayout(gbTutorialText);
+        tutorialText.setLayout(gbTutorialText);
 
         JTextArea jta = new JTextArea(texto);
         jta.setEditable(false);
@@ -384,9 +384,9 @@ public class ShowTutorial extends JPanel
         gbcTutorialText.weighty = 1;
         gbcTutorialText.anchor = GridBagConstraints.NORTH;
         gbTutorialText.setConstraints(jta, gbcTutorialText);
-        TutorialText.add(jta);
+        tutorialText.add(jta);
 
-        JScrollPane jsp = new JScrollPane(TutorialText);
+        JScrollPane jsp = new JScrollPane(tutorialText);
         jsp.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         gbcPanel0.gridx = 7;

@@ -21,10 +21,10 @@ public class EndTutorial {
 
         JPanel pnEndCard;
         JPanel pnBlank;
-        JLabel lbTEXT;
+        JLabel lbText;
         JPanel pnBlankEsq;
         JPanel pnBlankDir;
-        JPanel pnBlankTOP;
+        JPanel pnBlankTop;
         JPanel pnBotao;
         JButton btExit;
         JPanel pnCentral;
@@ -40,9 +40,9 @@ public class EndTutorial {
         GridBagConstraints gbcBlank = new GridBagConstraints();
         pnBlank.setLayout(gbBlank);
 
-        lbTEXT = new JLabel("Congratulations on completing the tutorial, we hope you liked it and have learned something out of it!");
-        Font lbTEXTFont = lbTEXT.getFont();
-        lbTEXT.setFont(new Font(lbTEXTFont.getName(), Font.PLAIN, 17));
+        lbText = new JLabel("Congratulations on completing the tutorial, we hope you liked it and have learned something out of it!");
+        Font lbTextFont = lbText.getFont();
+        lbText.setFont(new Font(lbTextFont.getName(), Font.PLAIN, 17));
         JLabel test1 = new JLabel(" ");
         gbcBlank.gridx = 0;
         gbcBlank.gridy = 0;
@@ -52,8 +52,8 @@ public class EndTutorial {
         gbcBlank.weightx = 1;
         gbcBlank.weighty = 1;
         gbcBlank.anchor = GridBagConstraints.NORTH;
-        gbBlank.setConstraints(lbTEXT, gbcBlank);
-        pnBlank.add(lbTEXT);
+        gbBlank.setConstraints(lbText, gbcBlank);
+        pnBlank.add(lbText);
         pnBlank.add(test1);
         gbcEndCard.gridx = 0;
         gbcEndCard.gridy = 0;
@@ -96,10 +96,10 @@ public class EndTutorial {
         gbEndCard.setConstraints(pnBlankDir, gbcEndCard);
         pnEndCard.add(pnBlankDir);
 
-        pnBlankTOP = new JPanel();
-        GridBagLayout gbBlankTOP = new GridBagLayout();
-        GridBagConstraints gbcBlankTOP = new GridBagConstraints();
-        pnBlankTOP.setLayout(gbBlankTOP);
+        pnBlankTop = new JPanel();
+        GridBagLayout gbBlankTop = new GridBagLayout();
+        GridBagConstraints gbcBlankTop = new GridBagConstraints();
+        pnBlankTop.setLayout(gbBlankTop);
         gbcEndCard.gridx = 9;
         gbcEndCard.gridy = 18;
         gbcEndCard.gridwidth = 12;
@@ -108,8 +108,8 @@ public class EndTutorial {
         gbcEndCard.weightx = 1;
         gbcEndCard.weighty = 1;
         gbcEndCard.anchor = GridBagConstraints.NORTH;
-        gbEndCard.setConstraints(pnBlankTOP, gbcEndCard);
-        pnEndCard.add(pnBlankTOP);
+        gbEndCard.setConstraints(pnBlankTop, gbcEndCard);
+        pnEndCard.add(pnBlankTop);
 
         pnBotao = new JPanel();
         GridBagLayout gbBotao = new GridBagLayout();

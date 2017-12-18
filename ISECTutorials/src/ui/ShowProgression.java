@@ -150,6 +150,9 @@ public class ShowProgression
         chart.getStyler().setAnnotationDistance(1.15);
         chart.getStyler().setPlotContentSize(.7);
         chart.getStyler().setStartAngleInDegrees(90);
+        
+        if(pro.getCorrect() == 0)
+            chart.setTitle("Ainda não ha resultados!");
 
         chart.addSeries("Right", pro.getCorrect());
         chart.addSeries("Wrong", (pro.getTotalNumberOfQuestionsAnswered() - pro.getCorrect()));

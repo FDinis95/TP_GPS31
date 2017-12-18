@@ -37,12 +37,12 @@ public class EvaluationTest extends JPanel {
         GridBagConstraints gbcPanel0 = new GridBagConstraints();
         evalCard.setLayout(gbPanel0);
 
-        JPanel Menu = new JPanel();
+        JPanel menu = new JPanel();
         GridBagLayout gbMenu = new GridBagLayout();
         GridBagConstraints gbcMenu = new GridBagConstraints();
-        Menu.setLayout(gbMenu);
+        menu.setLayout(gbMenu);
 
-        JButton Button = new JButton("SKIP");
+        JButton button = new JButton("SKIP");
         gbcMenu.gridx = 0;
         gbcMenu.gridy = 0;
         gbcMenu.gridwidth = 6;
@@ -52,15 +52,15 @@ public class EvaluationTest extends JPanel {
         gbcMenu.weighty = 1;
         gbcMenu.anchor = GridBagConstraints.WEST;
 
-        Button.addActionListener((ActionEvent event)
+        button.addActionListener((ActionEvent event)
                 -> {
             cardPanel.add(new ShowTutorial().tutorial(path, index, cards, cardPanel, pro), "tutorials");
             cards.show(cardPanel, "tutorials");
 
         });
 
-        gbMenu.setConstraints(Button, gbcMenu);
-        Menu.add(Button);
+        gbMenu.setConstraints(button, gbcMenu);
+        menu.add(button);
 
         gbcPanel0.gridx = 0;
         gbcPanel0.gridy = 0;
@@ -70,9 +70,9 @@ public class EvaluationTest extends JPanel {
         gbcPanel0.weightx = 1;
         gbcPanel0.weighty = 0;
         gbcPanel0.anchor = GridBagConstraints.NORTH;
-        gbPanel0.setConstraints(Menu, gbcPanel0);
+        gbPanel0.setConstraints(menu, gbcPanel0);
 
-        evalCard.add(Menu);
+        evalCard.add(menu);
 
         pnCentral = new JPanel();
         GridBagLayout gbCentral = new GridBagLayout();
