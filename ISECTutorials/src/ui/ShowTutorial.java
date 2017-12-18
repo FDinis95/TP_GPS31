@@ -29,6 +29,7 @@ public class ShowTutorial extends JPanel
     JButton bnt8 = new JButton("Chapter  9");
     JButton bnt9 = new JButton("Chapter 10");
     int chapter;
+    
 
     
     public ShowTutorial()
@@ -38,17 +39,13 @@ public class ShowTutorial extends JPanel
     public JPanel tutorial(String path, int index, CardLayout cards, JPanel cardPanel, Progression pro){
             //Tutorial card
         chapter = index;
-        
         JPanel tutorialCard = new JPanel();
         
         JPanel Menu;
         JButton Button;
         JButton Button1;
-
         JPanel ChapText;
-
         JPanel ChapterList;
-
         JPanel TutorialText;
 
         GridBagLayout gbPanel0 = new GridBagLayout();
@@ -100,6 +97,13 @@ public class ShowTutorial extends JPanel
         gbcPanel0.weightx = 1;
         gbcPanel0.weighty = 0;
         gbcPanel0.anchor = GridBagConstraints.NORTH;
+        
+        Button1.addActionListener((ActionEvent event) ->
+        {
+            cardPanel.add(new ShowProgression().showPro(pro), "progression");
+            cards.show(cardPanel, "progression");
+        });
+        
         gbPanel0.setConstraints(Menu, gbcPanel0);
         
         tutorialCard.add(Menu);
