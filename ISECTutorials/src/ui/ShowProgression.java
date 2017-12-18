@@ -144,7 +144,7 @@ public class ShowProgression
         gbcProgression.weighty = 1;
         gbcProgression.anchor = GridBagConstraints.NORTH;
 
-        PieChart chart = new PieChartBuilder().width(300).height(300).title("Results").theme(ChartTheme.GGPlot2).build();
+        PieChart chart = new PieChartBuilder().width(400).height(300).title("Results").theme(ChartTheme.GGPlot2).build();
         chart.getStyler().setLegendVisible(false);
         chart.getStyler().setAnnotationType(PieStyler.AnnotationType.LabelAndPercentage);
         chart.getStyler().setAnnotationDistance(1.15);

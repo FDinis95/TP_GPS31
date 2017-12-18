@@ -181,8 +181,16 @@ public class ShowChapterTestResult
                 cards.show(cardPanel, "end");
             } else
             {
-                cardPanel.add(new ShowTutorial().tutorial(path, index + 1, cards, cardPanel, pro), "tutorial"); //CHECK CHAPTER LOCKED
-                cards.show(cardPanel, "tutorial");
+                if(index == 9)
+                {
+                    cardPanel.add(new ShowTutorial().tutorial(path, 0, cards, cardPanel, pro), "tutorial"); //CHECK IF CHAPTER 10 (RETURN TO 0)
+                    cards.show(cardPanel, "tutorial");
+                }
+                else
+                {
+                    cardPanel.add(new ShowTutorial().tutorial(path, index + 1, cards, cardPanel, pro), "tutorial"); //CHECK CHAPTER LOCKED
+                    cards.show(cardPanel, "tutorial");
+                }
             }
         });
 

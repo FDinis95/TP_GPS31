@@ -16,6 +16,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
+import javax.swing.SwingConstants;
 import logic.ValidateTestResult;
 
 public class ChapterTest {
@@ -56,7 +57,7 @@ public class ChapterTest {
         scrollable.setLayout(new BoxLayout(scrollable, BoxLayout.Y_AXIS));
 
         scrollable.add(new JLabel("\n"));
-        scrollable.add(new JLabel("Answer the following questions to validate the chapter\n"));
+        scrollable.add(new JLabel("Answer the following questions from Chapter " + (index + 1)));
         scrollable.add(new JLabel("\n"));
 
 //        System.err.println("chapter path: " + path);
