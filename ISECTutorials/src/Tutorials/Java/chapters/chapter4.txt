@@ -1,12 +1,12 @@
 Basic Operations
 
 Java provides a rich set of operators to manipulate variables. We can divide all the Java operators into the following groups −
-Arithmetic Operators
-Relational Operators
-Bitwise Operators
-Logical Operators
-Assignment Operators
-Misc Operators
+    Arithmetic Operators
+    Relational Operators
+    Bitwise Operators
+    Logical Operators
+    Assignment Operators
+    Misc Operators
 
 The Arithmetic Operators
 Arithmetic operators are used in mathematical expressions in the same way that they are used in algebra. The following table lists the arithmetic operators −

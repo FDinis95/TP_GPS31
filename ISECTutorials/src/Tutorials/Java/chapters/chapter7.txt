@@ -25,8 +25,8 @@ arrayRefVar = new dataType[arraySize];
 
 
 The above statement does two things −
-It creates an array using new dataType[arraySize].
-It assigns the reference of the newly created array to the variable arrayRefVar.
+    It creates an array using new dataType[arraySize].
+    It assigns the reference of the newly created array to the variable arrayRefVar.
 Declaring an array variable, creating an array, and assigning the reference of the array to the variable can be combined in one statement, as shown below −
 dataType[] arrayRefVar = new dataType[arraySize];
 

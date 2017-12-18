@@ -3,8 +3,8 @@ I/O
 The java.io package contains nearly every class you might ever need to perform input and output (I/O) in Java. All these streams represent an input source and an output destination. The stream in the java.io package supports many data such as primitives, object, localized characters, etc.
 Stream
 A stream can be defined as a sequence of data. There are two kinds of Streams −
-InPutStream − The InputStream is used to read data from a source.
-OutPutStream − The OutputStream is used for writing data to a destination.
+    InPutStream − The InputStream is used to read data from a source.
+    OutPutStream − The OutputStream is used for writing data to a destination.
 
 Java provides strong but flexible support for I/O related to files and networks but this tutorial covers very basic functionality related to streams and I/O. We will see the most commonly used examples one by one −
 Byte Streams
@@ -84,9 +84,10 @@ $java CopyFile
 
 Standard Streams
 All the programming languages provide support for standard I/O where the user's program can take input from a keyboard and then produce an output on the computer screen. If you are aware of C or C++ programming languages, then you must be aware of three standard devices STDIN, STDOUT and STDERR. Similarly, Java provides the following three standard streams −
-Standard Input − This is used to feed the data to user's program and usually a keyboard is used as standard input stream and represented as System.in.
-Standard Output − This is used to output the data produced by the user's program and usually a computer screen is used for standard output stream and represented as System.out.
-Standard Error − This is used to output the error data produced by the user's program and usually a computer screen is used for standard error stream and represented as System.err.
+    Standard Input − This is used to feed the data to user's program and usually a keyboard is used as standard input stream and represented as System.in.
+    Standard Output − This is used to output the data produced by the user's program and usually a computer screen is used for standard output stream and represented as System.out.
+    Standard Error − This is used to output the error data produced by the user's program and usually a computer screen is used for standard error stream and represented as System.err.
+
 Following is a simple program, which creates InputStreamReader to read standard input stream until the user types a "q" −
 Example
 import java.io.*;
