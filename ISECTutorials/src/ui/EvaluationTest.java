@@ -131,7 +131,7 @@ public class EvaluationTest extends JPanel
                     {
                         radioMenu.clearSelection();
                         radioBtn0.setSelected(true);
-                        answers[questionNumber]=0;
+                        answers[questionNumber]=1;
                     }
                 });
                 JRadioButton radioBtn1 = new JRadioButton(s[1]);
@@ -141,7 +141,7 @@ public class EvaluationTest extends JPanel
                     {
                         radioMenu.clearSelection();
                         radioBtn1.setSelected(true);
-                        answers[questionNumber] = 1;
+                        answers[questionNumber] = 2;
                     }
                 });
                 JRadioButton radioBtn2 = new JRadioButton(s[2]);
@@ -151,7 +151,7 @@ public class EvaluationTest extends JPanel
                     {
                         radioMenu.clearSelection();
                         radioBtn2.setSelected(true);
-                        answers[questionNumber] = 2;
+                        answers[questionNumber] = 3;
                     }
                 });
                 JRadioButton radioBtn3 = new JRadioButton(s[3]);
@@ -161,7 +161,7 @@ public class EvaluationTest extends JPanel
                     {
                         radioMenu.clearSelection();
                         radioBtn3.setSelected(true);
-                        answers[questionNumber] = 3;
+                        answers[questionNumber] = 4;
                     }
                 });
                 
