@@ -6,6 +6,7 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -16,14 +17,17 @@ import javax.swing.JProgressBar;
 public class ShowEvaluationTestResult extends JPanel
 {
 
-    JPanel pnEvaluationTest;
-    JPanel pnPanel1;
-    JPanel pnPanel2;
-    JPanel pnPanel3;
-    JPanel pnPanel5;
+    JPanel pnPanel0;
+    JPanel pnHeader;
+    JPanel pnStars;
+    JPanel pnMessage;
+    JPanel pnProgression;
+    JProgressBar pbProgressBar1;
+    JLabel lbCorrect;
+    JLabel lbTotal;
     JPanel pnPanel6;
-    JButton btNext;
-    JProgressBar pbProgressBar;
+    JButton btContinue;
+
     Helper help;
     String[] stars;
 
@@ -33,40 +37,38 @@ public class ShowEvaluationTestResult extends JPanel
 
     public JPanel results(String path, CardLayout cards, JPanel cardPanel, Progression pro, int result)
     {
+        pnPanel0 = new JPanel();
+        GridBagLayout gbPanel0 = new GridBagLayout();
+        GridBagConstraints gbcPanel0 = new GridBagConstraints();
+        pnPanel0.setLayout(gbPanel0);
 
-////Calcular Número de estrelas completas ou incompletas
-        pnEvaluationTest = new JPanel();
-        GridBagLayout gbEvaluationTest = new GridBagLayout();
-        GridBagConstraints gbcEvaluationTest = new GridBagConstraints();
-        pnEvaluationTest.setLayout(gbEvaluationTest);
+        pnHeader = new JPanel();
+        GridBagLayout gbHeader = new GridBagLayout();
+        GridBagConstraints gbcHeader = new GridBagConstraints();
+        pnHeader.setLayout(gbHeader);
+        gbcPanel0.gridx = 0;
+        gbcPanel0.gridy = 0;
+        gbcPanel0.gridwidth = 20;
+        gbcPanel0.gridheight = 3;
+        gbcPanel0.fill = GridBagConstraints.BOTH;
+        gbcPanel0.weightx = 1;
+        gbcPanel0.weighty = 0;
+        gbcPanel0.anchor = GridBagConstraints.NORTH;
+        gbPanel0.setConstraints(pnHeader, gbcPanel0);
+        pnPanel0.add(pnHeader);
 
-        pnPanel1 = new JPanel();
-        GridBagLayout gbPanel1 = new GridBagLayout();
-        GridBagConstraints gbcPanel1 = new GridBagConstraints();
-        pnPanel1.setLayout(gbPanel1);
-        gbcEvaluationTest.gridx = 0;
-        gbcEvaluationTest.gridy = 0;
-        gbcEvaluationTest.gridwidth = 20;
-        gbcEvaluationTest.gridheight = 3;
-        gbcEvaluationTest.fill = GridBagConstraints.BOTH;
-        gbcEvaluationTest.weightx = 1;
-        gbcEvaluationTest.weighty = 1;
-        gbcEvaluationTest.anchor = GridBagConstraints.NORTH;
-        gbEvaluationTest.setConstraints(pnPanel1, gbcEvaluationTest);
-        pnEvaluationTest.add(pnPanel1);
-
-        pnPanel2 = new JPanel();
-        GridBagLayout gbPanel2 = new GridBagLayout();
-        GridBagConstraints gbcPanel2 = new GridBagConstraints();
-        pnPanel2.setLayout(gbPanel2);
-        gbcEvaluationTest.gridx = 0;
-        gbcEvaluationTest.gridy = 3;
-        gbcEvaluationTest.gridwidth = 20;
-        gbcEvaluationTest.gridheight = 5;
-        gbcEvaluationTest.fill = GridBagConstraints.BOTH;
-        gbcEvaluationTest.weightx = 1;
-        gbcEvaluationTest.weighty = 1;
-        gbcEvaluationTest.anchor = GridBagConstraints.NORTH;
+        pnStars = new JPanel();
+        GridBagLayout gbStars = new GridBagLayout();
+        GridBagConstraints gbcStars = new GridBagConstraints();
+        pnStars.setLayout(gbStars);
+        gbcPanel0.gridx = 0;
+        gbcPanel0.gridy = 3;
+        gbcPanel0.gridwidth = 20;
+        gbcPanel0.gridheight = 6;
+        gbcPanel0.fill = GridBagConstraints.BOTH;
+        gbcPanel0.weightx = 1;
+        gbcPanel0.weighty = 0;
+        gbcPanel0.anchor = GridBagConstraints.NORTH;
 
         help = new Helper();
         stars = help.fillStars(pro);
@@ -88,119 +90,136 @@ public class ShowEvaluationTestResult extends JPanel
         str4.setIcon(new ImageIcon(stars[3]));
         str5.setIcon(new ImageIcon(stars[4]));
 
-        pnPanel2.add(str1);
-        pnPanel2.add(str2);
-        pnPanel2.add(str3);
-        pnPanel2.add(str4);
-        pnPanel2.add(str5);
+        pnStars.add(str1);
+        pnStars.add(str2);
+        pnStars.add(str3);
+        pnStars.add(str4);
+        pnStars.add(str5);
+        
+        gbcStars.insets = new Insets( 10,0,10,0 );
 
-        gbEvaluationTest.setConstraints(pnPanel2, gbcEvaluationTest);
-        pnEvaluationTest.add(pnPanel2);
+        gbPanel0.setConstraints(pnStars, gbcPanel0);
+        pnPanel0.add(pnStars);
 
-        pnPanel3 = new JPanel();
-        GridBagLayout gbPanel3 = new GridBagLayout();
-        GridBagConstraints gbcPanel3 = new GridBagConstraints();
-        pnPanel3.setLayout(gbPanel3);
-        gbcEvaluationTest.gridx = 0;
-        gbcEvaluationTest.gridy = 8;
-        gbcEvaluationTest.gridwidth = 20;
-        gbcEvaluationTest.gridheight = 3;
-        gbcEvaluationTest.fill = GridBagConstraints.BOTH;
-        gbcEvaluationTest.weightx = 1;
-        gbcEvaluationTest.weighty = 1;
-        gbcEvaluationTest.anchor = GridBagConstraints.NORTH;
+        pnMessage = new JPanel();
+        GridBagLayout gbMessage = new GridBagLayout();
+        GridBagConstraints gbcMessage = new GridBagConstraints();
+        pnMessage.setLayout(gbMessage);
+        gbcPanel0.gridx = 0;
+        gbcPanel0.gridy = 9;
+        gbcPanel0.gridwidth = 20;
+        gbcPanel0.gridheight = 3;
+        gbcPanel0.fill = GridBagConstraints.BOTH;
+        gbcPanel0.weightx = 1;
+        gbcPanel0.weighty = 0;
+        gbcPanel0.anchor = GridBagConstraints.NORTH;
+        
+        JLabel text =  new JLabel(help.messages(pro));
+        pnMessage.add(text);
+        
+        gbcMessage.insets = new Insets(20, 0, 20, 0);
+        
+        gbPanel0.setConstraints(pnMessage, gbcPanel0);
+        pnPanel0.add(pnMessage);
 
-        gbEvaluationTest.setConstraints(pnPanel3, gbcEvaluationTest);
-        pnEvaluationTest.add(pnPanel3);
+        pnProgression = new JPanel();
+        GridBagLayout gbProgression = new GridBagLayout();
+        GridBagConstraints gbcProgression = new GridBagConstraints();
+        pnProgression.setLayout(gbProgression);
 
-        pnPanel5 = new JPanel();
-        GridBagLayout gbPanel5 = new GridBagLayout();
-        GridBagConstraints gbcPanel5 = new GridBagConstraints();
-        pnPanel5.setLayout(gbPanel5);
-        gbcEvaluationTest.gridx = 0;
-        gbcEvaluationTest.gridy = 11;
-        gbcEvaluationTest.gridwidth = 10;
-        gbcEvaluationTest.gridheight = 9;
-        gbcEvaluationTest.fill = GridBagConstraints.BOTH;
-        gbcEvaluationTest.weightx = 1;
-        gbcEvaluationTest.weighty = 1;
-        gbcEvaluationTest.anchor = GridBagConstraints.NORTH;
-        gbEvaluationTest.setConstraints(pnPanel5, gbcEvaluationTest);
-        pnEvaluationTest.add(pnPanel5);
+        pbProgressBar1 = new JProgressBar(0, 20);
+        pbProgressBar1.setValue(result);
+
+        gbcProgression.gridx = 4;
+        gbcProgression.gridy = 2;
+        gbcProgression.gridwidth = 12;
+        gbcProgression.gridheight = 1;
+        gbcProgression.fill = GridBagConstraints.BOTH;
+        gbcProgression.weightx = 1;
+        gbcProgression.weighty = 0;
+        gbcProgression.anchor = GridBagConstraints.NORTH;
+
+        gbcProgression.insets = new Insets(10, 0, 10, 0);
+
+        gbProgression.setConstraints(pbProgressBar1, gbcProgression);
+        pnProgression.add(pbProgressBar1);
+
+        lbCorrect = new JLabel("Correct: " + result);
+        lbCorrect.setForeground(Color.GREEN);
+        gbcProgression.gridx = 0;
+        gbcProgression.gridy = 2;
+        gbcProgression.gridwidth = 4;
+        gbcProgression.gridheight = 1;
+        gbcProgression.fill = GridBagConstraints.BOTH;
+        gbcProgression.weightx = 1;
+        gbcProgression.weighty = 1;
+        gbcProgression.anchor = GridBagConstraints.NORTH;
+        gbcProgression.insets = new Insets(0, 100, 0, 0);
+        gbProgression.setConstraints(lbCorrect, gbcProgression);
+        pnProgression.add(lbCorrect);
+
+        lbTotal = new JLabel("Total: 20");
+        gbcProgression.gridx = 16;
+        gbcProgression.gridy = 2;
+        gbcProgression.gridwidth = 4;
+        gbcProgression.gridheight = 1;
+        gbcProgression.fill = GridBagConstraints.BOTH;
+        gbcProgression.weightx = 1;
+        gbcProgression.weighty = 1;
+        gbcProgression.anchor = GridBagConstraints.NORTH;
+        gbcProgression.insets = new Insets(0, 100, 0, 0);
+        gbProgression.setConstraints(lbTotal, gbcProgression);
+        pnProgression.add(lbTotal);
+
+        gbcPanel0.gridx = 0;
+        gbcPanel0.gridy = 12;
+        gbcPanel0.gridwidth = 20;
+        gbcPanel0.gridheight = 5;
+        gbcPanel0.fill = GridBagConstraints.BOTH;
+        gbcPanel0.weightx = 1;
+        gbcPanel0.weighty = 0;
+        gbcPanel0.anchor = GridBagConstraints.NORTH;
+        gbPanel0.setConstraints(pnProgression, gbcPanel0);
+        pnPanel0.add(pnProgression);
 
         pnPanel6 = new JPanel();
         GridBagLayout gbPanel6 = new GridBagLayout();
         GridBagConstraints gbcPanel6 = new GridBagConstraints();
         pnPanel6.setLayout(gbPanel6);
 
-        btNext = new JButton("Next");
-        gbcPanel6.gridx = 6;
-        gbcPanel6.gridy = 6;
-        gbcPanel6.gridwidth = 3;
-        gbcPanel6.gridheight = 2;
+        btContinue = new JButton("Continue");
+        gbcPanel6.gridx = 14;
+        gbcPanel6.gridy = 0;
+        gbcPanel6.gridwidth = 6;
+        gbcPanel6.gridheight = 3;
         gbcPanel6.fill = GridBagConstraints.BOTH;
         gbcPanel6.weightx = 1;
         gbcPanel6.weighty = 0;
         gbcPanel6.anchor = GridBagConstraints.NORTH;
-        gbPanel6.setConstraints(btNext, gbcPanel6);
-        pnPanel6.add(btNext);
 
-        JLabel lbCorrect = new JLabel("Number of correct answers: " + result);
-        lbCorrect.setForeground(Color.GREEN);
-        gbcPanel6.gridx = 1;
-        gbcPanel6.gridy = 1;
-        gbcPanel6.gridwidth = 8;
-        gbcPanel6.gridheight = 2;
-        gbcPanel6.fill = GridBagConstraints.BOTH;
-        gbcPanel6.weightx = 1;
-        gbcPanel6.weighty = 1;
-        gbcPanel6.anchor = GridBagConstraints.NORTH;
-        gbPanel6.setConstraints(lbCorrect, gbcPanel6);
-        pnPanel6.add(lbCorrect);
+        gbcPanel6.insets = new Insets(20, 100, 20, 100);
 
-        JLabel lbTotal = new JLabel("Total number of questions answered: 20");
-        lbTotal.setForeground(Color.BLUE);
-        gbcPanel6.gridx = 1;
-        gbcPanel6.gridy = 3;
-        gbcPanel6.gridwidth = 8;
-        gbcPanel6.gridheight = 2;
-        gbcPanel6.fill = GridBagConstraints.BOTH;
-        gbcPanel6.weightx = 1;
-        gbcPanel6.weighty = 1;
-        gbcPanel6.anchor = GridBagConstraints.NORTH;
-        gbPanel6.setConstraints(lbTotal, gbcPanel6);
-        pnPanel6.add(lbTotal);
-        gbcEvaluationTest.gridx = 10;
-        gbcEvaluationTest.gridy = 11;
-        gbcEvaluationTest.gridwidth = 10;
-        gbcEvaluationTest.gridheight = 9;
-        gbcEvaluationTest.fill = GridBagConstraints.BOTH;
-        gbcEvaluationTest.weightx = 1;
-        gbcEvaluationTest.weighty = 1;
-        gbcEvaluationTest.anchor = GridBagConstraints.NORTH;
-        gbEvaluationTest.setConstraints(pnPanel6, gbcEvaluationTest);
-        pnEvaluationTest.add(pnPanel6);
-//
-//        pbProgressBar = new JProgressBar(0, 20);
-//        pbProgressBar.setValue(result);
-//        gbcEvaluationTest.gridx = 6;
-//        gbcEvaluationTest.gridy = 1;
-//        gbcEvaluationTest.gridwidth = 9;
-//        gbcEvaluationTest.gridheight = 2;
-//        gbcEvaluationTest.fill = GridBagConstraints.BOTH;
-//        gbcEvaluationTest.weightx = 1;
-//        gbcEvaluationTest.weighty = 1;
-//        gbcEvaluationTest.anchor = GridBagConstraints.NORTH;
-//        gbEvaluationTest.setConstraints( pbProgressBar, gbcEvaluationTest );
-//        pnEvaluationTest.add(pbProgressBar);
+        gbPanel6.setConstraints(btContinue, gbcPanel6);
+        pnPanel6.add(btContinue);
+        gbcPanel0.gridx = 0;
+        gbcPanel0.gridy = 17;
+        gbcPanel0.gridwidth = 20;
+        gbcPanel0.gridheight = 3;
+        gbcPanel0.fill = GridBagConstraints.BOTH;
+        gbcPanel0.weightx = 1;
+        gbcPanel0.weighty = 0;
+        gbcPanel0.anchor = GridBagConstraints.NORTH;
 
-        btNext.addActionListener((ActionEvent event)
+        btContinue.addActionListener((ActionEvent event)
                 ->
         {
             cardPanel.add(new ShowTutorial().tutorial(path, 0, cards, cardPanel, pro), "tutorial"); //CHECK CHAPTER LOCKED
             cards.next(cardPanel);
         });
 
-        return pnEvaluationTest;
+        gbPanel0.setConstraints(pnPanel6, gbcPanel0);
+        pnPanel0.add(pnPanel6);
+
+        return pnPanel0;
     }
 }
