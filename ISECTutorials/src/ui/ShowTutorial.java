@@ -103,7 +103,7 @@ public class ShowTutorial extends JPanel
         
         Button1.addActionListener((ActionEvent event) ->
         {
-            cardPanel.add(new ShowProgression().showPro(pro), "progression");
+            cardPanel.add(new ShowProgression().showPro(path,index,cards,cardPanel, pro), "progression");
             cards.show(cardPanel, "progression");
         });
         

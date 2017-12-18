@@ -22,6 +22,7 @@ public class ShowChapterTestResult
 
     public JPanel chapterResults(String path, CardLayout cards, JPanel cardPanel, Progression pro, int result, int index)
     {
+        
         JPanel resultPanel;
         JPanel pnPanel1;
         JPanel pnPanel2;
@@ -148,7 +149,7 @@ public class ShowChapterTestResult
                 ->
         {
             cardPanel.add(new ShowTutorial().tutorial(path, index, cards, cardPanel, pro), "tutorial"); //CHECK CHAPTER LOCKED
-            cards.next(cardPanel);
+            cards.show(cardPanel, "tutorial");
         });
 
         gbButtonPanel.setConstraints(btReturn, gbcButtonPanel);
@@ -171,12 +172,12 @@ public class ShowChapterTestResult
             Boolean temp = end.verify(pro);
             if (temp)
             {
-//                cardPanel.add(new EndTutorial().endScreen(cards, pro), "end"); //CHECK CHAPTER LOCKED
-//                cards.next(cardPanel);
+                cardPanel.add(new EndTutorial().endScreen(pro), "end"); //CHECK CHAPTER LOCKED
+                cards.show(cardPanel, "end");
             }
             else{
             cardPanel.add(new ShowTutorial().tutorial(path, index + 1, cards, cardPanel, pro), "tutorial"); //CHECK CHAPTER LOCKED
-            cards.next(cardPanel);
+            cards.show(cardPanel, "tutorial");
             }
         });
 

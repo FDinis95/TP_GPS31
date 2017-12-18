@@ -16,7 +16,7 @@ public class EndTutorial {
     public EndTutorial() {
     }
 
-    public JPanel EndScreen(JPanel resultCard, Progression pro) {
+    public JPanel endScreen(Progression pro) {
 //        Verificar capítulos concluídos Helper
 
         JPanel pnEndCard;

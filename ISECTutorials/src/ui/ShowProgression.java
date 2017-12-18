@@ -1,9 +1,11 @@
 package ui;
 
 import data.Progression;
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -27,7 +29,7 @@ public class ShowProgression
     {
     }
 
-    public JPanel showPro(Progression pro)
+    public JPanel showPro(String path, int index, CardLayout cards, JPanel cardPanel, Progression pro)
     {
 
         pnProgression = new JPanel();
@@ -107,9 +109,9 @@ public class ShowProgression
 
         JLabel lbMessage = new JLabel(help.messages(pro));
         lbMessage.setForeground(Color.DARK_GRAY);
-        
+
         pnPanel3.add(lbMessage);
-        
+
         gbProgression.setConstraints(pnPanel3, gbcProgression);
         pnProgression.add(pnPanel3);
 
@@ -125,9 +127,7 @@ public class ShowProgression
         gbcProgression.weightx = 1;
         gbcProgression.weighty = 1;
         gbcProgression.anchor = GridBagConstraints.NORTH;
-        
-        
-        
+
         gbProgression.setConstraints(pnPanel5, gbcProgression);
         pnProgression.add(pnPanel5);
 
@@ -145,6 +145,14 @@ public class ShowProgression
         gbcPanel6.weightx = 1;
         gbcPanel6.weighty = 0;
         gbcPanel6.anchor = GridBagConstraints.NORTH;
+
+        btReturn.addActionListener((ActionEvent event)
+                ->
+        {
+            cardPanel.add(new ShowTutorial().tutorial(path, index, cards, cardPanel, pro), "tutorial"); //CHECK CHAPTER LOCKED
+            cards.show(cardPanel, "tutorial");
+        });
+
         gbPanel6.setConstraints(btReturn, gbcPanel6);
         pnPanel6.add(btReturn);
 
