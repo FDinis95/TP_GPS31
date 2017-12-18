@@ -168,10 +168,10 @@ public class EvaluationTest extends JPanel
         JButton btnNext = new JButton("Next");
         btnNext.addActionListener((ActionEvent event) ->
         {
-            for (int j = 0; j < quests.size(); j++)
-            {
-                System.out.println(answers[j] + " " + corrects[j] + " " + chapters[j]);
-            }
+//            for (int j = 0; j < quests.size(); j++)
+//            {
+//                System.out.println(answers[j] + " " + corrects[j] + " " + chapters[j]);
+//            }
             int temp = new ValidateTestResult().validateEvaluationTest(answers, corrects, chapters, pro);
             cardPanel.add(new ShowEvaluationTestResult().results(path, cards, cardPanel, pro, temp), "evaluationresults");
             cards.show(cardPanel, "evaluationresults");

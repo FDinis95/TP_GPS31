@@ -1,7 +1,6 @@
 package ui;
 
 import data.Progression;
-import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
@@ -14,7 +13,6 @@ import javax.swing.JPanel;
 import logic.Helper;
 import org.knowm.xchart.PieChart;
 import org.knowm.xchart.PieChartBuilder;
-import org.knowm.xchart.SwingWrapper;
 import org.knowm.xchart.XChartPanel;
 import org.knowm.xchart.style.PieStyler;
 import org.knowm.xchart.style.Styler.ChartTheme;
@@ -134,17 +132,17 @@ public class ShowProgression
         gbcProgression.weightx = 1;
         gbcProgression.weighty = 1;
         gbcProgression.anchor = GridBagConstraints.NORTH;
-        
+
         PieChart chart = new PieChartBuilder().width(300).height(300).title("Results").theme(ChartTheme.GGPlot2).build();
         chart.getStyler().setLegendVisible(false);
         chart.getStyler().setAnnotationType(PieStyler.AnnotationType.LabelAndPercentage);
         chart.getStyler().setAnnotationDistance(1.15);
         chart.getStyler().setPlotContentSize(.7);
         chart.getStyler().setStartAngleInDegrees(90);
-        
+
         chart.addSeries("Right", pro.getCorrect());
         chart.addSeries("Wrong", (pro.getTotalNumberOfQuestionsAnswered() - pro.getCorrect()));
-        
+
         JPanel chartPanel = new XChartPanel(chart);
         pnPanel5.add(chartPanel);
 
