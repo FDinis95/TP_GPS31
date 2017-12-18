@@ -70,9 +70,3 @@ answer two
 answer three
 answer four
 1
-Q12 Question thirteen
-answer one
-answer two
-answer three
-answer four
-2
