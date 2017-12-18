@@ -55,7 +55,11 @@ public class ShowEvaluationTestResult extends JPanel
         gbcPanel0.weighty = 0;
         gbcPanel0.anchor = GridBagConstraints.NORTH;
         gbPanel0.setConstraints(pnHeader, gbcPanel0);
+        JLabel user = new JLabel ("");
+        user.setIcon(new ImageIcon("src/logic/images/user.png"));
+        pnHeader.add(user);
         pnPanel0.add(pnHeader);
+       
 
         pnStars = new JPanel();
         GridBagLayout gbStars = new GridBagLayout();
