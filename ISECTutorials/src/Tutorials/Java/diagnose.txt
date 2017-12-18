@@ -45,7 +45,7 @@ Java Virtual Mechanism
 Java Virtual Machine
 Java Variable Machine
 Java Variable Mechanism
-2   
+2
 Q8 Wich of the following is generated when the source code is sucessfully compiled?
 Output
 Bytecode
