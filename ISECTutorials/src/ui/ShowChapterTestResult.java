@@ -164,6 +164,9 @@ public class ShowChapterTestResult
         gbcButtonPanel.weightx = 1;
         gbcButtonPanel.weighty = 0;
         gbcButtonPanel.anchor = GridBagConstraints.NORTH;
+        if(result < 4){
+            btNext.setEnabled(false);
+        }
 
         btNext.addActionListener((ActionEvent event)
                 ->

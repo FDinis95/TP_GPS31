@@ -36,6 +36,7 @@ public final class CreateMainMenu
     {
         frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setResizable(false);
         frame.setTitle("ISEC Tutorials");
         frame.setSize(new Dimension(800, 600));
         frame.setLocationRelativeTo(null);
