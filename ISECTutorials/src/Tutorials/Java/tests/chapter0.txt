@@ -28,7 +28,6 @@ James Gosling
 Joseph Sevin
 Curtis Campbell
 2
-4
 Q5 Java was first developed in
 1990
 1991
@@ -41,13 +40,12 @@ Oct
 Oak
 None of the above
 3
-Q7 Whats the full form of JVM
+Q7 Whats the full form of JVM?
 Java Virtual Mechanism
 Java Virtual Machine
 Java Variable Machine
 Java Variable Mechanism
 2   
-
 Q8 Wich of the following is generated when the source code is sucessfully compiled?
 Output
 Bytecode

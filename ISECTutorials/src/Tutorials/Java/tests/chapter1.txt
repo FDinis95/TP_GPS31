@@ -1,72 +1,72 @@
-Q0 Question one
-answer one
-answer two
-answer three
-answer four
-4
-Q1 Question two
-answer one
-answer two
-answer three
-answer four
-3
-Q2 Question three
-answer one
-answer two
-answer three
-answer four
-2
-Q3 Question four
-answer one
-answer two
-answer three
-answer four
+Q0 A Java Class can contain
+Local Variables, Instance Variables , Object Variables
+Local Variables, Object Variables, Instance Variables
+Local Variables, Instance Variables, Class Variables
+Instance variables, Object Variables, Class Variables
+3 
+Q1 Instance variables 
+Are variables within a class but outside any method. Instance variables can be accessed from inside any method, constructor or blocks of that particular class.
+Are variables in many methods. Instance variables can be accessed from inside any method, particular class.
+Are variables in a class constructor. Instance variables can be accessed from inside any method, constructor or blocks of that particular class.
+Are variables in one method. Instance variables can only be accessed from inside that method
 1
-Q4 Question five
-answer one
-answer two
-answer three
-answer four
+Q2 Which of the following can be operands of arithmetic operators?
+Numeric
+Boolean
+Characters
+Both Boolean & Characters
 4
-Q5 Question six
-answer one
-answer two
-answer three
-answer four
+Q3 Which of these function is used to allocate memory to array variable in Java?
+malloc
+alloc
+new
+calloc
 3
-Q6 Question seven
-answer one
-answer two
-answer three
-answer four
-2
-Q7 Question eight
-answer one
-answer two
-answer three
-answer four
+Q4 Which of these is necessary to specify at time of array initialization?
+Row
+Column
+Both Row and Column
+None of the mentioned
 1
-Q8 Question nine
-answer one
-answer two
-answer three
-answer four
+Q5 Given a one dimensional array arr, what is the correct way of getting the number of elements in arr.
+arr.length
+arr.length-1
+arr.size
+arr.size-1
+3
+Q6 Arrays in java are implemented as ?
+class
+object
+variable
+None of the mentioned
 4
-Q9 Question ten
-answer one
-answer two
-answer three
-answer four
+Q7 String is an __
+class
+Variable
+Array
+Data Type
 3
-Q10 Question eleven
-answer one
-answer two
-answer three
-answer four
-2
-Q11 Question twelve
-answer one
-answer two
-answer three
-answer four
+Q8 If s = "text", what is the value returned by s.length()?
+4
+5
+true
+false
 1
+Q9 What is the difference between a TextArea and a TextField?
+A textArea can handle multiple lines of text
+a textArea can be used for output
+TextArea is not a class
+TextAreas are used for displaying graphics
+1
+Q10 A compound system is :
+A collection of one or more statements enclosed in braces
+A statement involving if and else
+a way of declaring variables
+a way of setting the value of a variable
+3
+Q11 Which os these methods of string class es used to obtain character at specified index?
+char()
+Charat()
+charat()
+charAt()
+3

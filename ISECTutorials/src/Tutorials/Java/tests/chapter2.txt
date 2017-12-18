@@ -1,72 +1,72 @@
-Q0 Question one
-answer one
-answer two
-answer three
-answer four
-4
-Q1 Question two
-answer one
-answer two
-answer three
-answer four
-3
-Q2 Question three
-answer one
-answer two
-answer three
-answer four
-2
-Q3 Question four
-answer one
-answer two
-answer three
-answer four
+Q0 Which of these methods of string class can be used to test to strings for equality?
+isequal()
+isequals()
+equal()
+equals()
 1
-Q4 Question five
-answer one
-answer two
-answer three
-answer four
-4
-Q5 Question six
-answer one
-answer two
-answer three
-answer four
-3
-Q6 Question seven
-answer one
-answer two
-answer three
-answer four
+Q1 Which is a valid declaration of a string?
+String s1 = null;
+String s2 = 'null';
+String s3 = (String) 'abc';
+String s4 = (string) "\ufeed';
 2
-Q7 Question eight
-answer one
-answer two
-answer three
-answer four
-1
-Q8 Question nine
-answer one
-answer two
-answer three
-answer four
-4
-Q9 Question ten
-answer one
-answer two
-answer three
-answer four
+Q2 Which of the following features is not supported by java?
+Multithreading
+Reflection
+Operator Overloading
+Garbage Collection
 3
-Q10 Question eleven
-answer one
-answer two
-answer three
-answer four
-2
-Q11 Question twelve
-answer one
-answer two
-answer three
-answer four
+Q3 Which command is used to compile a java program ?
+javac
+java
+javad
+.javadoc
 1
+Q4 What does AWT stand for?
+Abstract windowing toolkit
+a web toolkit
+application with types
+absolutely wonderfull toolkit
+1
+Q5 Can we access private class outside the package?
+yes
+no
+---
+---
+2
+Q6 Which class can not be a subclass in java?
+Parent class
+Final class
+----
+----
+1
+Q7 The JDK command to compile a class in the file Test.java is :
+java Test
+javac Test.java
+javac Test
+----
+2
+Q8 Which of the following is not a primitive data type?
+byte
+short
+enum
+int
+3
+Q9 Which of the folloying is the smallest integer data type
+int
+long
+byte
+short
+3
+Q10 Which value can not store character data type?
+digit
+special character
+string
+letter
+1
+Q11 Which of the following data types comes under floating data type?
+byte
+int
+float
+long
+4
