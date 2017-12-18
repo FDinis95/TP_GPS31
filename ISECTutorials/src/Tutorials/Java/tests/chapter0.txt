@@ -1,27 +1,27 @@
-Q0 Question one
-answer one
-answer two
-answer three
-answer four
-4
-Q1 Question two
-answer one
-answer two
-answer three
-answer four
-3
-Q2 Question three
-answer one
-answer two
-answer three
-answer four
+Q0 Java is not
+Simple
+Platform Dependant
+Object Oriented
+Portable
 2
-Q3 Question four
-answer one
-answer two
-answer three
-answer four
+Q1 It’s important to remember
+Java is case sensitive so Class names should start with lowercase and methods with uppercase letter
+Java is case sensitive so Class and method names should start with lowercase letter
+Java is case sensitive so Class and method names should start with uppercase letter
+Java is case sensitive so Class names should start with uppercase and Methods with lowercase letter
+4
+Q2 Java is considered to be
+More dynamic than C and C++
+More dynamic than C and equally dynamic as C++
+More dynamic than C and less dynamic as C++
+None of the above
 1
+Q3 Identifiers can begin with
+Letters(a-z or A-Z) and currency($) and  numbers(0-9)
+Letters(a-z or A-Z) and numbers(0-9) and underscore (_)
+Letters(a-z or A-Z) and currency($) and underscore(_)
+Letters(a-z or A-Z)and numbers(0-9)
+3
 Q4 Question five
 answer one
 answer two
