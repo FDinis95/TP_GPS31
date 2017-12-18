@@ -54,21 +54,6 @@ public class ShowProgression
         gbcProgression.weightx = 1;
         gbcProgression.weighty = 1;
         gbcProgression.anchor = GridBagConstraints.NORTH;
-        gbProgression.setConstraints(pnPanel1, gbcProgression);
-        pnProgression.add(pnPanel1);
-
-        pnPanel2 = new JPanel();
-        GridBagLayout gbPanel2 = new GridBagLayout();
-        GridBagConstraints gbcPanel2 = new GridBagConstraints();
-        pnPanel2.setLayout(gbPanel2);
-        gbcProgression.gridx = 0;
-        gbcProgression.gridy = 3;
-        gbcProgression.gridwidth = 20;
-        gbcProgression.gridheight = 5;
-        gbcProgression.fill = GridBagConstraints.BOTH;
-        gbcProgression.weightx = 1;
-        gbcProgression.weighty = 1;
-        gbcProgression.anchor = GridBagConstraints.NORTH;
 
         help = new Helper();
         stars = help.fillStars(pro);
@@ -90,12 +75,38 @@ public class ShowProgression
         str4.setIcon(new ImageIcon(stars[3]));
         str5.setIcon(new ImageIcon(stars[4]));
 
-        pnPanel2.add(str1);
-        pnPanel2.add(str2);
-        pnPanel2.add(str3);
-        pnPanel2.add(str4);
-        pnPanel2.add(str5);
+        pnPanel1.add(str1);
+        pnPanel1.add(str2);
+        pnPanel1.add(str3);
+        pnPanel1.add(str4);
+        pnPanel1.add(str5);
 
+        gbProgression.setConstraints(pnPanel1, gbcProgression);
+        pnProgression.add(pnPanel1);
+
+        pnPanel2 = new JPanel();
+        GridBagLayout gbPanel2 = new GridBagLayout();
+        GridBagConstraints gbcPanel2 = new GridBagConstraints();
+        pnPanel2.setLayout(gbPanel2);
+        gbcProgression.gridx = 0;
+        gbcProgression.gridy = 3;
+        gbcProgression.gridwidth = 20;
+        gbcProgression.gridheight = 5;
+        gbcProgression.fill = GridBagConstraints.BOTH;
+        gbcProgression.weightx = 1;
+        gbcProgression.weighty = 1;
+        gbcProgression.anchor = GridBagConstraints.NORTH;
+
+        int[] chapters = pro.getChapter();
+        int var = 0;
+        for (int i = 0; i < 10; i++)
+        {
+            var += chapters[i];
+        }
+
+        JLabel text = new JLabel(var + " chapters unlocked!");
+        pnPanel2.add(text);
+        
         gbProgression.setConstraints(pnPanel2, gbcProgression);
         pnProgression.add(pnPanel2);
 
