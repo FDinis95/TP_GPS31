@@ -20,9 +20,8 @@ import logic.ValidateTestResult;
 
 public class ChapterTest {
 
-    int[] answers = new int[20];
-    int[] corrects = new int[20];
-    int[] chapters = new int[20];
+    int[] answers = new int[7];
+    int[] corrects = new int[7];
     int index = 0;
 
     public ChapterTest()
@@ -76,7 +75,7 @@ public class ChapterTest {
                     if (radioBtn0.isSelected()) {
                         radioMenu.clearSelection();
                         radioBtn0.setSelected(true);
-                        answers[questionNumber] = 0;
+                        answers[questionNumber] = 1;
                     }
                 });
                 JRadioButton radioBtn1 = new JRadioButton(s[1]);
@@ -85,7 +84,7 @@ public class ChapterTest {
                     if (radioBtn1.isSelected()) {
                         radioMenu.clearSelection();
                         radioBtn1.setSelected(true);
-                        answers[questionNumber] = 1;
+                        answers[questionNumber] = 2;
                     }
                 });
                 JRadioButton radioBtn2 = new JRadioButton(s[2]);
@@ -94,7 +93,7 @@ public class ChapterTest {
                     if (radioBtn2.isSelected()) {
                         radioMenu.clearSelection();
                         radioBtn2.setSelected(true);
-                        answers[questionNumber] = 2;
+                        answers[questionNumber] = 3;
                     }
                 });
                 JRadioButton radioBtn3 = new JRadioButton(s[3]);
@@ -103,7 +102,7 @@ public class ChapterTest {
                     if (radioBtn3.isSelected()) {
                         radioMenu.clearSelection();
                         radioBtn3.setSelected(true);
-                        answers[questionNumber] = 3;
+                        answers[questionNumber] = 4;
                     }
                 });
 
@@ -118,7 +117,6 @@ public class ChapterTest {
 
             }
             corrects[i] = q.getCorrect();
-            chapters[i] = q.getChapter();
         }
 
         JPanel btnPanel = new JPanel();
@@ -127,11 +125,12 @@ public class ChapterTest {
         btnNext.addActionListener((ActionEvent event)
                 -> {
             for (int j = 0; j < quests.size(); j++) {
-                System.out.println(answers[j] + " " + corrects[j] + " " + chapters[j]);
+                System.out.println(answers[j] + " " + corrects[j] + " " + index);
             }
-            int temp = new ValidateTestResult().validateEvaluationTest(answers, corrects, chapters, pro);
-//            cardPanel.add(new ShowChapterTestResult().results(path, cards, cardPanel, pro, temp), "chapresults");
-//            cards.show(cardPanel, "chapresults");
+            System.err.println("Chap test index" + index);
+            int temp = new ValidateTestResult().validateChapterTest(answers, corrects, index, pro);
+            cardPanel.add(new ShowChapterTestResult().chapterResults(path, cards, cardPanel, pro, temp, index), "chapresults");
+            cards.show(cardPanel, "chapresults");
         });
         
         JButton btnCancel = new JButton("Cancel");
