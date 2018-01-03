@@ -1,78 +1,72 @@
-Q0 Question one
-answer one
-answer two
-answer three
-answer four
-4
-Q1 Question two
-answer one
-answer two
-answer three
-answer four
-3
-Q2 Question three
-answer one
-answer two
-answer three
-answer four
+Q0 Java is not
+Simple
+Platform Dependant
+Object Oriented
+Portable
 2
-Q3 Question four
-answer one
-answer two
-answer three
-answer four
-1
-Q4 Question five
-answer one
-answer two
-answer three
-answer four
+Q1 It’s important to remember
+Java is case sensitive so Class names should start with lowercase and methods with uppercase letter
+Java is case sensitive so Class and method names should start with lowercase letter
+Java is case sensitive so Class and method names should start with uppercase letter
+Java is case sensitive so Class names should start with uppercase and Methods with lowercase letter
 4
-Q5 Question six
-answer one
-answer two
-answer three
-answer four
-3
-Q6 Question seven
-answer one
-answer two
-answer three
-answer four
-2
-Q7 Question eight
-answer one
-answer two
-answer three
-answer four
+Q2 Java is considered to be
+More dynamic than C and C++
+More dynamic than C and equally dynamic as C++
+More dynamic than C and less dynamic as C++
+None of the above
 1
-Q8 Question nine
-answer one
-answer two
-answer three
-answer four
-4
-Q9 Question ten
-answer one
-answer two
-answer three
-answer four
+Q3 Identifiers can begin with
+Letters(a-z or A-Z) and currency($) and  numbers(0-9)
+Letters(a-z or A-Z) and numbers(0-9) and underscore (_)
+Letters(a-z or A-Z) and currency($) and underscore(_)
+Letters(a-z or A-Z)and numbers(0-9)
 3
-Q10 Question eleven
-answer one
-answer two
-answer three
-answer four
+Q4 Who initiated the Java Language Project in 1991?
+Ryan Gosling
+James Gosling
+Joseph Sevin
+Curtis Campbell
 2
-Q11 Question twelve
-answer one
-answer two
-answer three
-answer four
-1
-Q12 Question thirteen
-answer one
-answer two
-answer three
-answer four
+Q5 Java was first developed in
+1990
+1991
+1993
+1996
+2
+Q6 What was the first name for Java?
+J language
+Oct
+Oak
+None of the above
 3
+Q7 Whats the full form of JVM?
+Java Virtual Mechanism
+Java Virtual Machine
+Java Variable Machine
+Java Variable Mechanism
+2
+Q8 Wich of the following is generated when the source code is sucessfully compiled?
+Output
+Bytecode
+Error
+None of the above
+2
+Q9 The extension name of a Java source code file is ?
+.java
+.onj
+.class
+.exe
+1
+Q10 ___ is a software that interprets Java bytecode.
+Java Virtual Machine
+Java Compiler
+Java Debugger
+Java API
+1
+Q11 Wich of these is an illegal identifier
+$salary
+123age
+_name
+_1_value
+2

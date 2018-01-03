@@ -1,9 +1,83 @@
-Teste 1
+Objects
 
- Lorem ipsum dolor sit amet, aliquet donec, natoque vulputate pretium erat pede, turpis sed est faucibus mi aenean. Aliquet mauris in, ipsum convallis lobortis sed. Ut libero natoque leo viverra feugiat, quos erat venenatis tortor vel nisl consequat, tempus dui, sed wisi vestibulum in gravida vivamus suspendisse, quam convallis quis vel quam sed eleifend. In praesent ullamcorper cras, dapibus sed felis justo, egestas in. Arcu et vitae pellentesque parturient dictum, lobortis mauris mauris tortor tincidunt vestibulum mollis, ornare integer hendrerit eget ac at. Nulla aliquet enim vitae arcu, dolor nec litora blandit mauris, mattis vestibulum et ut nisi, morbi pede, scelerisque pellentesque justo nonummy.
+Java is an Object-Oriented Language. As a language that has the Object-Oriented feature, Java supports the following fundamental concepts −
+    Polymorphism
+    Inheritance
+    Encapsulation
+    Abstraction
+    Classes
+    Objects
+    Instance
+    Method
+    Message Parsing
 
-In felis arcu quisque, nunc erat scelerisque neque nostra velit augue, tellus vel nonummy nonummy fusce a. Scelerisque vel vel. Sequi pharetra sed eu morbi leo, tellus aenean, ac fusce vehicula est eget, quisque porttitor ultricies mauris fringilla elementum eget, vel integer feugiat praesent mi. Quam nec nunc suspendisse tortor eleifend. Sed morbi libero pede habitant interdum, neque et in aenean at molestie, placerat mi augue justo, eu iaculis accumsan sit eget phasellus arcu, eget in ipsum. Donec in nullam ipsum, gravida magna, turpis auctor a eleifend, nec eget, sed tempus interdum eros non massa vitae. Senectus elit, sodales magna phasellus quia nunc, elit tincidunt odio euismod ultrices rutrum eleifend, vitae taciti eros fusce. Justo eros, velit gravida iusto augue id, volutpat nulla aenean donec magna consectetuer non.
+In this chapter, we will look into the concepts - Classes and Objects.
+    Object − Objects have states and behaviors. Example: A dog has states - color, name, breed as well as behaviors – wagging the tail, barking, eating. An object is an instance of a class.
+    Class − A class can be defined as a template/blueprint that describes the behavior/state that the object of its type support.
+    Objects in Java
 
-Aliquam elit ac adipiscing aliquet, lacus enim rutrum tincidunt, pharetra quis quisque sem lacinia aliquet varius. Erat tellus. Pulvinar amet risus, ante feugiat sapien sed scelerisque, consequat cras sociis sapien sollicitudin, nec lacus orci. Augue lacinia donec quis mus urna, duis accumsan at at facilisis, faucibus volutpat duis felis. Luctus vel duis ante viverra aliquam, est condimentum duis.
+Let us now look deep into what are objects. If we consider the real-world, we can find many objects around us, cars, dogs, humans, etc. All these objects have a state and a behavior.
 
-Semper wisi id nisl sodales consequat nobis, ligula sociis aenean diam wisi, feugiat purus placerat ac sodales consequat lorem. Ut fusce euismod ut vitae purus, nunc ipsum vestibulum, vestibulum suscipit mauris eros libero sed odio. Viverra consequat quis erat, dis mauris sed non adipiscing natoque nunc, mauris ligula turpis consectetuer aliquam rhoncus quis, odio mauris vehicula montes at. Nec in totam, quis ad mi id odio justo viverra, dis wisi nullam odio imperdiet sociis porttitor. Risus eu, eros id, erat elit molestie lorem, cras per quam, aptent metus vulputate tempor veniam. Felis odio nec curabitur eu sed aenean, nulla parturient magnis fringilla fugiat ligula, lorem habitasse conubia feugiat torquent feugiat. Praesent dolore feugiat sapien. At provident ante pellentesque id luctus, odio nascetur diam quis, lacus dolor tellus pharetra, cursus ultrices maecenas condimentum odio ridiculus, proin ac non in mauris.
+If we consider a dog, then its state is - name, breed, color, and the behavior is - barking, wagging the tail, running.
+
+If you compare the software object with a real-world object, they have very similar characteristics.
+
+Software objects also have a state and a behavior. A software object's state is stored in fields and behavior is shown via methods.
+
+So in software development, methods operate on the internal state of an object and the object-to-object communication is done via methods.
+
+Classes in Java
+A class is a blueprint from which individual objects are created.
+Following is a sample of a class.
+Example
+public class Dog {
+   String breed;
+   int age;
+   String color;
+
+   void barking() {
+   }
+
+   void hungry() {
+   }
+
+   void sleeping() {
+   }
+}
+
+A class can contain any of the following variable types.
+    Local variables − Variables defined inside methods, constructors or blocks are called local variables. The variable will be declared and initialized within the method and the variable will be destroyed when the method has completed.
+    Instance variables − Instance variables are variables within a class but outside any method. These variables are initialized when the class is instantiated. Instance variables can be accessed from inside any method, constructor or blocks of that particular class.
+    Class variables − Class variables are variables declared within a class, outside any method, with the static keyword.
+
+A class can have any number of methods to access the value of various kinds of methods. In the above example, barking(), hungry() and sleeping() are methods.
+
+Following are some of the important topics that need to be discussed when looking into classes of the Java Language.
+Constructors
+
+When discussing about classes, one of the most important sub topic would be constructors. Every class has a constructor. If we do not explicitly write a constructor for a class, the Java compiler builds a default constructor for that class.
+
+Each time a new object is created, at least one constructor will be invoked. The main rule of constructors is that they should have the same name as the class. A class can have more than one constructor.
+
+Following is an example of a constructor −
+Example
+public class Puppy {
+   public Puppy() {
+   }
+
+   public Puppy(String name) {
+      // This constructor has one parameter, name.
+   }
+}
+
+Java also supports Singleton Classes where you would be able to create only one instance of a class.
+
+Note − We have two different types of constructors. We are going to discuss constructors in detail in the subsequent chapters.
+
+Creating an Object
+As mentioned previously, a class provides the blueprints for objects. So basically, an object is created from a class. In Java, the new keyword is used to create new objects.
+
+There are three steps when creating an object from a class −
+    Declaration − A variable declaration with a variable name with an object type.
+    Instantiation − The 'new' keyword is used to create the object.
+    Initialization − The 'new' keyword is followed by a call to a constructor. This call initializes the new object.

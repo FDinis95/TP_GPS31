@@ -18,20 +18,17 @@ import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import logic.ValidateTestResult;
 
-public class EvaluationTest extends JPanel
-{
+public class EvaluationTest extends JPanel {
 
     int[] answers = new int[20];
     int[] corrects = new int[20];
     int[] chapters = new int[20];
     int index = 0;
 
-    public EvaluationTest()
-    {
+    public EvaluationTest() {
     }
 
-    public JPanel evaluation(String path, CardLayout cards, JPanel cardPanel, Progression pro)
-    {
+    public JPanel evaluation(String path, CardLayout cards, JPanel cardPanel, Progression pro) {
         Arrays.fill(answers, -1);
         JPanel evalCard = new JPanel();
         JPanel pnCentral;
@@ -40,12 +37,12 @@ public class EvaluationTest extends JPanel
         GridBagConstraints gbcPanel0 = new GridBagConstraints();
         evalCard.setLayout(gbPanel0);
 
-        JPanel Menu = new JPanel();
+        JPanel menu = new JPanel();
         GridBagLayout gbMenu = new GridBagLayout();
         GridBagConstraints gbcMenu = new GridBagConstraints();
-        Menu.setLayout(gbMenu);
+        menu.setLayout(gbMenu);
 
-        JButton Button = new JButton("SKIP");
+        JButton button = new JButton("SKIP");
         gbcMenu.gridx = 0;
         gbcMenu.gridy = 0;
         gbcMenu.gridwidth = 6;
@@ -54,29 +51,17 @@ public class EvaluationTest extends JPanel
         gbcMenu.weightx = 1;
         gbcMenu.weighty = 1;
         gbcMenu.anchor = GridBagConstraints.WEST;
-      
-        Button.addActionListener((ActionEvent event) ->
-        {
-            cardPanel.add(new ShowTutorial().tutorial(path, index, cards, cardPanel), "tutorials");
+
+        button.addActionListener((ActionEvent event)
+                -> {
+            cardPanel.add(new ShowTutorial().tutorial(path, index, cards, cardPanel, pro), "tutorials");
             cards.show(cardPanel, "tutorials");
 
         });
-        
-        gbMenu.setConstraints(Button, gbcMenu);
-        Menu.add(Button);
 
-//        JButton Button1 = new JButton("Progress");
-//        gbcMenu.gridx = 7;
-//        gbcMenu.gridy = 0;
-//        gbcMenu.gridwidth = 6;
-//        gbcMenu.gridheight = 5;
-//        gbcMenu.fill = GridBagConstraints.BOTH;
-//        gbcMenu.weightx = 1;
-//        gbcMenu.weighty = 1;
-//        gbcMenu.anchor = GridBagConstraints.WEST;
-//        gbMenu.setConstraints(Button1, gbcMenu);
-//        Menu.add(Button1);
-        
+        gbMenu.setConstraints(button, gbcMenu);
+        menu.add(button);
+
         gbcPanel0.gridx = 0;
         gbcPanel0.gridy = 0;
         gbcPanel0.gridwidth = 30;
@@ -85,16 +70,16 @@ public class EvaluationTest extends JPanel
         gbcPanel0.weightx = 1;
         gbcPanel0.weighty = 0;
         gbcPanel0.anchor = GridBagConstraints.NORTH;
-        gbPanel0.setConstraints(Menu, gbcPanel0);
-        
-        evalCard.add(Menu);
-        
+        gbPanel0.setConstraints(menu, gbcPanel0);
+
+        evalCard.add(menu);
+
         pnCentral = new JPanel();
         GridBagLayout gbCentral = new GridBagLayout();
         GridBagConstraints gbcCentral = new GridBagConstraints();
         pnCentral.setLayout(gbCentral);
         JScrollPane scpCentral = new JScrollPane(pnCentral);
-        
+
         gbcPanel0.gridx = 5;
         gbcPanel0.gridy = GridBagConstraints.RELATIVE;
         gbcPanel0.gridwidth = 10;
@@ -104,8 +89,6 @@ public class EvaluationTest extends JPanel
         gbcPanel0.weighty = 1;
         gbcPanel0.anchor = GridBagConstraints.NORTH;
 
-
-        
         JPanel scrollable = new JPanel();
         scrollable.setLayout(new BoxLayout(scrollable, BoxLayout.Y_AXIS));
 
@@ -113,11 +96,9 @@ public class EvaluationTest extends JPanel
         scrollable.add(new JLabel("Answer the following questions to validate your knowledge\n"));
         scrollable.add(new JLabel("\n"));
 
-        System.err.println("Evaluation path: " + path);
         LoadQuestions lq = new LoadQuestions(path + "\\diagnose.txt");
         List<Question> quests = lq.getQuestions();
-        for (int i = 0; i < quests.size(); i++)
-        {
+        for (int i = 0; i < quests.size(); i++) {
             int questionNumber = i;
             Question q = quests.get(i);
             String s[] = q.getAnswers();
@@ -125,46 +106,42 @@ public class EvaluationTest extends JPanel
             {
                 ButtonGroup radioMenu = new ButtonGroup();
                 JRadioButton radioBtn0 = new JRadioButton(s[0]);
-                radioBtn0.addActionListener((e) ->
-                {
-                    if (radioBtn0.isSelected())
-                    {
+                radioBtn0.addActionListener((e)
+                        -> {
+                    if (radioBtn0.isSelected()) {
                         radioMenu.clearSelection();
                         radioBtn0.setSelected(true);
-                        answers[questionNumber]=0;
-                    }
-                });
-                JRadioButton radioBtn1 = new JRadioButton(s[1]);
-                radioBtn1.addActionListener((e) ->
-                {
-                    if (radioBtn1.isSelected())
-                    {
-                        radioMenu.clearSelection();
-                        radioBtn1.setSelected(true);
                         answers[questionNumber] = 1;
                     }
                 });
-                JRadioButton radioBtn2 = new JRadioButton(s[2]);
-                radioBtn2.addActionListener((e) ->
-                {
-                    if (radioBtn2.isSelected())
-                    {
+                JRadioButton radioBtn1 = new JRadioButton(s[1]);
+                radioBtn1.addActionListener((e)
+                        -> {
+                    if (radioBtn1.isSelected()) {
                         radioMenu.clearSelection();
-                        radioBtn2.setSelected(true);
+                        radioBtn1.setSelected(true);
                         answers[questionNumber] = 2;
                     }
                 });
-                JRadioButton radioBtn3 = new JRadioButton(s[3]);
-                radioBtn3.addActionListener((e) ->
-                {
-                    if (radioBtn3.isSelected())
-                    {
+                JRadioButton radioBtn2 = new JRadioButton(s[2]);
+                radioBtn2.addActionListener((e)
+                        -> {
+                    if (radioBtn2.isSelected()) {
                         radioMenu.clearSelection();
-                        radioBtn3.setSelected(true);
+                        radioBtn2.setSelected(true);
                         answers[questionNumber] = 3;
                     }
                 });
-                
+                JRadioButton radioBtn3 = new JRadioButton(s[3]);
+                radioBtn3.addActionListener((e)
+                        -> {
+                    if (radioBtn3.isSelected()) {
+                        radioMenu.clearSelection();
+                        radioBtn3.setSelected(true);
+                        answers[questionNumber] = 4;
+                    }
+                });
+
                 radioMenu.add(radioBtn0);
                 radioMenu.add(radioBtn1);
                 radioMenu.add(radioBtn2);
@@ -179,17 +156,14 @@ public class EvaluationTest extends JPanel
             chapters[i] = q.getChapter();
         }
 
-
         JPanel btnPanel = new JPanel();
-
-
         JButton btnNext = new JButton("Next");
-        btnNext.addActionListener((ActionEvent event) ->
-        {
-            for (int j = 0; j < quests.size(); j++)
-            {
-                System.out.println(answers[j]+" "+ corrects[j] +" "+chapters[j]);
-            }
+        btnNext.addActionListener((ActionEvent event)
+                -> {
+//            for (int j = 0; j < quests.size(); j++)
+//            {
+//                System.out.println(answers[j] + " " + corrects[j] + " " + chapters[j]);
+//            }
             int temp = new ValidateTestResult().validateEvaluationTest(answers, corrects, chapters, pro);
             cardPanel.add(new ShowEvaluationTestResult().results(path, cards, cardPanel, pro, temp), "evaluationresults");
             cards.show(cardPanel, "evaluationresults");
