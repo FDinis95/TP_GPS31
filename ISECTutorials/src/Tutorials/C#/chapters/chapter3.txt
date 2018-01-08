@@ -1,9 +1,214 @@
-Teste 3
+An operator is a symbol that tells the compiler to perform specific mathematical or logical manipulations. C# has rich set of built-in operators and provides the following type of operators −
 
- Lorem ipsum dolor sit amet, aliquet donec, natoque vulputate pretium erat pede, turpis sed est faucibus mi aenean. Aliquet mauris in, ipsum convallis lobortis sed. Ut libero natoque leo viverra feugiat, quos erat venenatis tortor vel nisl consequat, tempus dui, sed wisi vestibulum in gravida vivamus suspendisse, quam convallis quis vel quam sed eleifend. In praesent ullamcorper cras, dapibus sed felis justo, egestas in. Arcu et vitae pellentesque parturient dictum, lobortis mauris mauris tortor tincidunt vestibulum mollis, ornare integer hendrerit eget ac at. Nulla aliquet enim vitae arcu, dolor nec litora blandit mauris, mattis vestibulum et ut nisi, morbi pede, scelerisque pellentesque justo nonummy.
+Arithmetic Operators
+Relational Operators
+Logical Operators
+Bitwise Operators
+Assignment Operators
+Misc Operators
+This tutorial explains the arithmetic, relational, logical, bitwise, assignment, and other operators one by one.
 
-In felis arcu quisque, nunc erat scelerisque neque nostra velit augue, tellus vel nonummy nonummy fusce a. Scelerisque vel vel. Sequi pharetra sed eu morbi leo, tellus aenean, ac fusce vehicula est eget, quisque porttitor ultricies mauris fringilla elementum eget, vel integer feugiat praesent mi. Quam nec nunc suspendisse tortor eleifend. Sed morbi libero pede habitant interdum, neque et in aenean at molestie, placerat mi augue justo, eu iaculis accumsan sit eget phasellus arcu, eget in ipsum. Donec in nullam ipsum, gravida magna, turpis auctor a eleifend, nec eget, sed tempus interdum eros non massa vitae. Senectus elit, sodales magna phasellus quia nunc, elit tincidunt odio euismod ultrices rutrum eleifend, vitae taciti eros fusce. Justo eros, velit gravida iusto augue id, volutpat nulla aenean donec magna consectetuer non.
+Arithmetic Operators
+Following table shows all the arithmetic operators supported by C#. Assume variable A holds 10 and variable B holds 20 then −
 
-Aliquam elit ac adipiscing aliquet, lacus enim rutrum tincidunt, pharetra quis quisque sem lacinia aliquet varius. Erat tellus. Pulvinar amet risus, ante feugiat sapien sed scelerisque, consequat cras sociis sapien sollicitudin, nec lacus orci. Augue lacinia donec quis mus urna, duis accumsan at at facilisis, faucibus volutpat duis felis. Luctus vel duis ante viverra aliquam, est condimentum duis.
+Show Examples
 
-Semper wisi id nisl sodales consequat nobis, ligula sociis aenean diam wisi, feugiat purus placerat ac sodales consequat lorem. Ut fusce euismod ut vitae purus, nunc ipsum vestibulum, vestibulum suscipit mauris eros libero sed odio. Viverra consequat quis erat, dis mauris sed non adipiscing natoque nunc, mauris ligula turpis consectetuer aliquam rhoncus quis, odio mauris vehicula montes at. Nec in totam, quis ad mi id odio justo viverra, dis wisi nullam odio imperdiet sociis porttitor. Risus eu, eros id, erat elit molestie lorem, cras per quam, aptent metus vulputate tempor veniam. Felis odio nec curabitur eu sed aenean, nulla parturient magnis fringilla fugiat ligula, lorem habitasse conubia feugiat torquent feugiat. Praesent dolore feugiat sapien. At provident ante pellentesque id luctus, odio nascetur diam quis, lacus dolor tellus pharetra, cursus ultrices maecenas condimentum odio ridiculus, proin ac non in mauris.
+Operator	Example
++               A + B = 30
+-               A - B = -10
+*               A * B = 200
+/               B / A = 2
+%               B % A = 0
+++              A++ = 11
+--              A-- = 9
+
+Relational Operators
+Following table shows all the relational operators supported by C#. Assume variable A holds 10 and variable B holds 20, then:
+
+Show Examples
+
+Operator	Example
+==              (A=5;B=10)(A == B) is not true.
+!=              (A=5;B=10)(A != B) is true.
+>		(A=5;B=10)(A > B) is not true.
+<		(A=5;B=10)(A < B) is true.
+>=		(A=5;B=10)(A >= B) is not true.
+<=		(A=5;B=10)(A <= B) is true.
+
+Logical Operators
+Following table shows all the logical operators supported by C#. Assume variable A holds Boolean value true and variable B holds Boolean value false, then −
+
+Show Examples
+
+Operator	Description
+&&              Called Logical AND operator. If both the operands are non zero then condition becomes true.
+||              Called Logical OR Operator. If any of the two operands is non zero then condition becomes true.
+!               Called Logical NOT Operator. Use to reverses the logical state of its operand. If a condition is true then Logical NOT operator will make false.
+
+Bitwise Operators
+Bitwise operator works on bits and perform bit by bit operation. The truth tables for &, |, and ^ are as follows :
+
+p	q	p & q	p | q	p ^ q
+0	0	0	0	0
+0	1	0	1	1
+1	1	1	1	0
+1	0	0	1	1
+Assume if A = 60; and B = 13; then in the binary format they are as follows:
+
+A = 0011 1100
+
+B = 0000 1101
+
+-------------------
+
+A&B = 0000 1100
+
+A|B = 0011 1101
+
+A^B = 0011 0001
+
+~A  = 1100 0011
+
+The Bitwise operators supported by C# are listed in the following table. Assume variable A holds 60 and variable B holds 13, then:
+
+Show Examples
+
+Operator	Description	Example
+&	Binary AND Operator copies a bit to the result if it exists in both operands.	(A & B) = 12, which is 0000 1100
+|	Binary OR Operator copies a bit if it exists in either operand.	(A | B) = 61, which is 0011 1101
+^	Binary XOR Operator copies the bit if it is set in one operand but not both.	(A ^ B) = 49, which is 0011 0001
+~	Binary Ones Complement Operator is unary and has the effect of 'flipping' bits.	(~A ) = 61, which is 1100 0011 in 2's complement due to a signed binary number.
+<<	Binary Left Shift Operator. The left operands value is moved left by the number of bits specified by the right operand.	A << 2 = 240, which is 1111 0000
+>>	Binary Right Shift Operator. The left operands value is moved right by the number of bits specified by the right operand.	A >> 2 = 15, which is 0000 1111
+
+Assignment Operators
+There are following assignment operators supported by C# −
+
+Show Examples
+
+Operator	Description	Example
+=	Simple assignment operator, Assigns values from right side operands to left side operand	C = A + B assigns value of A + B into C
++=	Add AND assignment operator, It adds right operand to the left operand and assign the result to left operand	C += A is equivalent to C = C + A
+-=	Subtract AND assignment operator, It subtracts right operand from the left operand and assign the result to left operand	C -= A is equivalent to C = C - A
+*=	Multiply AND assignment operator, It multiplies right operand with the left operand and assign the result to left operand	C *= A is equivalent to C = C * A
+/=	Divide AND assignment operator, It divides left operand with the right operand and assign the result to left operand	C /= A is equivalent to C = C / A
+%=	Modulus AND assignment operator, It takes modulus using two operands and assign the result to left operand	C %= A is equivalent to C = C % A
+<<=	Left shift AND assignment operator	C <<= 2 is same as C = C << 2
+>>=	Right shift AND assignment operator	C >>= 2 is same as C = C >> 2
+&=	Bitwise AND assignment operator	C &= 2 is same as C = C & 2
+^=	bitwise exclusive OR and assignment operator	C ^= 2 is same as C = C ^ 2
+|=	bitwise inclusive OR and assignment operator	C |= 2 is same as C = C | 2
+
+Miscellaneous Operators
+There are few other important operators including sizeof, typeof and ? : supported by C#.
+
+Show Examples
+
+Operator	Description
+sizeof()	Returns the size of a data type.
+typeof()	Returns the type of a class.
+&               Returns the address of an variable
+*               Pointer to a variable.
+? :             Conditional Expression
+is              Determines whether an object is of a certain type.
+as              Cast without raising an exception if the cast fails.
+
+Operator Precedence in C#
+Operator precedence determines the grouping of terms in an expression. This affects evaluation of an expression. Certain operators have higher precedence than others; for example, the multiplication operator has higher precedence than the addition operator.
+
+For example x = 7 + 3 * 2; here, x is assigned 13, not 20 because operator * has higher precedence than +, so the first evaluation takes place for 3*2 and then 7 is added into it.
+
+Here, operators with the highest precedence appear at the top of the table, those with the lowest appear at the bottom. Within an expression, higher precedence operators are evaluated first.
+
+Show Examples
+
+Category	Operator                            Associativity
+Postfix         () [] -> . ++ - -                   Left to right
+Unary           + - ! ~ ++ - - (type)* & sizeof     Right to left
+Multiplicative	* / %                               Left to right
+Additive	+ -                                 Left to right
+Shift           << >>                               Left to right
+Relational	< <= > >=                           Left to right
+Equality	== !=                               Left to right
+Bitwise AND	&                                   Left to right
+Bitwise XOR	^                                   Left to right
+Bitwise OR	|                                   Left to right
+Logical AND	&&                                  Left to right
+Logical OR	||                                  Left to right
+Conditional	?:                                  Right to left
+Assignment	= += -= *= /= %=>>= <<= &= ^= |=    Right to left
+Comma	,                                           Left to right
+
+Decision making structures requires the programmer to specify one or more conditions to be evaluated or tested by the program, along with a statement or statements to be executed if the condition is determined to be true, and optionally, other statements to be executed if the condition is determined to be false.
+
+Sr.	Statement & Description
+1	if statement
+An if statement consists of a boolean expression followed by one or more statements.
+
+2	if...else statement
+An if statement can be followed by an optional else statement, which executes when the boolean expression is false.
+
+3	nested if statements
+You can use one if or else if statement inside another if or else if statement(s).
+
+4	switch statement
+A switch statement allows a variable to be tested for equality against a list of values.
+
+5	nested switch statements
+You can use one switch statement inside another switch statement(s).
+
+The ? : Operator
+We have covered conditional operator ? : which can be used to replace if...else statements. It has the following general form:
+
+Exp1 ? Exp2 : Exp3;
+Where Exp1, Exp2, and Exp3 are expressions. Notice the use and placement of the colon.
+
+The value of a ? expression is determined as follows: Exp1 is evaluated. If it is true, then Exp2 is evaluated and becomes the value of the entire ? expression. If Exp1 is false, then Exp3 is evaluated and its value becomes the value of the expression.
+
+There may be a situation, when you need to execute a block of code several number of times. In general, the statements are executed sequentially: The first statement in a function is executed first, followed by the second, and so on.
+
+Programming languages provide various control structures that allow for more complicated execution paths.
+
+C# provides following types of loop to handle looping requirements. Click the following links to check their detail.
+
+Sr.No.	Loop Type & Description
+1	while loop
+It repeats a statement or a group of statements while a given condition is true. It tests the condition before executing the loop body.
+
+2	for loop
+It executes a sequence of statements multiple times and abbreviates the code that manages the loop variable.
+
+3	do...while loop
+It is similar to a while statement, except that it tests the condition at the end of the loop body
+
+4	nested loops
+You can use one or more loop inside any another while, for or do..while loop.
+
+Loop Control Statements
+Loop control statements change execution from its normal sequence. When execution leaves a scope, all automatic objects that were created in that scope are destroyed.
+
+C# provides the following control statements. Click the following links to check their details.
+
+Sr.No.	Control Statement & Description
+1	break statement
+Terminates the loop or switch statement and transfers execution to the statement immediately following the loop or switch.
+
+2	continue statement
+Causes the loop to skip the remainder of its body and immediately retest its condition prior to reiterating.
+
+Infinite Loop
+A loop becomes infinite loop if a condition never becomes false. The for loop is traditionally used for this purpose. Since none of the three expressions that form the for loop are required, you can make an endless loop by leaving the conditional expression empty.
+
+Example
+using System;
+
+namespace Loops {
+   class Program {
+      static void Main(string[] args) {
+         for (; ; ) {
+            Console.WriteLine("Hey! I am Trapped");
+         }
+      }
+   }
+} 
+When the conditional expression is absent, it is assumed to be true. You may have an initialization and increment expression, but programmers more commonly use the for(;;) construct to signify an infinite loop.

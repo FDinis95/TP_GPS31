@@ -1,9 +1,537 @@
-Teste 9
+An interface is defined as a syntactical contract that all the classes inheriting the interface should follow. The interface defines the 'what' part of the syntactical contract and the deriving classes define the 'how' part of the syntactical contract.
 
- Lorem ipsum dolor sit amet, aliquet donec, natoque vulputate pretium erat pede, turpis sed est faucibus mi aenean. Aliquet mauris in, ipsum convallis lobortis sed. Ut libero natoque leo viverra feugiat, quos erat venenatis tortor vel nisl consequat, tempus dui, sed wisi vestibulum in gravida vivamus suspendisse, quam convallis quis vel quam sed eleifend. In praesent ullamcorper cras, dapibus sed felis justo, egestas in. Arcu et vitae pellentesque parturient dictum, lobortis mauris mauris tortor tincidunt vestibulum mollis, ornare integer hendrerit eget ac at. Nulla aliquet enim vitae arcu, dolor nec litora blandit mauris, mattis vestibulum et ut nisi, morbi pede, scelerisque pellentesque justo nonummy.
+Interfaces define properties, methods, and events, which are the members of the interface. Interfaces contain only the declaration of the members. It is the responsibility of the deriving class to define the members. It often helps in providing a standard structure that the deriving classes would follow.
 
-In felis arcu quisque, nunc erat scelerisque neque nostra velit augue, tellus vel nonummy nonummy fusce a. Scelerisque vel vel. Sequi pharetra sed eu morbi leo, tellus aenean, ac fusce vehicula est eget, quisque porttitor ultricies mauris fringilla elementum eget, vel integer feugiat praesent mi. Quam nec nunc suspendisse tortor eleifend. Sed morbi libero pede habitant interdum, neque et in aenean at molestie, placerat mi augue justo, eu iaculis accumsan sit eget phasellus arcu, eget in ipsum. Donec in nullam ipsum, gravida magna, turpis auctor a eleifend, nec eget, sed tempus interdum eros non massa vitae. Senectus elit, sodales magna phasellus quia nunc, elit tincidunt odio euismod ultrices rutrum eleifend, vitae taciti eros fusce. Justo eros, velit gravida iusto augue id, volutpat nulla aenean donec magna consectetuer non.
+Abstract classes to some extent serve the same purpose, however, they are mostly used when only few methods are to be declared by the base class and the deriving class implements the functionalities.
 
-Aliquam elit ac adipiscing aliquet, lacus enim rutrum tincidunt, pharetra quis quisque sem lacinia aliquet varius. Erat tellus. Pulvinar amet risus, ante feugiat sapien sed scelerisque, consequat cras sociis sapien sollicitudin, nec lacus orci. Augue lacinia donec quis mus urna, duis accumsan at at facilisis, faucibus volutpat duis felis. Luctus vel duis ante viverra aliquam, est condimentum duis.
+Declaring Interfaces
+Interfaces are declared using the interface keyword. It is similar to class declaration. Interface statements are public by default. Following is an example of an interface declaration −
 
-Semper wisi id nisl sodales consequat nobis, ligula sociis aenean diam wisi, feugiat purus placerat ac sodales consequat lorem. Ut fusce euismod ut vitae purus, nunc ipsum vestibulum, vestibulum suscipit mauris eros libero sed odio. Viverra consequat quis erat, dis mauris sed non adipiscing natoque nunc, mauris ligula turpis consectetuer aliquam rhoncus quis, odio mauris vehicula montes at. Nec in totam, quis ad mi id odio justo viverra, dis wisi nullam odio imperdiet sociis porttitor. Risus eu, eros id, erat elit molestie lorem, cras per quam, aptent metus vulputate tempor veniam. Felis odio nec curabitur eu sed aenean, nulla parturient magnis fringilla fugiat ligula, lorem habitasse conubia feugiat torquent feugiat. Praesent dolore feugiat sapien. At provident ante pellentesque id luctus, odio nascetur diam quis, lacus dolor tellus pharetra, cursus ultrices maecenas condimentum odio ridiculus, proin ac non in mauris.
+public interface ITransactions {
+   // interface members
+   void showTransaction();
+   double getAmount();
+}
+Example
+The following example demonstrates implementation of the above interface −
+
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System;
+
+namespace InterfaceApplication {
+   
+   public interface ITransactions {
+      // interface members
+      void showTransaction();
+      double getAmount();
+   }
+   public class Transaction : ITransactions {
+      private string tCode;
+      private string date;
+      private double amount;
+      
+      public Transaction() {
+         tCode = " ";
+         date = " ";
+         amount = 0.0;
+      }
+      public Transaction(string c, string d, double a) {
+         tCode = c;
+         date = d;
+         amount = a;
+      }
+      public double getAmount() {
+         return amount;
+      }
+      public void showTransaction() {
+         Console.WriteLine("Transaction: {0}", tCode);
+         Console.WriteLine("Date: {0}", date);
+         Console.WriteLine("Amount: {0}", getAmount());
+      }
+   }
+   class Tester {
+     
+      static void Main(string[] args) {
+         Transaction t1 = new Transaction("001", "8/10/2012", 78900.00);
+         Transaction t2 = new Transaction("002", "9/10/2012", 451900.00);
+         
+         t1.showTransaction();
+         t2.showTransaction();
+         Console.ReadKey();
+      }
+   }
+}
+When the above code is compiled and executed, it produces the following result −
+
+Transaction: 001
+Date: 8/10/2012
+Amount: 78900
+Transaction: 002
+Date: 9/10/2012
+Amount: 451900
+
+A namespace is designed for providing a way to keep one set of names separate from another. The class names declared in one namespace does not conflict with the same class names declared in another.
+
+Defining a Namespace
+A namespace definition begins with the keyword namespace followed by the namespace name as follows −
+
+namespace namespace_name {
+   // code declarations
+}
+To call the namespace-enabled version of either function or variable, prepend the namespace name as follows −
+
+namespace_name.item_name;
+The following program demonstrates use of namespaces −
+
+using System;
+
+namespace first_space {
+   class namespace_cl {
+      public void func() {
+         Console.WriteLine("Inside first_space");
+      }
+   }
+}
+namespace second_space {
+   class namespace_cl {
+      public void func() {
+         Console.WriteLine("Inside second_space");
+      }
+   }
+}
+class TestClass {
+   static void Main(string[] args) {
+      first_space.namespace_cl fc = new first_space.namespace_cl();
+      second_space.namespace_cl sc = new second_space.namespace_cl();
+      fc.func();
+      sc.func();
+      Console.ReadKey();
+   }
+}
+When the above code is compiled and executed, it produces the following result −
+
+Inside first_space
+Inside second_space
+The using Keyword
+The using keyword states that the program is using the names in the given namespace. For example, we are using the System namespace in our programs. The class Console is defined there. We just write −
+
+Console.WriteLine ("Hello there");
+We could have written the fully qualified name as −
+
+System.Console.WriteLine("Hello there");
+You can also avoid prepending of namespaces with the using namespace directive. This directive tells the compiler that the subsequent code is making use of names in the specified namespace. The namespace is thus implied for the following code −
+
+Let us rewrite our preceding example, with using directive
+
+using System;
+using first_space;
+using second_space;
+
+namespace first_space {
+   class abc {
+      public void func() {
+         Console.WriteLine("Inside first_space");
+      }
+   }
+}
+namespace second_space {
+   class efg {
+      public void func() {
+         Console.WriteLine("Inside second_space");
+      }
+   }
+}   
+class TestClass {
+   static void Main(string[] args) {
+      abc fc = new abc();
+      efg sc = new efg();
+      fc.func();
+      sc.func();
+      Console.ReadKey();
+   }
+}
+When the above code is compiled and executed, it produces the following result
+
+Inside first_space
+Inside second_space
+Nested Namespaces
+You can define one namespace inside another namespace as follows
+
+namespace namespace_name1 {
+   
+   // code declarations
+   namespace namespace_name2 {
+      // code declarations
+   }
+}
+You can access members of nested namespace by using the dot (.) operator as follows −
+
+using System;
+using first_space;
+using first_space.second_space;
+
+namespace first_space {
+   class abc {
+      public void func() {
+         Console.WriteLine("Inside first_space");
+      }
+   }
+   namespace second_space {
+      class efg {
+         public void func() {
+            Console.WriteLine("Inside second_space");
+         }
+      }
+   }   
+}
+class TestClass {
+   static void Main(string[] args) {
+      abc fc = new abc();
+      efg sc = new efg();
+      fc.func();
+      sc.func();
+      Console.ReadKey();
+   }
+}
+When the above code is compiled and executed, it produces the following result
+
+Inside first_space
+Inside second_space
+
+A file is a collection of data stored in a disk with a specific name and a directory path. When a file is opened for reading or writing, it becomes a stream.
+
+The stream is basically the sequence of bytes passing through the communication path. There are two main streams: the input stream and the output stream. The input stream is used for reading data from file (read operation) and the output stream is used for writing into the file (write operation).
+
+C# I/O Classes
+The System.IO namespace has various classes that are used for performing numerous operations with files, such as creating and deleting files, reading from or writing to a file, closing a file etc.
+
+The following table shows some commonly used non-abstract classes in the System.IO namespace −
+
+Sr.No.	I/O Class & Description
+1	
+BinaryReader
+
+Reads primitive data from a binary stream.
+
+2	
+BinaryWriter
+
+Writes primitive data in binary format.
+
+3	
+BufferedStream
+
+A temporary storage for a stream of bytes.
+
+4	
+Directory
+
+Helps in manipulating a directory structure.
+
+5	
+DirectoryInfo
+
+Used for performing operations on directories.
+
+6	
+DriveInfo
+
+Provides information for the drives.
+
+7	
+File
+
+Helps in manipulating files.
+
+8	
+FileInfo
+
+Used for performing operations on files.
+
+9	
+FileStream
+
+Used to read from and write to any location in a file.
+
+10	
+MemoryStream
+
+Used for random access to streamed data stored in memory.
+
+11	
+Path
+
+Performs operations on path information.
+
+12	
+StreamReader
+
+Used for reading characters from a byte stream.
+
+13	
+StreamWriter
+
+Is used for writing characters to a stream.
+
+14	
+StringReader
+
+Is used for reading from a string buffer.
+
+15	
+StringWriter
+
+Is used for writing into a string buffer.
+
+The FileStream Class
+The FileStream class in the System.IO namespace helps in reading from, writing to and closing files. This class derives from the abstract class Stream.
+
+You need to create a FileStream object to create a new file or open an existing file. The syntax for creating a FileStream object is as follows −
+
+FileStream <object_name> = new FileStream( <file_name>, <FileMode Enumerator>,
+   <FileAccess Enumerator>, <FileShare Enumerator>);
+For example, we create a FileStream object F for reading a file named sample.txt as shown −
+
+FileStream F = new FileStream("sample.txt", FileMode.Open, FileAccess.Read,
+   FileShare.Read);
+Sr.No.	Parameter & Description
+1	
+FileMode
+
+The FileMode enumerator defines various methods for opening files. The members of the FileMode enumerator are −
+
+Append − It opens an existing file and puts cursor at the end of file, or creates the file, if the file does not exist.
+
+Create − It creates a new file.
+
+CreateNew − It specifies to the operating system, that it should create a new file.
+
+Open − It opens an existing file.
+
+OpenOrCreate − It specifies to the operating system that it should open a file if it exists, otherwise it should create a new file.
+
+Truncate − It opens an existing file and truncates its size to zero bytes.
+
+2	
+FileAccess
+
+FileAccess enumerators have members: Read, ReadWrite and Write.
+
+3	
+FileShare
+
+FileShare enumerators have the following member:
+
+Inheritable − It allows a file handle to pass inheritance to the child processes
+
+None − It declines sharing of the current file
+
+Read − It allows opening the file for readin.
+
+ReadWrite − It allows opening the file for reading and writing
+
+Write − It allows opening the file for writing
+
+Example
+The following program demonstrates use of the FileStream class
+
+using System;
+using System.IO;
+
+namespace FileIOApplication {
+   class Program {
+      static void Main(string[] args) {
+         FileStream F = new FileStream("test.dat", FileMode.OpenOrCreate, 
+            FileAccess.ReadWrite);
+         
+         for (int i = 1; i <= 20; i++) {
+            F.WriteByte((byte)i);
+         }
+         F.Position = 0;
+         for (int i = 0; i <= 20; i++) {
+            Console.Write(F.ReadByte() + " ");
+         }
+         F.Close();
+         Console.ReadKey();
+      }
+   }
+}
+When the above code is compiled and executed, it produces the following result
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 -1
+
+Advanced File Operations in C#
+The preceding example provides simple file operations in C#. However, to utilize the immense powers of C# System.IO classes, you need to know the commonly used properties and methods of these classes.
+
+Sr.No.	Topic & Description
+1	Reading from and Writing into Text files
+It involves reading from and writing into text files. The StreamReader and StreamWriter class helps to accomplish it.
+
+2	Reading from and Writing into Binary files
+It involves reading from and writing into binary files. The BinaryReader and BinaryWriter class helps to accomplish this.
+
+3	Manipulating the Windows file system
+It gives a C# programamer the ability to browse and locate Windows files and directories.
+
+
+An exception is a problem that arises during the execution of a program. A C# exception is a response to an exceptional circumstance that arises while a program is running, such as an attempt to divide by zero.
+
+Exceptions provide a way to transfer control from one part of a program to another. C# exception handling is built upon four keywords: try, catch, finally, and throw.
+
+try − A try block identifies a block of code for which particular exceptions is activated. It is followed by one or more catch blocks.
+
+catch − A program catches an exception with an exception handler at the place in a program where you want to handle the problem. The catch keyword indicates the catching of an exception.
+
+finally − The finally block is used to execute a given set of statements, whether an exception is thrown or not thrown. For example, if you open a file, it must be closed whether an exception is raised or not.
+
+throw − A program throws an exception when a problem shows up. This is done using a throw keyword.
+
+Syntax
+Assuming a block raises an exception, a method catches an exception using a combination of the try and catch keywords. A try/catch block is placed around the code that might generate an exception. Code within a try/catch block is referred to as protected code, and the syntax for using try/catch looks like the following −
+
+try {
+   // statements causing exception
+} catch( ExceptionName e1 ) {
+   // error handling code
+} catch( ExceptionName e2 ) {
+   // error handling code
+} catch( ExceptionName eN ) {
+   // error handling code
+} finally {
+   // statements to be executed
+}
+You can list down multiple catch statements to catch different type of exceptions in case your try block raises more than one exception in different situations.
+
+Exception Classes in C#
+C# exceptions are represented by classes. The exception classes in C# are mainly directly or indirectly derived from the System.Exception class. Some of the exception classes derived from the System.Exception class are the System.ApplicationException and System.SystemException classes.
+
+The System.ApplicationException class supports exceptions generated by application programs. Hence the exceptions defined by the programmers should derive from this class.
+
+The System.SystemException class is the base class for all predefined system exception.
+
+The following table provides some of the predefined exception classes derived from the Sytem.SystemException class −
+
+Sr.No.	Exception Class & Description
+1	
+System.IO.IOException
+
+Handles I/O errors.
+
+2	
+System.IndexOutOfRangeException
+
+Handles errors generated when a method refers to an array index out of range.
+
+3	
+System.ArrayTypeMismatchException
+
+Handles errors generated when type is mismatched with the array type.
+
+4	
+System.NullReferenceException
+
+Handles errors generated from referencing a null object.
+
+5	
+System.DivideByZeroException
+
+Handles errors generated from dividing a dividend with zero.
+
+6	
+System.InvalidCastException
+
+Handles errors generated during typecasting.
+
+7	
+System.OutOfMemoryException
+
+Handles errors generated from insufficient free memory.
+
+8	
+System.StackOverflowException
+
+Handles errors generated from stack overflow.
+
+Handling Exceptions
+C# provides a structured solution to the exception handling in the form of try and catch blocks. Using these blocks the core program statements are separated from the error-handling statements.
+
+These error handling blocks are implemented using the try, catch, and finally keywords. Following is an example of throwing an exception when dividing by zero condition occurs −
+
+ Live Demo
+using System;
+
+namespace ErrorHandlingApplication {
+   class DivNumbers {
+      int result;
+      
+      DivNumbers() {
+         result = 0;
+      }
+      public void division(int num1, int num2) {
+         try {
+            result = num1 / num2;
+         } catch (DivideByZeroException e) {
+            Console.WriteLine("Exception caught: {0}", e);
+         } finally {
+            Console.WriteLine("Result: {0}", result);
+         }
+      }
+      static void Main(string[] args) {
+         DivNumbers d = new DivNumbers();
+         d.division(25, 0);
+         Console.ReadKey();
+      }
+   }
+}
+When the above code is compiled and executed, it produces the following result −
+
+Exception caught: System.DivideByZeroException: Attempted to divide by zero. 
+at ...
+Result: 0
+Creating User-Defined Exceptions
+You can also define your own exception. User-defined exception classes are derived from the Exception class. The following example demonstrates this −
+
+ Live Demo
+using System;
+
+namespace UserDefinedException {
+   class TestTemperature {
+      static void Main(string[] args) {
+         Temperature temp = new Temperature();
+         try {
+            temp.showTemp();
+         } catch(TempIsZeroException e) {
+            Console.WriteLine("TempIsZeroException: {0}", e.Message);
+         }
+         Console.ReadKey();
+      }
+   }
+}
+public class TempIsZeroException: Exception {
+   public TempIsZeroException(string message): base(message) {
+   }
+}
+public class Temperature {
+   int temperature = 0;
+   
+   public void showTemp() {
+      
+      if(temperature == 0) {
+         throw (new TempIsZeroException("Zero Temperature found"));
+      } else {
+         Console.WriteLine("Temperature: {0}", temperature);
+      }
+   }
+}
+When the above code is compiled and executed, it produces the following result −
+
+TempIsZeroException: Zero Temperature found
+Throwing Objects
+You can throw an object if it is either directly or indirectly derived from the System.Exception class. You can use a throw statement in the catch block to throw the present object as −
+
+Catch(Exception e) {
+   ...
+   Throw e
+}

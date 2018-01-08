@@ -1,9 +1,260 @@
-Teste 1
+Basic Syntax
 
- Lorem ipsum dolor sit amet, aliquet donec, natoque vulputate pretium erat pede, turpis sed est faucibus mi aenean. Aliquet mauris in, ipsum convallis lobortis sed. Ut libero natoque leo viverra feugiat, quos erat venenatis tortor vel nisl consequat, tempus dui, sed wisi vestibulum in gravida vivamus suspendisse, quam convallis quis vel quam sed eleifend. In praesent ullamcorper cras, dapibus sed felis justo, egestas in. Arcu et vitae pellentesque parturient dictum, lobortis mauris mauris tortor tincidunt vestibulum mollis, ornare integer hendrerit eget ac at. Nulla aliquet enim vitae arcu, dolor nec litora blandit mauris, mattis vestibulum et ut nisi, morbi pede, scelerisque pellentesque justo nonummy.
+C# is an object-oriented programming language. In Object-Oriented Programming methodology, a program consists of various objects that interact with each other by means of actions. The actions that an object may take are called methods. Objects of the same kind are said to have the same type or, are said to be in the same class.
 
-In felis arcu quisque, nunc erat scelerisque neque nostra velit augue, tellus vel nonummy nonummy fusce a. Scelerisque vel vel. Sequi pharetra sed eu morbi leo, tellus aenean, ac fusce vehicula est eget, quisque porttitor ultricies mauris fringilla elementum eget, vel integer feugiat praesent mi. Quam nec nunc suspendisse tortor eleifend. Sed morbi libero pede habitant interdum, neque et in aenean at molestie, placerat mi augue justo, eu iaculis accumsan sit eget phasellus arcu, eget in ipsum. Donec in nullam ipsum, gravida magna, turpis auctor a eleifend, nec eget, sed tempus interdum eros non massa vitae. Senectus elit, sodales magna phasellus quia nunc, elit tincidunt odio euismod ultrices rutrum eleifend, vitae taciti eros fusce. Justo eros, velit gravida iusto augue id, volutpat nulla aenean donec magna consectetuer non.
+For example, let us consider a Rectangle object. It has attributes such as length and width. Depending upon the design, it may need ways for accepting the values of these attributes, calculating the area, and displaying details.
 
-Aliquam elit ac adipiscing aliquet, lacus enim rutrum tincidunt, pharetra quis quisque sem lacinia aliquet varius. Erat tellus. Pulvinar amet risus, ante feugiat sapien sed scelerisque, consequat cras sociis sapien sollicitudin, nec lacus orci. Augue lacinia donec quis mus urna, duis accumsan at at facilisis, faucibus volutpat duis felis. Luctus vel duis ante viverra aliquam, est condimentum duis.
+Let us look at implementation of a Rectangle class and discuss C# basic syntax:
 
-Semper wisi id nisl sodales consequat nobis, ligula sociis aenean diam wisi, feugiat purus placerat ac sodales consequat lorem. Ut fusce euismod ut vitae purus, nunc ipsum vestibulum, vestibulum suscipit mauris eros libero sed odio. Viverra consequat quis erat, dis mauris sed non adipiscing natoque nunc, mauris ligula turpis consectetuer aliquam rhoncus quis, odio mauris vehicula montes at. Nec in totam, quis ad mi id odio justo viverra, dis wisi nullam odio imperdiet sociis porttitor. Risus eu, eros id, erat elit molestie lorem, cras per quam, aptent metus vulputate tempor veniam. Felis odio nec curabitur eu sed aenean, nulla parturient magnis fringilla fugiat ligula, lorem habitasse conubia feugiat torquent feugiat. Praesent dolore feugiat sapien. At provident ante pellentesque id luctus, odio nascetur diam quis, lacus dolor tellus pharetra, cursus ultrices maecenas condimentum odio ridiculus, proin ac non in mauris.
+using System;
+
+namespace RectangleApplication {
+   class Rectangle {
+      
+      // member variables
+      double length;
+      double width;
+      
+      public void Acceptdetails() {
+         length = 4.5;    
+         width = 3.5;
+      }
+      public double GetArea() {
+         return length * width; 
+      }
+      public void Display() {
+         Console.WriteLine("Length: {0}", length);
+         Console.WriteLine("Width: {0}", width);
+         Console.WriteLine("Area: {0}", GetArea());
+      }
+   }
+   class ExecuteRectangle {
+      static void Main(string[] args) {
+         Rectangle r = new Rectangle();
+         r.Acceptdetails();
+         r.Display();
+         Console.ReadLine(); 
+      }
+   }
+}
+
+When the above code is compiled and executed, it produces the following result:
+
+    Length: 4.5
+    Width: 3.5
+    Area: 15.75
+
+The using Keyword
+The first statement in any C# program is
+    using System;
+The using keyword is used for including the namespaces in the program. A program can include multiple using statements.
+
+The class Keyword
+The class keyword is used for declaring a class.
+
+Comments in C#
+Comments are used for explaining code. Compilers ignore the comment entries. The multiline comments in C# programs start with /* and terminates with the characters */ as shown below:
+    /* This program demonstrates
+    The basic syntax of C# programming 
+    Language */
+
+Single-line comments are indicated by the '//' symbol. For example,
+    }//end class Rectangle
+    
+Member Variables
+Variables are attributes or data members of a class, used for storing data. In the preceding program, the Rectangle class has two member variables named length and width.
+
+Member Functions
+Functions are set of statements that perform a specific task. The member functions of a class are declared within the class. Our sample class Rectangle contains three member functions: AcceptDetails, GetArea and Display.
+
+Instantiating a Class
+In the preceding program, the class ExecuteRectangle contains the Main() method and instantiates the Rectangle class.
+
+Identifiers
+    An identifier is a name used to identify a class, variable, function, or any other user-defined item. The basic rules for naming classes in C# are as follows:
+    A name must begin with a letter that could be followed by a sequence of letters, digits (0 - 9) or underscore. The first character in an identifier cannot be a digit.
+    It must not contain any embedded space or symbol such as? - + ! @ # % ^ & * ( ) [ ] { } . ; : " ' / and \. However, an underscore ( _ ) can be used.
+    It should not be a C# keyword.
+
+C# Keywords
+Keywords are reserved words predefined to the C# compiler. These keywords cannot be used as identifiers. However, if you want to use these keywords as identifiers, you may prefix the keyword with the @ character.
+
+In C#, some identifiers have special meaning in context of code, such as get and set are called contextual keywords.
+
+The variables in C#, are categorized into the following types:
+
+    Value types
+    Reference types
+    Pointer types
+
+Value Type
+    Value type variables can be assigned a value directly. They are derived from the class System.ValueType.
+
+The value types directly contain data. Some examples are int, char, and float, which stores numbers, alphabets, and floating point numbers, respectively. When you declare an int type, the system allocates memory to store the value.
+
+Value types in C#:
+    Type	Represents
+    bool	Boolean value
+    byte	8-bit unsigned integer
+    char	16-bit Unicode character
+    decimal	128-bit precise decimal values with 28-29 significant digits
+    double	64-bit double-precision floating point type
+    float	32-bit single-precision floating point type
+    int         32-bit signed integer type
+    long	64-bit signed integer type
+    sbyte	8-bit signed integer type
+    short	16-bit signed integer type
+    uint	32-bit unsigned integer type
+    ulong	64-bit unsigned integer type
+    ushort	16-bit unsigned integer type
+
+
+To get the exact size of a type or a variable on a particular platform, you can use the sizeof method. The expression sizeof(type) yields the storage size of the object or type in bytes. Following is an example to get the size of int type on any machine −
+
+    using System;
+    namespace DataTypeApplication {
+        class Program {
+            static void Main(string[] args) {
+            Console.WriteLine("Size of int: {0}", sizeof(int));
+            Console.ReadLine();
+            }
+        }
+    }
+
+When the above code is compiled and executed, it produces the following result:
+    Size of int: 4
+
+Reference Type
+The reference types do not contain the actual data stored in a variable, but they contain a reference to the variables.
+
+In other words, they refer to a memory location. Using multiple variables, the reference types can refer to a memory location. If the data in the memory location is changed by one of the variables, the other variable automatically reflects this change in value. Example of built-in reference types are: object, dynamic, and string.
+
+Object Type
+The Object Type is the ultimate base class for all data types in C# Common Type System (CTS). Object is an alias for System.Object class. The object types can be assigned values of any other types, value types, reference types, predefined or user-defined types. However, before assigning values, it needs type conversion.
+
+When a value type is converted to object type, it is called boxing and on the other hand, when an object type is converted to a value type, it is called unboxing.
+
+    object obj;
+    obj = 100; // this is boxing
+
+Dynamic Type
+You can store any type of value in the dynamic data type variable. Type checking for these types of variables takes place at run-time.
+
+Syntax for declaring a dynamic type is:
+    dynamic <variable_name> = value;
+
+For example,
+    dynamic d = 20;
+Dynamic types are similar to object types except that type checking for object type variables takes place at compile time, whereas that for the dynamic type variables takes place at run time.
+
+String Type
+The String Type allows you to assign any string values to a variable. The string type is an alias for the System.String class. It is derived from object type. The value for a string type can be assigned using string literals in two forms: quoted and @quoted.
+
+For example:
+    String str = "Hello";
+A @quoted string literal looks as follows:
+    @"Hello";
+The user-defined reference types are: class, interface, or delegate. We will discuss these types in later chapter.
+
+Pointer Type
+Pointer type variables store the memory address of another type. Pointers in C# have the same capabilities as the pointers in C or C++.
+
+Syntax for declaring a pointer type is:
+    type* identifier;
+
+For example,
+    char* cptr;
+    int* iptr;
+
+Type conversion is converting one type of data to another type. It is also known as Type Casting. In C#, type casting has two forms −
+
+Implicit type conversion − These conversions are performed by C# in a type-safe manner. For example, are conversions from smaller to larger integral types and conversions from derived classes to base classes.
+
+Explicit type conversion − These conversions are done explicitly by users using the pre-defined functions. Explicit conversions require a cast operator.
+
+The following example shows an explicit type conversion:
+
+using System;
+
+namespace TypeConversionApplication {
+   class ExplicitConversion {
+      static void Main(string[] args) {
+         double d = 5673.74; 
+         int i;
+         
+         // cast double to int.
+         i = (int)d;
+         Console.WriteLine(i);
+         Console.ReadKey();
+      }
+   }
+}
+When the above code is compiled and executed, it produces the following result:
+
+    5673
+
+C# Type Conversion Methods
+C# provides the following built-in type conversion methods −
+
+Methods & Description
+ToBoolean
+    Converts a type to a Boolean value, where possible.	
+ToByte
+    Converts a type to a byte.	
+ToChar
+    Converts a type to a single Unicode character, where possible.
+ToDateTime
+    Converts a type (integer or string type) to date-time structures.	
+ToDecimal
+    Converts a floating point or integer type to a decimal type.	
+ToDouble
+    Converts a type to a double type.	
+ToInt16 
+    Converts a type to a 16-bit integer.	
+ToInt32
+    Converts a type to a 32-bit integer.	
+ToInt64
+    Converts a type to a 64-bit integer.	
+ToSbyte
+    Converts a type to a signed byte type.
+ToSingle
+    Converts a type to a small floating point number(Float).	
+ToString
+    Converts a type to a string.	
+ToType
+    Converts a type to a specified type.	
+ToUInt16
+    Converts a type to an unsigned int type.	
+ToUInt32
+    Converts a type to an unsigned long type.	
+ToUInt64
+    Converts a type to an unsigned big integer.
+
+The following example converts various value types to string type:
+
+using System;
+
+namespace TypeConversionApplication {
+   class StringConversion {
+      static void Main(string[] args) {
+         int i = 75;
+         float f = 53.005f;
+         double d = 2345.7652;
+         bool b = true;
+
+         Console.WriteLine(i.ToString());
+         Console.WriteLine(f.ToString());
+         Console.WriteLine(d.ToString());
+         Console.WriteLine(b.ToString());
+         Console.ReadKey();
+            
+      }
+   }
+}
+
+When the above code is compiled and executed, it produces the following result:
+
+    75
+    53.005
+    2345.7652
+    True

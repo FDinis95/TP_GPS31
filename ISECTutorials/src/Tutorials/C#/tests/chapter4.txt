@@ -1,78 +1,72 @@
-Q0 Question one
-answer one
-answer two
-answer three
-answer four
-4
-Q1 Question two
-answer one
-answer two
-answer three
-answer four
+Q0 Wich if these is not an incapsulation method
+Internal
+Private
+Protected Public
+Protected Internal
 3
-Q2 Question three
-answer one
-answer two
-answer three
-answer four
+Q1 All class functions can be used by other classes
+True
+False
+-----
+-----
 2
-Q3 Question four
-answer one
-answer two
-answer three
-answer four
+Q2 A class variable always requires a function to alter it
+True
+False
+-----
+-----
+2
+Q3 A class must be in a file with the same name
+True
+False
+-----
+-----
+2
+Q4 Get and Set functions are default of all class variables
+True
+False
+-----
+-----
+2
+Q5 Private members can only be used by private functions of it's own class
+True
+False
+-----
+-----
+2
+Q6 Private members can only be used by functions of it's own class
+True
+False
+-----
+-----
 1
-Q4 Question five
-answer one
-answer two
-answer three
-answer four
-4
-Q5 Question six
-answer one
-answer two
-answer three
-answer four
-3
-Q6 Question seven
-answer one
-answer two
-answer three
-answer four
+Q7 Destructors are used to clear a variable of a class
+True
+False
+-----
+-----
 2
-Q7 Question eight
-answer one
-answer two
-answer three
-answer four
+Q8 Destructors are used to delete an object of that class when it goes out of scope
+True
+False
+-----
+-----
 1
-Q8 Question nine
-answer one
-answer two
-answer three
-answer four
-4
-Q9 Question ten
-answer one
-answer two
-answer three
-answer four
-3
-Q10 Question eleven
-answer one
-answer two
-answer three
-answer four
-2
-Q11 Question twelve
-answer one
-answer two
-answer three
-answer four
+Q9 A static member of a class means all objects of that class are created with the same value for that member
+True
+False
+-----
+-----
 1
-Q12 Question thirteen
-answer one
-answer two
-answer three
-answer four
+Q10 Protected values can be used by the main program
+True
+False
+-----
+-----
 2
+Q11 Protected values can be used by child classes
+True
+False
+-----
+-----
+1

@@ -1,9 +1,199 @@
-Teste 2
+A variable is nothing but a name given to a storage area that our programs can manipulate. Each variable in C# has a specific type, which determines the size and layout of the variable's memory the range of values that can be stored within that memory and the set of operations that can be applied to the variable.
 
- Lorem ipsum dolor sit amet, aliquet donec, natoque vulputate pretium erat pede, turpis sed est faucibus mi aenean. Aliquet mauris in, ipsum convallis lobortis sed. Ut libero natoque leo viverra feugiat, quos erat venenatis tortor vel nisl consequat, tempus dui, sed wisi vestibulum in gravida vivamus suspendisse, quam convallis quis vel quam sed eleifend. In praesent ullamcorper cras, dapibus sed felis justo, egestas in. Arcu et vitae pellentesque parturient dictum, lobortis mauris mauris tortor tincidunt vestibulum mollis, ornare integer hendrerit eget ac at. Nulla aliquet enim vitae arcu, dolor nec litora blandit mauris, mattis vestibulum et ut nisi, morbi pede, scelerisque pellentesque justo nonummy.
+The basic value types provided in C# can be categorized as −
 
-In felis arcu quisque, nunc erat scelerisque neque nostra velit augue, tellus vel nonummy nonummy fusce a. Scelerisque vel vel. Sequi pharetra sed eu morbi leo, tellus aenean, ac fusce vehicula est eget, quisque porttitor ultricies mauris fringilla elementum eget, vel integer feugiat praesent mi. Quam nec nunc suspendisse tortor eleifend. Sed morbi libero pede habitant interdum, neque et in aenean at molestie, placerat mi augue justo, eu iaculis accumsan sit eget phasellus arcu, eget in ipsum. Donec in nullam ipsum, gravida magna, turpis auctor a eleifend, nec eget, sed tempus interdum eros non massa vitae. Senectus elit, sodales magna phasellus quia nunc, elit tincidunt odio euismod ultrices rutrum eleifend, vitae taciti eros fusce. Justo eros, velit gravida iusto augue id, volutpat nulla aenean donec magna consectetuer non.
+Type	Example
+Integral types          sbyte, byte, short, ushort, int, uint, long, ulong, and char
+Floating point types	float and double
+Decimal types           decimal
+Boolean types           true or false values, as assigned
+Nullable types          Nullable data types
+C# also allows defining other value types of variable such as enum and reference types of variables such as class, which we will cover in subsequent chapters.
 
-Aliquam elit ac adipiscing aliquet, lacus enim rutrum tincidunt, pharetra quis quisque sem lacinia aliquet varius. Erat tellus. Pulvinar amet risus, ante feugiat sapien sed scelerisque, consequat cras sociis sapien sollicitudin, nec lacus orci. Augue lacinia donec quis mus urna, duis accumsan at at facilisis, faucibus volutpat duis felis. Luctus vel duis ante viverra aliquam, est condimentum duis.
+Defining Variables
+Syntax for variable definition in C# is:
 
-Semper wisi id nisl sodales consequat nobis, ligula sociis aenean diam wisi, feugiat purus placerat ac sodales consequat lorem. Ut fusce euismod ut vitae purus, nunc ipsum vestibulum, vestibulum suscipit mauris eros libero sed odio. Viverra consequat quis erat, dis mauris sed non adipiscing natoque nunc, mauris ligula turpis consectetuer aliquam rhoncus quis, odio mauris vehicula montes at. Nec in totam, quis ad mi id odio justo viverra, dis wisi nullam odio imperdiet sociis porttitor. Risus eu, eros id, erat elit molestie lorem, cras per quam, aptent metus vulputate tempor veniam. Felis odio nec curabitur eu sed aenean, nulla parturient magnis fringilla fugiat ligula, lorem habitasse conubia feugiat torquent feugiat. Praesent dolore feugiat sapien. At provident ante pellentesque id luctus, odio nascetur diam quis, lacus dolor tellus pharetra, cursus ultrices maecenas condimentum odio ridiculus, proin ac non in mauris.
+<data_type> <variable_list>;
+Here, data_type must be a valid C# data type including char, int, float, double, or any user-defined data type, and variable_list may consist of one or more identifier names separated by commas.
+
+Some valid variable definitions are shown here:
+
+int i, j, k;
+char c, ch;
+float f, salary;
+double d;
+You can initialize a variable at the time of definition as:
+
+int i = 100;
+Initializing Variables
+Variables are initialized (assigned a value) with an equal sign followed by a constant expression. The general form of initialization is −
+
+variable_name = value;
+Variables can be initialized in their declaration. The initializer consists of an equal sign followed by a constant expression as −
+
+<data_type> <variable_name> = value;
+Some examples are:
+
+int d = 3, f = 5;    /* initializing d and f. */
+byte z = 22;         /* initializes z. */
+double pi = 3.14159; /* declares an approximation of pi. */
+char x = 'x';        /* the variable x has the value 'x'. */
+It is a good programming practice to initialize variables properly, otherwise sometimes program may produce unexpected result.
+
+The following example uses various types of variables:
+
+using System;
+
+namespace VariableDefinition {
+   class Program {
+      static void Main(string[] args) {
+         short a;
+         int b ;
+         double c;
+
+         /* actual initialization */
+         a = 10;
+         b = 20;
+         c = a + b;
+         Console.WriteLine("a = {0}, b = {1}, c = {2}", a, b, c);
+         Console.ReadLine();
+      }
+   }
+}
+When the above code is compiled and executed, it produces the following result:
+
+a = 10, b = 20, c = 30
+
+Accepting Values from User
+The Console class in the System namespace provides a function ReadLine() for accepting input from the user and store it into a variable.
+
+For example,
+
+int num;
+num = Convert.ToInt32(Console.ReadLine());
+The function Convert.ToInt32() converts the data entered by the user to int data type, because Console.ReadLine() accepts the data in string format.
+
+Lvalue and Rvalue Expressions in C#
+There are two kinds of expressions in C#:
+
+lvalue − An expression that is an lvalue may appear as either the left-hand or right-hand side of an assignment.
+
+rvalue − An expression that is an rvalue may appear on the right- but not left-hand side of an assignment.
+
+Variables are lvalues and hence they may appear on the left-hand side of an assignment. Numeric literals are rvalues and hence they may not be assigned and can not appear on the left-hand side. Following is a valid C# statement:
+
+int g = 20;
+But following is not a valid statement and would generate compile-time error:
+
+10 = 20;
+
+The constants refer to fixed values that the program may not alter during its execution. These fixed values are also called literals. Constants can be of any of the basic data types like an integer constant, a floating constant, a character constant, or a string literal. There are also enumeration constants as well.
+
+The constants are treated just like regular variables except that their values cannot be modified after their definition.
+
+Integer Literals
+An integer literal can be a decimal, or hexadecimal constant. A prefix specifies the base or radix: 0x or 0X for hexadecimal, and there is no prefix id for decimal.
+
+An integer literal can also have a suffix that is a combination of U and L, for unsigned and long, respectively. The suffix can be uppercase or lowercase and can be in any order.
+
+Here are some examples of integer literals:
+
+212         /* Legal */
+215u        /* Legal */
+0xFeeL      /* Legal */
+Following are other examples of various types of Integer literals:
+
+85         /* decimal */
+0x4b       /* hexadecimal */
+30         /* int */
+30u        /* unsigned int */
+30l        /* long */
+30ul       /* unsigned long */
+Floating-point Literals
+A floating-point literal has an integer part, a decimal point, a fractional part, and an exponent part. You can represent floating point literals either in decimal form or exponential form.
+
+Here are some examples of floating-point literals −
+
+3.14159       /* Legal */
+314159E-5F    /* Legal */
+510E          /* Illegal: incomplete exponent */
+210f          /* Illegal: no decimal or exponent */
+.e55          /* Illegal: missing integer or fraction */
+While representing in decimal form, you must include the decimal point, the exponent, or both; and while representing using exponential form you must include the integer part, the fractional part, or both. The signed exponent is introduced by e or E.
+
+Character Constants
+Character literals are enclosed in single quotes. For example, 'x' and can be stored in a simple variable of char type. A character literal can be a plain character (such as 'x'), an escape sequence (such as '\t'), or a universal character (such as '\u02C0').
+
+There are certain characters in C# when they are preceded by a backslash. They have special meaning and they are used to represent like newline (\n) or tab (\t). Here, is a list of some of such escape sequence codes:
+
+Escape sequence	Meaning
+\\              \ character
+\'              ' character
+\"              " character
+\?              ? character
+\a              Alert or bell
+\b              Backspace
+\f              Form feed
+\n              Newline
+\r              Carriage return
+\t              Horizontal tab
+\v              Vertical tab
+\xhh . . .	Hexadecimal number of one or more digits
+Following is the example to show few escape sequence characters:
+
+using System;
+
+namespace EscapeChar {
+   class Program {
+      static void Main(string[] args) {
+         Console.WriteLine("Hello\tWorld\n\n");
+         Console.ReadLine();
+      }
+   }
+}
+When the above code is compiled and executed, it produces the following result −
+
+Hello   World
+String Literals
+String literals or constants are enclosed in double quotes "" or with @"". A string contains characters that are similar to character literals: plain characters, escape sequences, and universal characters.
+
+You can break a long line into multiple lines using string literals and separating the parts using whitespaces.
+
+Here are some examples of string literals. All the three forms are identical strings.
+
+"hello, dear"
+"hello, \
+dear"
+"hello, " "d" "ear"
+@"hello dear"
+Defining Constants
+Constants are defined using the const keyword. Syntax for defining a constant is −
+
+const <data_type> <constant_name> = value;
+The following program demonstrates defining and using a constant in your program −
+
+ Live Demo
+using System;
+
+namespace DeclaringConstants {
+   class Program {
+      static void Main(string[] args) {
+         const double pi = 3.14159;   
+            
+         // constant declaration 
+         double r;
+         Console.WriteLine("Enter Radius: ");
+         r = Convert.ToDouble(Console.ReadLine());
+            
+         double areaCircle = pi * r * r;
+         Console.WriteLine("Radius: {0}, Area: {1}", r, areaCircle);
+         Console.ReadLine();
+      }
+   }
+}
+When the above code is compiled and executed, it produces the following result −
+
+Enter Radius: 
+3
+Radius: 3, Area: 28.27431
+

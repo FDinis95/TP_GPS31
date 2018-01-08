@@ -1,78 +1,72 @@
-Q0 Question one
-answer one
-answer two
-answer three
-answer four
+Q0 Which of the following is correct about C#?
+It is component oriented.
+It can be compiled on a variety of computer platforms.
+It is a part of .Net Framework.
+All of the above.
 4
-Q1 Question two
-answer one
-answer two
-answer three
-answer four
+Q1 C# was developed by _____________ and his team
+Anders Abramsen
+Anders Janson
+Anders Hejlsberg
+Anders Hjort
 3
-Q2 Question three
-answer one
-answer two
-answer three
-answer four
-2
-Q3 Question four
-answer one
-answer two
-answer three
-answer four
+Q2 Which of the following is false about C#
+It produces inefficient programs.
+It is object oriented
+It is easy to learn.
+It is a modern, general-purpose programming language
 1
-Q4 Question five
-answer one
-answer two
-answer three
-answer four
+Q3 Wich of these is a component of .Net Framework
+Windows Workflow Foundation (WF)
+Windows Presentation Foundation
+Windows Communication Foundation (WCF)
+All of the Above
 4
-Q5 Question six
-answer one
-answer two
-answer three
-answer four
-3
-Q6 Question seven
-answer one
-answer two
-answer three
-answer four
+Q4 Wich of these is not a component of .Net Framework
+ADO.Net
+Mono
+LINQ
+Common Type System
 2
-Q7 Question eight
-answer one
-answer two
-answer three
-answer four
-1
-Q8 Question nine
-answer one
-answer two
-answer three
-answer four
+Q5 Wich of these is not a component of .Net Framework
+Metadata and Assemblies
+Windows Forms
+Visual Studio
+Common Language Runtime (CLR)
+3
+Q6 It is impossible to use .Net on any operating system that isn't Windows. 
+True
+False
+------
+------
+2
+Q7 Wich of these is part of a C# Program
+Class attributes
+A Main method
+Statements and Expressions
+All of the above
 4
-Q9 Question ten
-answer one
-answer two
-answer three
-answer four
-3
-Q10 Question eleven
-answer one
-answer two
-answer three
-answer four
+Q8 A C# should start with
+Namespace Declaration
+Using system
+Main method
+Global variables
 2
-Q11 Question twelve
-answer one
-answer two
-answer three
-answer four
+Q9 C# is case sensitive
+True
+False
+-----
+-----
 1
-Q12 Question thirteen
-answer one
-answer two
-answer three
-answer four
-3
+Q10 Some expressions don't need a semicolon(;)
+True
+False
+-----
+-----
+2
+Q11 Like Java, program file name must be the class name. 
+True
+False
+-----
+-----
+2
