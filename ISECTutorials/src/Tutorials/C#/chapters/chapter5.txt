@@ -1,3 +1,5 @@
+Method
+
 A method is a group of statements that together perform a task. Every C# program has at least one class with a method named Main.
 
 To use a method, you need to:
