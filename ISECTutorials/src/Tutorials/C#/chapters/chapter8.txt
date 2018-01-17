@@ -16,9 +16,8 @@ The syntax used in C# for creating derived classes is as follows −
 class <derived_class> : <base_class> {
    ...
 }
-Consider a base class Shape and its derived class Rectangle −
+Consider a base class Shape and its derived class Rectangle:
 
- Live Demo
 using System;
 
 namespace InheritanceApplication {
@@ -113,7 +112,7 @@ Area: 33.75
 Cost: 2362.5
 
 Multiple Inheritance in C#
-C# does not support multiple inheritance. However, you can use interfaces to implement multiple inheritance. The following program demonstrates this −
+C# does not support multiple inheritance. However, you can use interfaces to implement multiple inheritance. The following program demonstrates this:
 
 using System;
 
@@ -169,16 +168,15 @@ The word polymorphism means having many forms. In object-oriented programming pa
 Polymorphism can be static or dynamic. In static polymorphism, the response to a function is determined at the compile time. In dynamic polymorphism, it is decided at run-time.
 
 Static Polymorphism
-The mechanism of linking a function with an object during compile time is called early binding. It is also called static binding. C# provides two techniques to implement static polymorphism. They are −
+The mechanism of linking a function with an object during compile time is called early binding. It is also called static binding. C# provides two techniques to implement static polymorphism. They are:
 
-Function overloading
-Operator overloading
-We discuss operator overloading in next chapter.
+    Function overloading
+    Operator overloading
 
 Function Overloading
 You can have multiple definitions for the same function name in the same scope. The definition of the function must differ from each other by the types and/or the number of arguments in the argument list. You cannot overload function declarations that differ only by return type.
 
-The following example shows using function print() to print different data types −
+The following example shows using function print() to print different data types
 
 using System;
 

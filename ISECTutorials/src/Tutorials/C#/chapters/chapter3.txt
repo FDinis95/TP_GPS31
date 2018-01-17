@@ -1,3 +1,5 @@
+Operators
+
 An operator is a symbol that tells the compiler to perform specific mathematical or logical manipulations. C# has rich set of built-in operators and provides the following type of operators −
 
 Arithmetic Operators

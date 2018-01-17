@@ -1,72 +1,72 @@
-Q0 Question one
-answer one
-answer two
-answer three
-answer four
-4
-Q1 Question two
-answer one
-answer two
-answer three
-answer four
+Q0 Wich of these are Modifiers
+Java Access Modifiers
+Non Access Modifiers
+Both
+None of the above
 3
-Q2 Question three
-answer one
-answer two
-answer three
-answer four
+Q1 To use a modifier you include its keyword in the definition of a class, method, or variable, after it's declaration
+True
+False
+----
+----
 2
-Q3 Question four
-answer one
-answer two
-answer three
-answer four
-1
-Q4 Question five
-answer one
-answer two
-answer three
-answer four
-4
-Q5 Question six
-answer one
-answer two
-answer three
-answer four
+Q2 How many levels of acess control modifiers are:
 3
-Q6 Question seven
-answer one
-answer two
-answer three
-answer four
-2
-Q7 Question eight
-answer one
-answer two
-answer three
-answer four
-1
-Q8 Question nine
-answer one
-answer two
-answer three
-answer four
 4
-Q9 Question ten
-answer one
-answer two
-answer three
-answer four
-3
-Q10 Question eleven
-answer one
-answer two
-answer three
-answer four
+6
+8
 2
-Q11 Question twelve
-answer one
-answer two
-answer three
-answer four
+Q3 Since there is no default acess modifier, they must always be declared
+True
+False
+------
+------
+2
+Q4 Protected modifiers can only be used in it's class
+True
+False
+------
+------
+2
+Q5 Protected modifiers can only be used by parent classes
+True
+False
+------
+------
+2
+Q6 Protected modifiers can be used in it's class and subclasses
+True
+False
+------
+------
 1
+Q7 Java doesn't support the ? : operator
+True
+False
+------
+------
+2
+Q8 Private members can't be acessed by public metmbers of the same class
+True
+False
+------
+------
+2
+Q9 Java doesn't support nested statments
+True
+False
+------
+------
+2
+Q10 Wich if these is not an acess modificer
+Internal
+Private
+Public
+Protected
+1
+Q11 Protected values can be used by the main class
+True
+False
+-----
+-----
+2

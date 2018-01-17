@@ -1,4 +1,4 @@
-Modifiers
+Modifiers, Loop Control and Decision Making
 
 Modifiers are keywords that you add to those definitions to change their meanings. Java language has a wide variety of modifiers, including the following −
     Java Access Modifiers
@@ -19,7 +19,7 @@ public static void main(String[] arguments) {
 }
     
 Access Control Modifiers
-Java provides a number of access modifiers to set access levels for classes, variables, methods and constructors. The four access levels are −
+Java provides a number of access modifiers to set access levels for classes, variables, methods and constructors. The four access levels are:
     Visible to the package, the default. No modifiers are needed.
     Visible to the class only (private).
     Visible to the world (public).
@@ -30,3 +30,65 @@ Java provides a number of non-access modifiers to achieve many other functionali
     The final modifier for finalizing the implementations of classes, methods, and variables.
     The abstract modifier for creating abstract classes and methods.
     The synchronized and volatile modifiers, which are used for threads.
+
+Loop Control
+
+There may be a situation when you need to execute a block of code several number of times. In general, statements are executed sequentially: The first statement in a function is executed first, followed by the second, and so on.
+
+Programming languages provide various control structures that allow for more complicated execution paths.
+
+A loop statement allows us to execute a statement or group of statements multiple times and following is the general form of a loop statement in most of the programming languages 
+
+Java programming language provides the following types of loop to handle looping requirements:
+
+while loop - repeats a statement or group of statements while a given condition is true.
+
+for loop - execute a sequence of statements multiple times and abreviates the code that manages the loop variable (i).
+
+do...while loop - similar to the while statement, except it tests the condition at the end of the loop body.
+
+Loop Control Statements
+Loop control statements change execution from its normal sequence. When execution leaves a scope, all automatic objects that were created in that scope are destroyed.
+
+Java supports the following control statements
+
+break statement - terminates the loop or switch statement and returns.
+
+continue statement - causes the loop to skip the rest of the code and test the condition again.
+
+Decision making structures have one or more conditions to be evaluated or tested by the program, along with a statement or statements that are to be executed if the condition is determined to be true, and optionally, other statements to be executed if the condition is determined to be false.
+
+
+Decision Making
+
+Java programming language provides the following types of decision making statements. 
+
+No.	Statement & Description
+1	if statement
+	An if statement consists of a boolean expression followed by one or more statements.
+
+2	if...else statement
+	An if statement can be followed by an optional else statement, which executes when the boolean expression is false.
+
+3	nested if statement
+	You can use one if or else if statement inside another if or else if statement(s).
+
+4	switch statement
+	A switch statement allows a variable to be tested for equality against a list of values.
+	
+	
+	
+The ? : Operator
+
+We have covered conditional operator ? : in the previous chapter which can be used to replace if...else statements. 
+
+It has the following general form −
+Exp1 ? Exp2 : Exp3;
+Where Exp1, Exp2, and Exp3 are expressions. 
+Notice the use and placement of the colon.
+
+To determine the value of the whole expression, initially exp1 is evaluated.
+
+If the value of exp1 is true, then the value of Exp2 will be the value of the whole expression.
+
+If the value of exp1 is false, then Exp3 is evaluated and its value becomes the value of the entire expression.

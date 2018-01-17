@@ -1,83 +1,187 @@
-Methods
+Interfaces and Packages
 
-A Java method is a collection of statements that are grouped together to perform an operation. When you call the System.out.println() method, for example, the system actually executes several statements in order to display a message on the console.
-Now you will learn how to create your own methods with or without return values, invoke a method with or without parameters, and apply method abstraction in the program design.
-Creating Method
-Considering the following example to explain the syntax of a method −
-Syntax
-public static int methodName(int a, int b) {
-   // body
-}
+Interfaces
 
+An interface is a reference type in Java. It is similar to class. It is a collection of abstract methods. A class implements an interface, thereby inheriting the abstract methods of the interface.
 
-Here,
-    public static − modifier
-    int − return type
-    methodName − name of the method
-    a, b − formal parameters
-    int a, int b − list of parameters
-Method definition consists of a method header and a method body. The same is shown in the following syntax −
-Syntax
-modifier returnType nameOfMethod (Parameter List) {
-   // method body
-}
+Along with abstract methods, an interface may also contain constants, default methods, static methods, and nested types. Method bodies exist only for default methods and static methods.
 
-The syntax shown above includes −
-    modifier − It defines the access type of the method and it is optional to use.
-    returnType − Method may return a value.
-    nameOfMethod − This is the method name. The method signature consists of the method name and the parameter list.
-    Parameter List − The list of parameters, it is the type, order, and number of parameters of a method. These are optional, method may contain zero parameters.
-    method body − The method body defines what the method does with the statements.
-Example
-Here is the source code of the above defined method called min(). This method takes two parameters num1 and num2 and returns the maximum between the two −
-/** the snippet returns the minimum between two numbers */
+Writing an interface is similar to writing a class. But a class describes the attributes and behaviors of an object. And an interface contains behaviors that a class implements.
 
-public static int minFunction(int n1, int n2) {
-   int min;
-   if (n1 > n2)
-      min = n2;
-   else
-      min = n1;
+Unless the class that implements the interface is abstract, all the methods of the interface need to be defined in the class.
 
-   return min; 
-}
+An interface is similar to a class in the following ways:
 
-Method Calling
+An interface can contain any number of methods.
 
-For using a method, it should be called. There are two ways in which a method is called i.e., method returns a value or returning nothing (no return value).
+An interface is written in a file with a .java extension, with the name of the interface matching the name of the file.
 
-The process of method calling is simple. When a program invokes a method, the program control gets transferred to the called method. This called method then returns control to the caller in two conditions, when −
-    the return statement is executed.
-    it reaches the method ending closing brace.
+The byte code of an interface appears in a .class file.
 
-The methods returning void is considered as call to a statement. Lets consider an example −
-System.out.println("This is tutorialspoint.com!");
-The method returning value can be understood by the following example −
-int result = sum(6, 9);
-Following is the example to demonstrate how to define a method and how to call it −
+Interfaces appear in packages, and their corresponding bytecode file must be in a directory structure that matches the package name.
+
+However, an interface is different from a class in several ways, including −
+
+You cannot instantiate an interface.
+
+An interface does not contain any constructors.
+
+All of the methods in an interface are abstract.
+
+An interface cannot contain instance fields. The only fields that can appear in an interface must be declared both static and final.
+
+An interface is not extended by a class; it is implemented by a class.
+
+An interface can extend multiple interfaces.
+
+Declaring Interfaces
+The interface keyword is used to declare an interface. Here is a simple example to declare an interface −
 
 Example
-public class ExampleMinNumber {
-   
-   public static void main(String[] args) {
-      int a = 11;
-      int b = 6;
-      int c = minFunction(a, b);
-      System.out.println("Minimum Value = " + c);
-   }
+Following is an example of an interface −
 
-   /** returns the minimum of two numbers */
-   public static int minFunction(int n1, int n2) {
-      int min;
-      if (n1 > n2)
-         min = n2;
-      else
-         min = n1;
+/* File name : NameOfInterface.java */
+import java.lang.*;
+// Any number of import statements
 
-      return min; 
-   }
+public interface NameOfInterface {
+   // Any number of final, static fields
+   // Any number of abstract method declarations\
 }
+Interfaces have the following properties −
+
+An interface is implicitly abstract. You do not need to use the abstract keyword while declaring an interface.
+
+Each method in an interface is also implicitly abstract, so the abstract keyword is not needed.
+
+Methods in an interface are implicitly public.
+
+Example
+/* File name : Animal.java */
+interface Animal {
+   public void eat();
+   public void travel();
+}
+Implementing Interfaces
+When a class implements an interface, you can think of the class as signing a contract, agreeing to perform the specific behaviors of the interface. If a class does not perform all the behaviors of the interface, the class must declare itself as abstract.
+
+A class uses the implements keyword to implement an interface. The implements keyword appears in the class declaration following the extends portion of the declaration.
+
+Example
+/* File name : MammalInt.java */
+public class MammalInt implements Animal {
+
+   public void eat() {
+      System.out.println("Mammal eats");
+   }
+
+   public void travel() {
+      System.out.println("Mammal travels");
+   } 
+
+   public int noOfLegs() {
+      return 0;
+   }
+
+   public static void main(String args[]) {
+      MammalInt m = new MammalInt();
+      m.eat();
+      m.travel();
+   }
+} 
 This will produce the following result −
-Output
-Minimum value = 6
 
+Output
+Mammal eats
+Mammal travels
+When overriding methods defined in interfaces, there are several rules to be followed −
+
+Checked exceptions should not be declared on implementation methods other than the ones declared by the interface method or subclasses of those declared by the interface method.
+
+The signature of the interface method and the same return type or subtype should be maintained when overriding the methods.
+
+An implementation class itself can be abstract and if so, interface methods need not be implemented.
+
+When implementation interfaces, there are several rules −
+
+A class can implement more than one interface at a time.
+
+A class can extend only one class, but implement many interfaces.
+
+An interface can extend another interface, in a similar way as a class can extend another class.
+
+
+Packages
+
+Packages are used in Java in order to prevent naming conflicts, to control access, to make searching/locating and usage of classes, interfaces, enumerations and annotations easier, etc.
+
+A Package can be defined as a grouping of related types (classes, interfaces, enumerations and annotations ) providing access protection and namespace management.
+
+Some of the existing packages in Java are −
+
+java.lang − bundles the fundamental classes
+
+java.io − classes for input , output functions are bundled in this package
+
+Programmers can define their own packages to bundle group of classes/interfaces, etc. It is a good practice to group related classes implemented by you so that a programmer can easily determine that the classes, interfaces, enumerations, and annotations are related.
+
+Since the package creates a new namespace there won't be any name conflicts with names in other packages. Using packages, it is easier to provide access control and it is also easier to locate the related classes.
+
+Creating a Package
+While creating a package, you should choose a name for the package and include a package statement along with that name at the top of every source file that contains the classes, interfaces, enumerations, and annotation types that you want to include in the package.
+
+The package statement should be the first line in the source file. There can be only one package statement in each source file, and it applies to all types in the file.
+
+If a package statement is not used then the class, interfaces, enumerations, and annotation types will be placed in the current default package.
+
+To compile the Java programs with package statements, you have to use -d option as shown below.
+
+javac -d Destination_folder file_name.java
+Then a folder with the given package name is created in the specified destination, and the compiled class files will be placed in that folder.
+
+Example
+Let us look at an example that creates a package called animals. It is a good practice to use names of packages with lower case letters to avoid any conflicts with the names of classes and interfaces.
+
+Following package example contains interface named animals −
+
+/* File name : Animal.java */
+package animals;
+
+interface Animal {
+   public void eat();
+   public void travel();
+}
+Now, let us implement the above interface in the same package animals −
+
+package animals;
+/* File name : MammalInt.java */
+
+public class MammalInt implements Animal {
+
+   public void eat() {
+      System.out.println("Mammal eats");
+   }
+
+   public void travel() {
+      System.out.println("Mammal travels");
+   } 
+
+   public int noOfLegs() {
+      return 0;
+   }
+
+   public static void main(String args[]) {
+      MammalInt m = new MammalInt();
+      m.eat();
+      m.travel();
+   }
+} 
+Now compile the java files as shown below −
+
+$ javac -d . Animal.java 
+$ javac -d . MammalInt.java
+Now a package/folder with the name animals will be created in the current directory and these class files will be placed in it.
+You can execute the class file within the package and get the result as shown below.
+
+Mammal eats
+Mammal travels

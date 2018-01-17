@@ -1,72 +1,72 @@
-Q0 Question one
-answer one
-answer two
-answer three
-answer four
-4
-Q1 Question two
-answer one
-answer two
-answer three
-answer four
-3
-Q2 Question three
-answer one
-answer two
-answer three
-answer four
-2
-Q3 Question four
-answer one
-answer two
-answer three
-answer four
+Q0 The class which inherits the properties of other is known as subclass
+True
+False
+------
+------
 1
-Q4 Question five
-answer one
-answer two
-answer three
-answer four
-4
-Q5 Question six
-answer one
-answer two
-answer three
-answer four
-3
-Q6 Question seven
-answer one
-answer two
-answer three
-answer four
-2
-Q7 Question eight
-answer one
-answer two
-answer three
-answer four
+Q1 The class used for inheritance is called base class
+True
+False
+------
+------
 1
-Q8 Question nine
-answer one
-answer two
-answer three
-answer four
-4
-Q9 Question ten
-answer one
-answer two
-answer three
-answer four
-3
-Q10 Question eleven
-answer one
-answer two
-answer three
-answer four
-2
-Q11 Question twelve
-answer one
-answer two
-answer three
-answer four
+Q2 Inheritance can be defined as 
+the process where one class acquires the properties
+the ability of an object to take on many forms.
+a mechanism of wrapping the data (variables) and code acting on the data (methods) together as a single unit.
+None of the above.
 1
+Q3 Polymorphism can be defined as 
+the process where one class acquires the properties
+the ability of an object to take on many forms.
+a mechanism of wrapping the data (variables) and code acting on the data (methods) together as a single unit.
+None of the above.
+2
+Q4 Encapsulation can be defined as 
+the process where one class acquires the properties
+the ability of an object to take on many forms.
+a mechanism of wrapping the data (variables) and code acting on the data (methods) together as a single unit.
+None of the above.
+3
+Q5 Abstraction can be defined as 
+the process where one class acquires the properties
+the ability of an object to take on many forms.
+a mechanism of wrapping the data (variables) and code acting on the data (methods) together as a single unit.
+None of the above.
+4
+Q6 Any Java object that can pass more than one IS-A test is considered to be polymorphic.
+True
+False
+------
+------
+1
+Q7 The only possible way to access an object is through a reference variable.
+True
+False
+------
+------
+1
+Q8 Once declared, the type of a reference variable can be changed.
+True
+False
+------
+------
+2
+Q9 A reference variable can refer to any object of its declared type or any subtype of its declared type.
+True
+False
+------
+------
+1
+Q10 A reference variable can only be declared as a class type.
+True
+False
+------
+------
+2
+Q11 A reference variable can only be declared as an interface type.
+True
+False
+------
+------
+2

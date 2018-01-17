@@ -1,4 +1,4 @@
-Objects
+Objects and Operators
 
 Java is an Object-Oriented Language. As a language that has the Object-Oriented feature, Java supports the following fundamental concepts −
     Polymorphism
@@ -81,3 +81,60 @@ There are three steps when creating an object from a class −
     Declaration − A variable declaration with a variable name with an object type.
     Instantiation − The 'new' keyword is used to create the object.
     Initialization − The 'new' keyword is followed by a call to a constructor. This call initializes the new object.
+
+Basic Operators
+
+Java provides a rich set of operators to manipulate variables. We can divide all the Java operators into the following groups −
+    Arithmetic Operators
+    Relational Operators
+    Bitwise Operators
+    Logical Operators
+    Assignment Operators
+    Misc Operators
+
+The Arithmetic Operators
+Arithmetic operators are used in mathematical expressions in the same way that they are used in algebra. The following table lists the arithmetic operators −
+Assume integer variable A holds 10 and variable B holds 20, then −
+Show Examples
+
++ (Addition)
+- (Subtraction)
+* (Multiplication)
+/ (Division)
+% (Modulus)
+++ (Increment)
+-- (Decrement)
+
+
+The Relational Operators
+There are following relational operators supported by Java language.
+Assume variable A holds 10 and variable B holds 20, then −
+Show Examples
+
+== (equal to)
+!= (not equal to)
+> (greater than)
+< (less than)
+>= (greater than or equal to)
+<= (less than or equal to)
+
+The Logical Operators
+The following table lists the logical operators −
+Assume Boolean variables A holds true and variable B holds false, then −
+Show Examples
+
+&& (logical and)
+|| (logical or)
+! (logical not)
+
+
+The Assignment Operators
+Following are the assignment operators supported by Java language −
+Show Examples
+
+= (assignment operator)
++= (add and assignment operator)
+-= (subtract and assignment operator)
+*= (multiply and assignment operator)
+/= (divide and assignment operator)
+%= (modulus and assignment operator)

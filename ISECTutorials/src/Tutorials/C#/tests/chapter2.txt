@@ -10,7 +10,7 @@ Q1 Syntax for variable definition in C# is:
 -----
 -----
 1
-Q2 Integer i; Is a valid declaration:
+Q2 "integer i;" Is a valid declaration:
 True
 False
 -----
@@ -34,7 +34,7 @@ Q5 Initialization uses
 +=
 ----
 1
-Q6 Users inser values trough
+Q6 Users insert values trough
 Console.WriteLine();
 Console.ReadLine();
 ---------------

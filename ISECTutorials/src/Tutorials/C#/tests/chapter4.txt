@@ -58,7 +58,7 @@ False
 -----
 -----
 1
-Q10 Protected values can be used by the main program
+Q10 Protected values can be used by the main class
 True
 False
 -----

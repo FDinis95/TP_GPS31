@@ -1,72 +1,72 @@
-Q0 Question one
-answer one
-answer two
-answer three
-answer four
-4
-Q1 Question two
-answer one
-answer two
-answer three
-answer four
+Q0 A stream can be defined as a sequence of:
+operators
+loops
+data
+All of the above
 3
-Q2 Question three
-answer one
-answer two
-answer three
-answer four
+Q1 Wich of these are streams
+InPutStream
+OutPutStream
+Both
+None of the above
+3
+Q2 Java doesn't support flexible I/O related to files
+True
+False
+------
+------
 2
-Q3 Question four
-answer one
-answer two
-answer three
-answer four
+Q3 InPutStream is used to
+Read data
+Write data
+---------
+---------
 1
-Q4 Question five
-answer one
-answer two
-answer three
-answer four
-4
-Q5 Question six
-answer one
-answer two
-answer three
-answer four
-3
-Q6 Question seven
-answer one
-answer two
-answer three
-answer four
+Q4 OutPutStream is used to
+Read data
+Write data
+---------
+---------
 2
-Q7 Question eight
-answer one
-answer two
-answer three
-answer four
+Q5 Wich of these is a file stream
+Byte
+Character
+Both
+None of the above
+3
+Q6 Standart streams are only related to user inputs
+True
+False
+------
+------
+2
+Q7 Standart streams only display data on the screen
+True
+False
+------
+------
+2
+Q8 STDIN, STDOUT and STDERR are the Java standart streams
+True
+False
+------
+------
+2
+Q9 System.in, System.out and System.err are the Java standart streams
+True
+False
+------
+------
 1
-Q8 Question nine
-answer one
-answer two
-answer three
-answer four
-4
-Q9 Question ten
-answer one
-answer two
-answer three
-answer four
-3
-Q10 Question eleven
-answer one
-answer two
-answer three
-answer four
+Q10 System.err is automaticly used if the programm has a error in coding to warn the programmer
+True
+False
+------
+------
 2
-Q11 Question twelve
-answer one
-answer two
-answer three
-answer four
+Q11 System.in standard input is the keyboard
+True
+False
+------
+------
 1

@@ -1,129 +1,191 @@
-I/O
+Doc. Comments and Collections
 
-The java.io package contains nearly every class you might ever need to perform input and output (I/O) in Java. All these streams represent an input source and an output destination. The stream in the java.io package supports many data such as primitives, object, localized characters, etc.
-Stream
-A stream can be defined as a sequence of data. There are two kinds of Streams −
-    InPutStream − The InputStream is used to read data from a source.
-    OutPutStream − The OutputStream is used for writing data to a destination.
+Documentation Comments
 
-Java provides strong but flexible support for I/O related to files and networks but this tutorial covers very basic functionality related to streams and I/O. We will see the most commonly used examples one by one −
-Byte Streams
-Java byte streams are used to perform input and output of 8-bit bytes. Though there are many classes related to byte streams but the most frequently used classes are, FileInputStream and FileOutputStream. Following is an example which makes use of these two classes to copy an input file into an output file −
-Example
-import java.io.*;
-public class CopyFile {
+The Java language supports three types of comments:
 
-   public static void main(String args[]) throws IOException {  
-      FileInputStream in = null;
-      FileOutputStream out = null;
+Sr.No.	Comment & Description
+1	
+/* text */
 
-      try {
-         in = new FileInputStream("input.txt");
-         out = new FileOutputStream("output.txt");
-         
-         int c;
-         while ((c = in.read()) != -1) {
-            out.write(c);
-         }
-      }finally {
-         if (in != null) {
-            in.close();
-         }
-         if (out != null) {
-            out.close();
-         }
-      }
-   }
-}
-Now let's have a file input.txt with the following content −
-This is test for copy file.
+The compiler ignores everything from /* to */.
+
+2	
+//text
+
+The compiler ignores everything from // to the end of the line.
+
+3	
+/** documentation */
+
+This is a documentation comment and in general its called doc comment. 
+The JDK javadoc tool uses doc comments when preparing automatically generated documentation.
 
 
-As a next step, compile the above program and execute it, which will result in creating output.txt file with the same content as we have in input.txt. So let's put the above code in CopyFile.java file and do the following −
-$javac CopyFile.java
-$java CopyFile
+Collections
 
+Prior to Java 2, Java provided ad hoc classes such as Dictionary, Vector, Stack, and Properties to store and manipulate groups of objects. Although these classes were quite useful, they lacked a central, unifying theme. Thus, the way that you used Vector was different from the way that you used Properties.
 
-Character Streams
-Java Byte streams are used to perform input and output of 8-bit bytes, whereas Java Character streams are used to perform input and output for 16-bit unicode. Though there are many classes related to character streams but the most frequently used classes are, FileReader and FileWriter. Though internally FileReader uses FileInputStream and FileWriter uses FileOutputStream but here the major difference is that FileReader reads two bytes at a time and FileWriter writes two bytes at a time.
-We can re-write the above example, which makes the use of these two classes to copy an input file (having unicode characters) into an output file −
-Example
-import java.io.*;
-public class CopyFile {
+The collections framework was designed to meet several goals, such as:
 
-   public static void main(String args[]) throws IOException {
-      FileReader in = null;
-      FileWriter out = null;
+The framework had to be high-performance. The implementations for the fundamental collections (dynamic arrays, linked lists, trees, and hashtables) were to be highly efficient.
 
-      try {
-         in = new FileReader("input.txt");
-         out = new FileWriter("output.txt");
-         
-         int c;
-         while ((c = in.read()) != -1) {
-            out.write(c);
-         }
-      }finally {
-         if (in != null) {
-            in.close();
-         }
-         if (out != null) {
-            out.close();
-         }
-      }
-   }
-}
-Now let's have a file input.txt with the following content −
-This is test for copy file.
+The framework had to allow different types of collections to work in a similar manner and with a high degree of interoperability.
 
+The framework had to extend and/or adapt a collection easily.
 
-As a next step, compile the above program and execute it, which will result in creating output.txt file with the same content as we have in input.txt. So let's put the above code in CopyFile.java file and do the following −
-$javac CopyFile.java
-$java CopyFile
+Towards this end, the entire collections framework is designed around a set of standard interfaces. Several standard implementations such as LinkedList, HashSet, and TreeSet, of these interfaces are provided that you may use as-is and you may also implement your own collection, if you choose.
 
+A collections framework is a unified architecture for representing and manipulating collections. All collections frameworks contain the following −
 
-Standard Streams
-All the programming languages provide support for standard I/O where the user's program can take input from a keyboard and then produce an output on the computer screen. If you are aware of C or C++ programming languages, then you must be aware of three standard devices STDIN, STDOUT and STDERR. Similarly, Java provides the following three standard streams −
-    Standard Input − This is used to feed the data to user's program and usually a keyboard is used as standard input stream and represented as System.in.
-    Standard Output − This is used to output the data produced by the user's program and usually a computer screen is used for standard output stream and represented as System.out.
-    Standard Error − This is used to output the error data produced by the user's program and usually a computer screen is used for standard error stream and represented as System.err.
+Interfaces − These are abstract data types that represent collections. Interfaces allow collections to be manipulated independently of the details of their representation. In object-oriented languages, interfaces generally form a hierarchy.
 
-Following is a simple program, which creates InputStreamReader to read standard input stream until the user types a "q" −
-Example
-import java.io.*;
-public class ReadConsole {
+Implementations, i.e., Classes − These are the concrete implementations of the collection interfaces. In essence, they are reusable data structures.
 
-   public static void main(String args[]) throws IOException {
-      InputStreamReader cin = null;
+Algorithms − These are the methods that perform useful computations, such as searching and sorting, on objects that implement collection interfaces. The algorithms are said to be polymorphic: that is, the same method can be used on many different implementations of the appropriate collection interface.
 
-      try {
-         cin = new InputStreamReader(System.in);
-         System.out.println("Enter characters, 'q' to quit.");
-         char c;
-         do {
-            c = (char) cin.read();
-            System.out.print(c);
-         } while(c != 'q');
-      }finally {
-         if (cin != null) {
-            cin.close();
-         }
-      }
-   }
-}
-Let's keep the above code in ReadConsole.java file and try to compile and execute it as shown in the following program. This program continues to read and output the same character until we press 'q' −
-$javac ReadConsole.java
-$java ReadConsole
-Enter characters, 'q' to quit.
-1
-1
-e
-e
-q
-q
+In addition to collections, the framework defines several map interfaces and classes. Maps store key/value pairs. Although maps are not collections in the proper use of the term, but they are fully integrated with collections.
 
+The Collection Interfaces
+The collections framework defines several interfaces. This section provides an overview of each interface −
 
-Reading and Writing Files
-As described earlier, a stream can be defined as a sequence of data. The InputStream is used to read data from a source and the OutputStream is used for writing data to a destination.
+Sr.No.	Interface & Description
+1	The Collection Interface
+This enables you to work with groups of objects; it is at the top of the collections hierarchy.
 
-The two important streams are FileInputStream and FileOutputStream, which would be discussed in this tutorial.
+2	The List Interface
+This extends Collection and an instance of List stores an ordered collection of elements.
+
+3	The Set
+This extends Collection to handle sets, which must contain unique elements.
+
+4	The SortedSet
+This extends Set to handle sorted sets.
+
+5	The Map
+This maps unique keys to values.
+
+6	The Map.Entry
+This describes an element (a key/value pair) in a map. This is an inner class of Map.
+
+7	The SortedMap
+This extends Map so that the keys are maintained in an ascending order.
+
+8	The Enumeration
+This is legacy interface defines the methods by which you can enumerate (obtain one at a time) the elements in a collection of objects. This legacy interface has been superceded by Iterator.
+
+The Collection Classes
+Java provides a set of standard collection classes that implement Collection interfaces. Some of the classes provide full implementations that can be used as-is and others are abstract class, providing skeletal implementations that are used as starting points for creating concrete collections.
+
+The standard collection classes are summarized in the following table −
+
+Sr.No.	Class & Description
+1	
+AbstractCollection
+
+Implements most of the Collection interface.
+
+2	AbstractList
+
+Extends AbstractCollection and implements most of the List interface.
+
+3	AbstractSequentialList
+
+Extends AbstractList for use by a collection that uses sequential rather than random access of its elements.
+
+4	LinkedList
+Implements a linked list by extending AbstractSequentialList.
+
+5	ArrayList
+Implements a dynamic array by extending AbstractList.
+
+6	AbstractSet
+Extends AbstractCollection and implements most of the Set interface.
+
+7	HashSet
+Extends AbstractSet for use with a hash table.
+
+8	LinkedHashSet
+Extends HashSet to allow insertion-order iterations.
+
+9	TreeSet
+Implements a set stored in a tree. Extends AbstractSet.
+
+10	AbstractMap
+Implements most of the Map interface.
+
+11	HashMap
+Extends AbstractMap to use a hash table.
+
+12	TreeMap
+Extends AbstractMap to use a tree.
+
+13	WeakHashMap
+Extends AbstractMap to use a hash table with weak keys.
+
+14	LinkedHashMap
+Extends HashMap to allow insertion-order iterations.
+
+15	IdentityHashMap
+Extends AbstractMap and uses reference equality when comparing documents.
+
+The AbstractCollection, AbstractSet, AbstractList, AbstractSequentialList and AbstractMap classes provide skeletal implementations of the core collection interfaces, to minimize the effort required to implement them.
+
+The following legacy classes defined by java.util have been discussed in the previous chapter:
+
+Sr.No.	Class & Description
+1	Vector
+This implements a dynamic array. It is similar to ArrayList, but with some differences.
+
+2	Stack
+Stack is a subclass of Vector that implements a standard last-in, first-out stack.
+
+3	Dictionary
+Dictionary is an abstract class that represents a key/value storage repository and operates much like Map.
+
+4	Hashtable
+Hashtable was part of the original java.util and is a concrete implementation of a Dictionary.
+
+5	Properties
+Properties is a subclass of Hashtable. It is used to maintain lists of values in which the key is a String and the value is also a String.
+
+6	BitSet
+A BitSet class creates a special type of array that holds bit values. This array can increase in size as needed.
+
+The Collection Algorithms
+The collections framework defines several algorithms that can be applied to collections and maps. These algorithms are defined as static methods within the Collections class.
+
+Several of the methods can throw a ClassCastException, which occurs when an attempt is made to compare incompatible types, or an UnsupportedOperationException, which occurs when an attempt is made to modify an unmodifiable collection.
+
+Collections define three static variables: EMPTY_SET, EMPTY_LIST, and EMPTY_MAP. All are immutable.
+
+Sr.No.	Algorithm & Description
+1	The Collection Algorithms
+Here is a list of all the algorithm implementation.
+
+How to Use an Iterator ?
+Often, you will want to cycle through the elements in a collection. For example, you might want to display each element.
+
+The easiest way to do this is to employ an iterator, which is an object that implements either the Iterator or the ListIterator interface.
+
+Iterator enables you to cycle through a collection, obtaining or removing elements. ListIterator extends Iterator to allow bidirectional traversal of a list and the modification of elements.
+
+Sr.No.	Iterator Method & Description
+1	Using Java Iterator
+Here is a list of all the methods with examples provided by Iterator and ListIterator interfaces.
+
+How to Use a Comparator ?
+Both TreeSet and TreeMap store elements in a sorted order. However, it is the comparator that defines precisely what sorted order means.
+
+This interface lets us sort a given collection any number of different ways. Also this interface can be used to sort any instances of any class (even classes we cannot modify).
+
+Sr.No.	Iterator Method & Description
+1	Using Java Comparator
+Here is a list of all the methods with examples provided by Comparator Interface.
+
+Summary
+The Java collections framework gives the programmer access to prepackaged data structures as well as to algorithms for manipulating them.
+
+A collection is an object that can hold references to other objects. The collection interfaces declare the operations that can be performed on each type of collection.
+
+The classes and interfaces of the collections framework are in package java.util.
