@@ -1,78 +1,72 @@
-Q0 Question one
-answer one
-answer two
-answer three
-answer four
-4
-Q1 Question two
-answer one
-answer two
-answer three
-answer four
-3
-Q2 Question three
-answer one
-answer two
-answer three
-answer four
+Q0 To use a method, you just have to define it:
+True
+False
+-----
+-----
 2
-Q3 Question four
-answer one
-answer two
-answer three
-answer four
+Q1 To define a method the syntax is:
+<Method Name> <Access Specifier> <Return Type>(Parameter List)
+<Access Specifier> <Return Type> <Method Name>(Parameter List)
+<Return Type> <Access Specifier> <Method Name>(Parameter List)
+<Access Specifier> <Method Name> <Return Type>(Parameter List)
+2
+Q2 All methods must have a return value
+True
+False
+-----
+-----
+2
+Q3 Method names are case sensitive
+True
+False
+-----
+-----
 1
-Q4 Question five
-answer one
-answer two
-answer three
-answer four
-4
-Q5 Question six
-answer one
-answer two
-answer three
-answer four
-3
-Q6 Question seven
-answer one
-answer two
-answer three
-answer four
+Q4 Methods must have parameters
+True
+False
+-----
+-----
 2
-Q7 Question eight
-answer one
-answer two
-answer three
-answer four
+Q5 Calling a method is done by:
+.MethodName(parameters)
+&MethodName(parameters)
+|MethodName(parameters)
+\\MethodName(parameters)
 1
-Q8 Question nine
-answer one
-answer two
-answer three
-answer four
-4
-Q9 Question ten
-answer one
-answer two
-answer three
-answer four
-3
-Q10 Question eleven
-answer one
-answer two
-answer three
-answer four
+Q6 Public methods can only be called from the main class
+True
+False
+-----
+-----
 2
-Q11 Question twelve
-answer one
-answer two
-answer three
-answer four
+Q7 A method cannot call itself
+True
+False
+-----
+-----
+2
+Q8 C# methods can't use Output parameters to return multiple values
+True
+False
+-----
+-----
+2
+Q9 Methods can have reference parameters 
+True
+False
+-----
+-----
 1
-Q12 Question thirteen
-answer one
-answer two
-answer three
-answer four
+Q10 Value Parameters altered inside the function return with that value to the main function
+True
+False
+-----
+-----
 2
+Q11 Reference Parameters altered inside the function return with that value to the main function
+True
+False
+-----
+-----
+1

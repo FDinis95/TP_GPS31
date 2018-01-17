@@ -1,9 +1,162 @@
-Teste 5
+A method is a group of statements that together perform a task. Every C# program has at least one class with a method named Main.
 
- Lorem ipsum dolor sit amet, aliquet donec, natoque vulputate pretium erat pede, turpis sed est faucibus mi aenean. Aliquet mauris in, ipsum convallis lobortis sed. Ut libero natoque leo viverra feugiat, quos erat venenatis tortor vel nisl consequat, tempus dui, sed wisi vestibulum in gravida vivamus suspendisse, quam convallis quis vel quam sed eleifend. In praesent ullamcorper cras, dapibus sed felis justo, egestas in. Arcu et vitae pellentesque parturient dictum, lobortis mauris mauris tortor tincidunt vestibulum mollis, ornare integer hendrerit eget ac at. Nulla aliquet enim vitae arcu, dolor nec litora blandit mauris, mattis vestibulum et ut nisi, morbi pede, scelerisque pellentesque justo nonummy.
+To use a method, you need to:
 
-In felis arcu quisque, nunc erat scelerisque neque nostra velit augue, tellus vel nonummy nonummy fusce a. Scelerisque vel vel. Sequi pharetra sed eu morbi leo, tellus aenean, ac fusce vehicula est eget, quisque porttitor ultricies mauris fringilla elementum eget, vel integer feugiat praesent mi. Quam nec nunc suspendisse tortor eleifend. Sed morbi libero pede habitant interdum, neque et in aenean at molestie, placerat mi augue justo, eu iaculis accumsan sit eget phasellus arcu, eget in ipsum. Donec in nullam ipsum, gravida magna, turpis auctor a eleifend, nec eget, sed tempus interdum eros non massa vitae. Senectus elit, sodales magna phasellus quia nunc, elit tincidunt odio euismod ultrices rutrum eleifend, vitae taciti eros fusce. Justo eros, velit gravida iusto augue id, volutpat nulla aenean donec magna consectetuer non.
+Define the method
+Call the method
 
-Aliquam elit ac adipiscing aliquet, lacus enim rutrum tincidunt, pharetra quis quisque sem lacinia aliquet varius. Erat tellus. Pulvinar amet risus, ante feugiat sapien sed scelerisque, consequat cras sociis sapien sollicitudin, nec lacus orci. Augue lacinia donec quis mus urna, duis accumsan at at facilisis, faucibus volutpat duis felis. Luctus vel duis ante viverra aliquam, est condimentum duis.
+Defining Methods in C#
+When you define a method, you basically declare the elements of its structure. The syntax for defining a method in C# is as follows −
 
-Semper wisi id nisl sodales consequat nobis, ligula sociis aenean diam wisi, feugiat purus placerat ac sodales consequat lorem. Ut fusce euismod ut vitae purus, nunc ipsum vestibulum, vestibulum suscipit mauris eros libero sed odio. Viverra consequat quis erat, dis mauris sed non adipiscing natoque nunc, mauris ligula turpis consectetuer aliquam rhoncus quis, odio mauris vehicula montes at. Nec in totam, quis ad mi id odio justo viverra, dis wisi nullam odio imperdiet sociis porttitor. Risus eu, eros id, erat elit molestie lorem, cras per quam, aptent metus vulputate tempor veniam. Felis odio nec curabitur eu sed aenean, nulla parturient magnis fringilla fugiat ligula, lorem habitasse conubia feugiat torquent feugiat. Praesent dolore feugiat sapien. At provident ante pellentesque id luctus, odio nascetur diam quis, lacus dolor tellus pharetra, cursus ultrices maecenas condimentum odio ridiculus, proin ac non in mauris.
+<Access Specifier> <Return Type> <Method Name>(Parameter List) {
+   Method Body
+}
+
+Following are the various elements of a method:
+
+Access Specifier − This determines the visibility of a variable or a method from another class.
+
+Return type − A method may return a value. The return type is the data type of the value the method returns. If the method is not returning any values, then the return type is void.
+
+Method name − Method name is a unique identifier and it is case sensitive. It cannot be same as any other identifier declared in the class.
+
+Parameter list − Enclosed between parentheses, the parameters are used to pass and receive data from a method. The parameter list refers to the type, order, and number of the parameters of a method. Parameters are optional; that is, a method may contain no parameters.
+
+Method body − This contains the set of instructions needed to complete the required activity.
+
+Example
+Following code snippet shows a function FindMax that takes two integer values and returns the larger of the two. It has public access specifier, so it can be accessed from outside the class using an instance of the class.
+
+class NumberManipulator {
+
+   public int FindMax(int num1, int num2) {
+      /* local variable declaration */
+      int result;
+
+      if (num1 > num2)
+         result = num1;
+      else
+         result = num2;
+
+      return result;
+   }
+   ...
+}
+
+Calling Methods in C#
+You can call a method using the name of the method. The following example illustrates this:
+
+using System;
+
+namespace CalculatorApplication {
+   class NumberManipulator {
+      public int FindMax(int num1, int num2) {
+         /* local variable declaration */
+         int result;
+         
+         if (num1 > num2)
+            result = num1;
+         else
+            result = num2;
+         return result;
+      }
+      
+      static void Main(string[] args) {
+         /* local variable definition */
+         int a = 100;
+         int b = 200;
+         int ret;
+         NumberManipulator n = new NumberManipulator();
+
+         //calling the FindMax method
+         ret = n.FindMax(a, b);
+         Console.WriteLine("Max value is : {0}", ret );
+         Console.ReadLine();
+      }
+   }
+}
+When the above code is compiled and executed, it produces the following result:
+
+    Max value is : 200
+
+You can also call public method from other classes by using the instance of the class. For example, the method FindMax belongs to the NumberManipulator class, you can call it from another class Test.
+
+using System;
+
+namespace CalculatorApplication {
+   class NumberManipulator {
+      public int FindMax(int num1, int num2) {
+         /* local variable declaration */
+         int result;
+         
+         if(num1 > num2)
+            result = num1;
+         else
+            result = num2;
+         
+         return result;
+      }
+   }
+   class Test {
+      static void Main(string[] args) {
+         /* local variable definition */
+         int a = 100;
+         int b = 200;
+         int ret;
+         NumberManipulator n = new NumberManipulator();
+         
+         //calling the FindMax method
+         ret = n.FindMax(a, b);
+         Console.WriteLine("Max value is : {0}", ret );
+         Console.ReadLine();
+      }
+   }
+}
+When the above code is compiled and executed, it produces the following result −
+
+Max value is : 200
+
+Recursive Method Call
+A method can call itself. This is known as recursion. Following is an example that calculates factorial for a given number using a recursive function −
+
+using System;
+
+namespace CalculatorApplication {
+   class NumberManipulator {
+      public int factorial(int num) {
+         /* local variable declaration */
+         int result;
+         if (num == 1) {
+            return 1;
+         } else {
+            result = factorial(num - 1) * num;
+            return result;
+         }
+      }
+      static void Main(string[] args) {
+         NumberManipulator n = new NumberManipulator();
+         //calling the factorial method {0}", n.factorial(6));
+         Console.WriteLine("Factorial of 7 is : {0}", n.factorial(7));
+         Console.WriteLine("Factorial of 8 is : {0}", n.factorial(8));
+         Console.ReadLine();
+      }
+   }
+}
+When the above code is compiled and executed, it produces the following result −
+
+Factorial of 6 is: 720
+Factorial of 7 is: 5040
+Factorial of 8 is: 40320
+
+Passing Parameters to a Method
+When method with parameters is called, you need to pass the parameters to the method. There are three ways that parameters can be passed to a method:
+
+No.	Mechanism & Description
+1	Value parameters
+This method copies the actual value of an argument into the formal parameter of the function. In this case, changes made to the parameter inside the function have no effect on the argument.
+
+2	Reference parameters
+This method copies the reference to the memory location of an argument into the formal parameter. This means that changes made to the parameter affect the argument.
+
+3	Output parameters
+This method helps in returning more than one value.

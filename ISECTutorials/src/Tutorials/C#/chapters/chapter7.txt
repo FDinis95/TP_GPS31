@@ -1,9 +1,263 @@
-Teste 7
+In C#, a structure is a value type data type. It helps you to make a single variable hold related data of various data types. The struct keyword is used for creating a structure.
 
- Lorem ipsum dolor sit amet, aliquet donec, natoque vulputate pretium erat pede, turpis sed est faucibus mi aenean. Aliquet mauris in, ipsum convallis lobortis sed. Ut libero natoque leo viverra feugiat, quos erat venenatis tortor vel nisl consequat, tempus dui, sed wisi vestibulum in gravida vivamus suspendisse, quam convallis quis vel quam sed eleifend. In praesent ullamcorper cras, dapibus sed felis justo, egestas in. Arcu et vitae pellentesque parturient dictum, lobortis mauris mauris tortor tincidunt vestibulum mollis, ornare integer hendrerit eget ac at. Nulla aliquet enim vitae arcu, dolor nec litora blandit mauris, mattis vestibulum et ut nisi, morbi pede, scelerisque pellentesque justo nonummy.
+Structures are used to represent a record. Suppose you want to keep track of your books in a library. You might want to track the following attributes about each book −
 
-In felis arcu quisque, nunc erat scelerisque neque nostra velit augue, tellus vel nonummy nonummy fusce a. Scelerisque vel vel. Sequi pharetra sed eu morbi leo, tellus aenean, ac fusce vehicula est eget, quisque porttitor ultricies mauris fringilla elementum eget, vel integer feugiat praesent mi. Quam nec nunc suspendisse tortor eleifend. Sed morbi libero pede habitant interdum, neque et in aenean at molestie, placerat mi augue justo, eu iaculis accumsan sit eget phasellus arcu, eget in ipsum. Donec in nullam ipsum, gravida magna, turpis auctor a eleifend, nec eget, sed tempus interdum eros non massa vitae. Senectus elit, sodales magna phasellus quia nunc, elit tincidunt odio euismod ultrices rutrum eleifend, vitae taciti eros fusce. Justo eros, velit gravida iusto augue id, volutpat nulla aenean donec magna consectetuer non.
+Title
+Author
+Subject
+Book ID
+Defining a Structure
+To define a structure, you must use the struct statement. The struct statement defines a new data type, with more than one member for your program.
 
-Aliquam elit ac adipiscing aliquet, lacus enim rutrum tincidunt, pharetra quis quisque sem lacinia aliquet varius. Erat tellus. Pulvinar amet risus, ante feugiat sapien sed scelerisque, consequat cras sociis sapien sollicitudin, nec lacus orci. Augue lacinia donec quis mus urna, duis accumsan at at facilisis, faucibus volutpat duis felis. Luctus vel duis ante viverra aliquam, est condimentum duis.
+For example, here is the way you can declare the Book structure:
 
-Semper wisi id nisl sodales consequat nobis, ligula sociis aenean diam wisi, feugiat purus placerat ac sodales consequat lorem. Ut fusce euismod ut vitae purus, nunc ipsum vestibulum, vestibulum suscipit mauris eros libero sed odio. Viverra consequat quis erat, dis mauris sed non adipiscing natoque nunc, mauris ligula turpis consectetuer aliquam rhoncus quis, odio mauris vehicula montes at. Nec in totam, quis ad mi id odio justo viverra, dis wisi nullam odio imperdiet sociis porttitor. Risus eu, eros id, erat elit molestie lorem, cras per quam, aptent metus vulputate tempor veniam. Felis odio nec curabitur eu sed aenean, nulla parturient magnis fringilla fugiat ligula, lorem habitasse conubia feugiat torquent feugiat. Praesent dolore feugiat sapien. At provident ante pellentesque id luctus, odio nascetur diam quis, lacus dolor tellus pharetra, cursus ultrices maecenas condimentum odio ridiculus, proin ac non in mauris.
+struct Books {
+   public string title;
+   public string author;
+   public string subject;
+   public int book_id;
+};  
+The following program shows the use of the structure:
+
+using System;
+
+struct Books {
+   public string title;
+   public string author;
+   public string subject;
+   public int book_id;
+};  
+
+public class testStructure {
+   public static void Main(string[] args) {
+      Books Book1;   /* Declare Book1 of type Book */
+      Books Book2;   /* Declare Book2 of type Book */
+
+      /* book 1 specification */
+      Book1.title = "C Programming";
+      Book1.author = "Nuha Ali"; 
+      Book1.subject = "C Programming Tutorial";
+      Book1.book_id = 6495407;
+
+      /* book 2 specification */
+      Book2.title = "Telecom Billing";
+      Book2.author = "Zara Ali";
+      Book2.subject =  "Telecom Billing Tutorial";
+      Book2.book_id = 6495700;
+
+      /* print Book1 info */
+      Console.WriteLine( "Book 1 title : {0}", Book1.title);
+      Console.WriteLine("Book 1 author : {0}", Book1.author);
+      Console.WriteLine("Book 1 subject : {0}", Book1.subject);
+      Console.WriteLine("Book 1 book_id :{0}", Book1.book_id);
+
+      /* print Book2 info */
+      Console.WriteLine("Book 2 title : {0}", Book2.title);
+      Console.WriteLine("Book 2 author : {0}", Book2.author);
+      Console.WriteLine("Book 2 subject : {0}", Book2.subject);
+      Console.WriteLine("Book 2 book_id : {0}", Book2.book_id);       
+
+      Console.ReadKey();
+   }
+}
+
+When the above code is compiled and executed, it produces the following result:
+
+Book 1 title : C Programming
+Book 1 author : Nuha Ali
+Book 1 subject : C Programming Tutorial
+Book 1 book_id : 6495407
+Book 2 title : Telecom Billing
+Book 2 author : Zara Ali
+Book 2 subject : Telecom Billing Tutorial
+Book 2 book_id : 6495700
+
+Features of C# Structures
+You have already used a simple structure named Books. Structures in C# are quite different from that in traditional C or C++. The C# structures have the following features:
+
+Structures can have methods, fields, indexers, properties, operator methods, and events.
+
+Structures can have defined constructors, but not destructors. However, you cannot define a default constructor for a structure. The default constructor is automatically defined and cannot be changed.
+
+Unlike classes, structures cannot inherit other structures or classes.
+
+Structures cannot be used as a base for other structures or classes.
+
+A structure can implement one or more interfaces.
+
+Structure members cannot be specified as abstract, virtual, or protected.
+
+When you create a struct object using the New operator, it gets created and the appropriate constructor is called. Unlike classes, structs can be instantiated without using the New operator.
+
+If the New operator is not used, the fields remain unassigned and the object cannot be used until all the fields are initialized.
+
+Class versus Structure
+Classes and Structures have the following basic differences:
+
+    classes are reference types and structs are value types
+    structures do not support inheritance
+    structures cannot have default constructor
+
+In the light of the above discussions, let us rewrite the previous example:
+
+using System;
+
+struct Books {
+   private string title;
+   private string author;
+   private string subject;
+   private int book_id;
+   
+   public void getValues(string t, string a, string s, int id) {
+      title = t;
+      author = a;
+      subject = s;
+      book_id = id;
+   }
+   
+   public void display() {
+      Console.WriteLine("Title : {0}", title);
+      Console.WriteLine("Author : {0}", author);
+      Console.WriteLine("Subject : {0}", subject);
+      Console.WriteLine("Book_id :{0}", book_id);
+   }
+};  
+
+public class testStructure {
+
+   public static void Main(string[] args) {
+      Books Book1 = new Books();   /* Declare Book1 of type Book */
+      Books Book2 = new Books();   /* Declare Book2 of type Book */
+
+      /* book 1 specification */
+      Book1.getValues("C Programming",
+      "Nuha Ali", "C Programming Tutorial",6495407);
+
+      /* book 2 specification */
+      Book2.getValues("Telecom Billing",
+      "Zara Ali", "Telecom Billing Tutorial", 6495700);
+
+      /* print Book1 info */
+      Book1.display();
+
+      /* print Book2 info */
+      Book2.display(); 
+
+      Console.ReadKey();
+   }
+}
+When the above code is compiled and executed, it produces the following result:
+
+Title : C Programming
+Author : Nuha Ali
+Subject : C Programming Tutorial
+Book_id : 6495407
+Title : Telecom Billing
+Author : Zara Ali
+Subject : Telecom Billing Tutorial
+Book_id : 6495700
+
+C# provides a special data types, the nullable types, to which you can assign normal range of values as well as null values.
+
+For example, you can store any value from -2,147,483,648 to 2,147,483,647 or null in a Nullable<Int32> variable. Similarly, you can assign true, false, or null in a Nullable<bool> variable. Syntax for declaring a nullable type is as follows:
+
+< data_type> ? <variable_name> = null;
+The following example demonstrates use of nullable data types −
+
+using System;
+
+namespace CalculatorApplication {
+   class NullablesAtShow {
+      static void Main(string[] args) {
+         int? num1 = null;
+         int? num2 = 45;
+         
+         double? num3 = new double?();
+         double? num4 = 3.14157;
+         
+         bool? boolval = new bool?();
+
+         // display the values
+         Console.WriteLine("Nullables at Show: {0}, {1}, {2}, {3}", num1, num2, num3, num4);
+         Console.WriteLine("A Nullable boolean value: {0}", boolval);
+         Console.ReadLine();
+      }
+   }
+}
+When the above code is compiled and executed, it produces the following result:
+
+Nullables at Show: , 45,  , 3.14157
+A Nullable boolean value:
+
+
+The Null Coalescing Operator (??)
+The null coalescing operator is used with the nullable value types and reference types. It is used for converting an operand to the type of another nullable (or not) value type operand, where an implicit conversion is possible.
+
+If the value of the first operand is null, then the operator returns the value of the second operand, otherwise it returns the value of the first operand. The following example explains this:
+
+using System;
+
+namespace CalculatorApplication {
+   class NullablesAtShow {
+      static void Main(string[] args) {
+         double? num1 = null;
+         double? num2 = 3.14157;
+         double num3;
+         
+         num3 = num1 ?? 5.34;      
+         Console.WriteLine(" Value of num3: {0}", num3);
+         
+         num3 = num2 ?? 5.34;
+         Console.WriteLine(" Value of num3: {0}", num3);
+         Console.ReadLine();
+      }
+   }
+}
+When the above code is compiled and executed, it produces the following result −
+
+Value of num3: 5.34
+Value of num3: 3.14157
+
+An enumeration is a set of named integer constants. An enumerated type is declared using the enum keyword.
+
+C# enumerations are value data type. In other words, enumeration contains its own values and cannot inherit or cannot pass inheritance.
+
+Declaring enum Variable
+The general syntax for declaring an enumeration is:
+
+enum <enum_name> {
+   enumeration list 
+};
+Where,
+
+The enum_name specifies the enumeration type name.
+
+The enumeration list is a comma-separated list of identifiers.
+
+Each of the symbols in the enumeration list stands for an integer value, one greater than the symbol that precedes it. By default, the value of the first enumeration symbol is 0. For example −
+
+enum Days { Sun, Mon, tue, Wed, thu, Fri, Sat };
+Example
+The following example demonstrates use of enum variable:
+
+
+using System;
+
+namespace EnumApplication {
+   class EnumProgram {
+      enum Days { Sun, Mon, tue, Wed, thu, Fri, Sat };
+
+      static void Main(string[] args) {
+         int WeekdayStart = (int)Days.Mon;
+         int WeekdayEnd = (int)Days.Fri;
+         
+         Console.WriteLine("Monday: {0}", WeekdayStart);
+         Console.WriteLine("Friday: {0}", WeekdayEnd);
+         Console.ReadKey();
+      }
+   }
+}
+When the above code is compiled and executed, it produces the following result:
+
+Monday: 1
+Friday: 5

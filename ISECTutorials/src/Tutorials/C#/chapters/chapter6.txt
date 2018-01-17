@@ -1,9 +1,404 @@
-Teste 6
+An array stores a fixed-size sequential collection of elements of the same type. An array is used to store a collection of data, but it is often more useful to think of an array as a collection of variables of the same type stored at contiguous memory locations.
 
- Lorem ipsum dolor sit amet, aliquet donec, natoque vulputate pretium erat pede, turpis sed est faucibus mi aenean. Aliquet mauris in, ipsum convallis lobortis sed. Ut libero natoque leo viverra feugiat, quos erat venenatis tortor vel nisl consequat, tempus dui, sed wisi vestibulum in gravida vivamus suspendisse, quam convallis quis vel quam sed eleifend. In praesent ullamcorper cras, dapibus sed felis justo, egestas in. Arcu et vitae pellentesque parturient dictum, lobortis mauris mauris tortor tincidunt vestibulum mollis, ornare integer hendrerit eget ac at. Nulla aliquet enim vitae arcu, dolor nec litora blandit mauris, mattis vestibulum et ut nisi, morbi pede, scelerisque pellentesque justo nonummy.
+Instead of declaring individual variables, such as number0, number1, ..., and number99, you declare one array variable such as numbers and use numbers[0], numbers[1], and ..., numbers[99] to represent individual variables. A specific element in an array is accessed by an index.
 
-In felis arcu quisque, nunc erat scelerisque neque nostra velit augue, tellus vel nonummy nonummy fusce a. Scelerisque vel vel. Sequi pharetra sed eu morbi leo, tellus aenean, ac fusce vehicula est eget, quisque porttitor ultricies mauris fringilla elementum eget, vel integer feugiat praesent mi. Quam nec nunc suspendisse tortor eleifend. Sed morbi libero pede habitant interdum, neque et in aenean at molestie, placerat mi augue justo, eu iaculis accumsan sit eget phasellus arcu, eget in ipsum. Donec in nullam ipsum, gravida magna, turpis auctor a eleifend, nec eget, sed tempus interdum eros non massa vitae. Senectus elit, sodales magna phasellus quia nunc, elit tincidunt odio euismod ultrices rutrum eleifend, vitae taciti eros fusce. Justo eros, velit gravida iusto augue id, volutpat nulla aenean donec magna consectetuer non.
+All arrays consist of contiguous memory locations. The lowest address corresponds to the first element and the highest address to the last element.
 
-Aliquam elit ac adipiscing aliquet, lacus enim rutrum tincidunt, pharetra quis quisque sem lacinia aliquet varius. Erat tellus. Pulvinar amet risus, ante feugiat sapien sed scelerisque, consequat cras sociis sapien sollicitudin, nec lacus orci. Augue lacinia donec quis mus urna, duis accumsan at at facilisis, faucibus volutpat duis felis. Luctus vel duis ante viverra aliquam, est condimentum duis.
+Declaring Arrays
+To declare an array in C#, you can use the following syntax:
 
-Semper wisi id nisl sodales consequat nobis, ligula sociis aenean diam wisi, feugiat purus placerat ac sodales consequat lorem. Ut fusce euismod ut vitae purus, nunc ipsum vestibulum, vestibulum suscipit mauris eros libero sed odio. Viverra consequat quis erat, dis mauris sed non adipiscing natoque nunc, mauris ligula turpis consectetuer aliquam rhoncus quis, odio mauris vehicula montes at. Nec in totam, quis ad mi id odio justo viverra, dis wisi nullam odio imperdiet sociis porttitor. Risus eu, eros id, erat elit molestie lorem, cras per quam, aptent metus vulputate tempor veniam. Felis odio nec curabitur eu sed aenean, nulla parturient magnis fringilla fugiat ligula, lorem habitasse conubia feugiat torquent feugiat. Praesent dolore feugiat sapien. At provident ante pellentesque id luctus, odio nascetur diam quis, lacus dolor tellus pharetra, cursus ultrices maecenas condimentum odio ridiculus, proin ac non in mauris.
+datatype[] arrayName;
+where,
+
+datatype is used to specify the type of elements in the array.
+
+[ ] specifies the rank of the array. The rank specifies the size of the array.
+
+arrayName specifies the name of the array.
+
+For example,
+
+double[] balance;
+
+Initializing an Array
+Declaring an array does not initialize the array in the memory. When the array variable is initialized, you can assign values to the array.
+
+Array is a reference type, so you need to use the new keyword to create an instance of the array. For example:
+
+double[] balance = new double[10];
+Assigning Values to an Array
+You can assign values to individual array elements, by using the index number, like −
+
+double[] balance = new double[10];
+balance[0] = 4500.0;
+You can assign values to the array at the time of declaration, as shown −
+
+double[] balance = { 2340.0, 4523.69, 3421.0};
+You can also create and initialize an array, as shown −
+
+int [] marks = new int[5]  { 99,  98, 92, 97, 95};
+You may also omit the size of the array, as shown −
+
+int [] marks = new int[]  { 99,  98, 92, 97, 95};
+You can copy an array variable into another target array variable. In such case, both the target and source point to the same memory location −
+
+int [] marks = new int[]  { 99,  98, 92, 97, 95};
+int[] score = marks;
+When you create an array, C# compiler implicitly initializes each array element to a default value depending on the array type. For example, for an int array all elements are initialized to 0.
+
+Accessing Array Elements
+An element is accessed by indexing the array name. This is done by placing the index of the element within square brackets after the name of the array. For example,
+
+double salary = balance[9];
+The following example, demonstrates the above-mentioned concepts declaration, assignment, and accessing arrays −
+
+using System;
+
+namespace ArrayApplication {
+   class MyArray {
+      static void Main(string[] args) {
+         int []  n = new int[10]; /* n is an array of 10 integers */
+         int i,j;
+
+         /* initialize elements of array n */
+         for ( i = 0; i < 10; i++ ) {
+            n[ i ] = i + 100;
+         }
+         
+         /* output each array element's value */
+         for (j = 0; j < 10; j++ ) {
+            Console.WriteLine("Element[{0}] = {1}", j, n[j]);
+         }
+         Console.ReadKey();
+      }
+   }
+}
+When the above code is compiled and executed, it produces the following result −
+
+Element[0] = 100
+Element[1] = 101
+Element[2] = 102
+Element[3] = 103
+Element[4] = 104
+Element[5] = 105
+Element[6] = 106
+Element[7] = 107
+Element[8] = 108
+Element[9] = 109
+Using the foreach Loop
+In the previous example, we used a for loop for accessing each array element. You can also use a foreach statement to iterate through an array.
+
+ Live Demo
+using System;
+
+namespace ArrayApplication {
+   class MyArray {
+      static void Main(string[] args) {
+         int []  n = new int[10]; /* n is an array of 10 integers */
+         
+         /* initialize elements of array n */
+         for ( int i = 0; i < 10; i++ ) {
+            n[i] = i + 100;
+         }
+         
+         /* output each array element's value */
+         foreach (int j in n ) {
+            int i = j-100;
+            Console.WriteLine("Element[{0}] = {1}", i, j);
+         }
+         Console.ReadKey();
+      }
+   }
+}
+When the above code is compiled and executed, it produces the following result −
+
+Element[0] = 100
+Element[1] = 101
+Element[2] = 102
+Element[3] = 103
+Element[4] = 104
+Element[5] = 105
+Element[6] = 106
+Element[7] = 107
+Element[8] = 108
+Element[9] = 109
+C# Arrays
+There are following few important concepts related to array which should be clear to a C# programmer −
+
+Sr.No.	Concept & Description
+1	Multi-dimensional arrays
+C# supports multidimensional arrays. The simplest form of the multidimensional array is the two-dimensional array.
+
+2	Jagged arrays
+C# supports multidimensional arrays, which are arrays of arrays.
+
+3	Passing arrays to functions
+You can pass to the function a pointer to an array by specifying the array's name without an index.
+
+4	Param arrays
+This is used for passing unknown number of parameters to a function.
+
+5	The Array Class
+Defined in System namespace, it is the base class to all arrays, and provides various properties and methods for working with arrays.
+
+In C#, you can use strings as array of characters, However, more common practice is to use the string keyword to declare a string variable. The string keyword is an alias for the System.String class.
+
+Creating a String Object
+You can create string object using one of the following methods :
+
+    By assigning a string literal to a String variable
+    By using a String class constructor
+    By using the string concatenation operator (+)
+    By retrieving a property or calling a method that returns a string
+    By calling a formatting method to convert a value or an object to its string representation
+
+The following example demonstrates this:
+
+using System;
+
+namespace StringApplication {
+   class Program {
+      static void Main(string[] args) {
+         
+         //from string literal and string concatenation
+         string fname, lname;
+         fname = "Rowan";
+         lname = "Atkinson";
+         
+         string fullname = fname + lname;
+         Console.WriteLine("Full Name: {0}", fullname);
+         
+         //by using string constructor { 'H', 'e', 'l', 'l','o' };
+         string greetings = new string(letters);
+         Console.WriteLine("Greetings: {0}", greetings);
+         
+         //methods returning string { "Hello", "World"};
+         string message = String.Join(" ", sarray);
+         Console.WriteLine("Message: {0}", message);
+         
+         //formatting method to convert a value
+         DateTime waiting = new DateTime(2012, 10, 10, 17, 58, 1);
+         string chat = String.Format("Message sent at {0:t} on {0:D}", waiting);
+         Console.WriteLine("Message: {0}", chat);
+      }
+   }
+}
+When the above code is compiled and executed, it produces the following result:
+
+Full Name: Rowan Atkinson
+Greetings: Hello
+Message: Hello World
+Message: Message sent at 5:58 PM on Wednesday, October 10, 2012
+Properties of the String Class
+
+The String class has the following two properties:
+
+No.	Property & Description
+1 Chars
+Gets the Char object at a specified position in the current String object.
+
+2 Length
+Gets the number of characters in the current String object.
+
+Methods of the String Class
+The String class has numerous methods that help you in working with the string objects. The following table provides some of the most commonly used methods:
+
+Given below is the list of methods of the String class.
+No.	Methods & Description
+1	public static int Compare(string strA, string strB)
+Compares two specified string objects and returns an integer that indicates their relative position in the sort order.
+
+2	public static int Compare(string strA, string strB, bool ignoreCase )
+Compares two specified string objects and returns an integer that indicates their relative position in the sort order. However, it ignores case if the Boolean parameter is true.
+
+3	public static string Concat(string str0, string str1)
+Concatenates two string objects.
+
+4	public static string Concat(string str0, string str1, string str2)
+Concatenates three string objects.
+
+5	public static string Concat(string str0, string str1, string str2, string str3)
+Concatenates four string objects.
+
+6	public bool Contains(string value)
+Returns a value indicating whether the specified String object occurs within this string.
+
+7	public static string Copy(string str)
+Creates a new String object with the same value as the specified string.
+
+8	public void CopyTo(int sourceIndex, char[] destination, int destinationIndex, int count)
+Copies a specified number of characters from a specified position of the String object to a specified position in an array of Unicode characters.
+
+9	public bool EndsWith(string value)
+Determines whether the end of the string object matches the specified string.
+
+10	public bool Equals(string value)
+Determines whether the current String object and the specified String object have the same value.
+
+11	public static bool Equals(string a, string b)
+Determines whether two specified String objects have the same value.
+
+12	public static string Format(string format, Object arg0)
+Replaces one or more format items in a specified string with the string representation of a specified object.
+
+13	public int IndexOf(char value)
+Returns the zero-based index of the first occurrence of the specified Unicode character in the current string.
+
+14	public int IndexOf(string value)
+Returns the zero-based index of the first occurrence of the specified string in this instance.
+
+15	public int IndexOf(char value, int startIndex)
+Returns the zero-based index of the first occurrence of the specified Unicode character in this string, starting search at the specified character position.
+
+16	public int IndexOf(string value, int startIndex)
+Returns the zero-based index of the first occurrence of the specified string in this instance, starting search at the specified character position.
+
+17	public int IndexOfAny(char[] anyOf)
+Returns the zero-based index of the first occurrence in this instance of any character in a specified array of Unicode characters.
+
+18	public int IndexOfAny(char[] anyOf, int startIndex)
+Returns the zero-based index of the first occurrence in this instance of any character in a specified array of Unicode characters, starting search at the specified character position.
+
+19	public string Insert(int startIndex, string value)
+Returns a new string in which a specified string is inserted at a specified index position in the current string object.
+
+20	public static bool IsNullOrEmpty(string value)
+Indicates whether the specified string is null or an Empty string.
+
+21	public static string Join(string separator, params string[] value)
+Concatenates all the elements of a string array, using the specified separator between each element.
+
+22	public static string Join(string separator, string[] value, int startIndex, int count)
+Concatenates the specified elements of a string array, using the specified separator between each element.
+
+23	public int LastIndexOf(char value)
+Returns the zero-based index position of the last occurrence of the specified Unicode character within the current string object.
+
+24	public int LastIndexOf(string value)
+Returns the zero-based index position of the last occurrence of a specified string within the current string object.
+
+25	public string Remove(int startIndex)
+Removes all the characters in the current instance, beginning at a specified position and continuing through the last position, and returns the string.
+
+26	public string Remove(int startIndex, int count)
+Removes the specified number of characters in the current string beginning at a specified position and returns the string.
+
+27	public string Replace(char oldChar, char newChar)
+Replaces all occurrences of a specified Unicode character in the current string object with the specified Unicode character and returns the new string.
+
+28	public string Replace(string oldValue, string newValue)
+Replaces all occurrences of a specified string in the current string object with the specified string and returns the new string.
+
+29	public string[] Split(params char[] separator)
+Returns a string array that contains the substrings in the current string object, delimited by elements of a specified Unicode character array.
+
+30	public string[] Split(char[] separator, int count)
+Returns a string array that contains the substrings in the current string object, delimited by elements of a specified Unicode character array. The int parameter specifies the maximum number of substrings to return.
+
+31	public bool StartsWith(string value)
+Determines whether the beginning of this string instance matches the specified string.
+
+32	public char[] ToCharArray()
+Returns a Unicode character array with all the characters in the current string object.
+
+33	public char[] ToCharArray(int startIndex, int length)
+Returns a Unicode character array with all the characters in the current string object, starting from the specified index and up to the specified length.
+
+34	public string ToLower()
+Returns a copy of this string converted to lowercase.
+
+35  public string ToUpper()
+Returns a copy of this string converted to uppercase.
+
+36	public string Trim()
+Removes all leading and trailing white-space characters from the current String object.
+
+Examples
+The following example demonstrates some of the methods mentioned above:
+
+Comparing Strings
+using System;
+
+namespace StringApplication {
+   class StringProg {
+      static void Main(string[] args) {
+         string str1 = "This is test";
+         string str2 = "This is text";
+
+         if (String.Compare(str1, str2) == 0) {
+            Console.WriteLine(str1 + " and " + str2 +  " are equal.");
+         } else {
+            Console.WriteLine(str1 + " and " + str2 + " are not equal.");
+         }
+         Console.ReadKey() ;
+      }
+   }
+}
+When the above code is compiled and executed, it produces the following result:
+
+    This is test and This is text are not equal.
+
+String Contains String
+
+using System;
+
+namespace StringApplication {
+   class StringProg {
+      static void Main(string[] args) {
+         string str = "This is test";
+         
+         if (str.Contains("test")) {
+            Console.WriteLine("The sequence 'test' was found.");
+         }
+         Console.ReadKey() ;
+      }
+   }
+}
+When the above code is compiled and executed, it produces the following result −
+
+The sequence 'test' was found.
+Getting a Substring
+ Live Demo
+using System;
+
+namespace StringApplication {
+   class StringProg {
+      static void Main(string[] args) {
+         string str = "Last night I dreamt of San Pedro";
+         Console.WriteLine(str);
+         
+         string substr = str.Substring(23);
+         Console.WriteLine(substr);
+      }
+   }
+}
+When the above code is compiled and executed, it produces the following result −
+
+Last night I dreamt of San Pedro
+San Pedro
+Joining Strings
+ Live Demo
+using System;
+
+namespace StringApplication {
+   class StringProg {
+      static void Main(string[] args) {
+         
+         string[] starray = new string[]{"Down the way nights are dark",
+            "And the sun shines daily on the mountain top",
+            "I took a trip on a sailing ship",
+            "And when I reached Jamaica",
+            "I made a stop"};
+
+         string str = String.Join("\n", starray);
+         Console.WriteLine(str);
+      }
+   }
+}
+When the above code is compiled and executed, it produces the following result −
+
+Down the way nights are dark
+And the sun shines daily on the mountain top
+I took a trip on a sailing ship
+And when I reached Jamaica
+I made a stop

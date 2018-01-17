@@ -1,72 +1,72 @@
-Q0 Question one
-answer one
-answer two
-answer three
-answer four
-4
-Q1 Question two
-answer one
-answer two
-answer three
-answer four
-3
-Q2 Question three
-answer one
-answer two
-answer three
-answer four
+Q0 How many types of comments are supported by Java
 2
-Q3 Question four
-answer one
-answer two
-answer three
-answer four
-1
-Q4 Question five
-answer one
-answer two
-answer three
-answer four
-4
-Q5 Question six
-answer one
-answer two
-answer three
-answer four
 3
-Q6 Question seven
-answer one
-answer two
-answer three
-answer four
+7
+5
 2
-Q7 Question eight
-answer one
-answer two
-answer three
-answer four
-1
-Q8 Question nine
-answer one
-answer two
-answer three
-answer four
-4
-Q9 Question ten
-answer one
-answer two
-answer three
-answer four
+Q1 Wich of these is not a comment type supported by Java
+/* text */
+//text
+/* documentation /
+/** documentation */
 3
-Q10 Question eleven
-answer one
-answer two
-answer three
-answer four
+Q2 Before Java2 java did not provide dd hoc classes such as Dictionary, Vector, Stack
+True
+False
+------
+------
 2
-Q11 Question twelve
-answer one
-answer two
-answer three
-answer four
+Q3 The collections framework was designed to be high-performance.
+True
+False
+------
+------
 1
+Q4 The collections framework was designed to extend and/or adapt a collection easily.
+True
+False
+------
+------
+1
+Q5 The entire collections framework is designed around a set of standard classes.
+True
+False
+------
+------
+2
+Q6 Interfaces allow collections to be manipulated independently of the details of their representation.
+True
+False
+------
+------
+1
+Q7 Wich of these is not a collection interface
+The SortedList
+The SortedSet
+The SortedMap
+The Enumeration
+1
+Q8 Wich of these is not a collection class
+AbstractCollection
+AbstractList
+AbstractSet
+AbstractEnumeration
+4
+Q9 Wich of these is not a legacy class
+Vector
+Stack
+Map
+Hashtable
+3
+Q10 Wich of these is not a legacy class
+Dictionary
+List
+Properties
+BitSet
+2
+Q11 JDK uses the /* text */ comment format for automatically generated documentation
+True
+False
+------
+------
+2

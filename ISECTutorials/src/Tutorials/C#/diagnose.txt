@@ -1,300 +1,300 @@
-Q0 Question one
-answer one
-answer two
-answer three
-answer four
+Q0 Which of the following is correct about C#?
+It is component oriented.
+It can be compiled on a variety of computer platforms.
+It is a part of .Net Framework.
+All of the above.
 4
-Q1 Question two
-answer one
-answer two
-answer three
-answer four
-3
-Q2 Question three
-answer one
-answer two
-answer three
-answer four
-2
-Q3 Question four
-answer one
-answer two
-answer three
-answer four
+Q1 Which of the following is false about C#
+It produces inefficient programs.
+It is object oriented
+It is easy to learn.
+It is a modern, general-purpose programming language
 1
-Q4 Question five
-answer one
-answer two
-answer three
-answer four
-4
-Q5 Question six
-answer one
-answer two
-answer three
-answer four
-3
-Q6 Question seven
-answer one
-answer two
-answer three
-answer four
+Q2 Wich of these is not a component of .Net Framework
+ADO.Net
+Mono
+LINQ
+Common Type System
 2
-Q7 Question eight
-answer one
-answer two
-answer three
-answer four
-1
-Q8 Question nine
-answer one
-answer two
-answer three
-answer four
-4
-Q9 Question ten
-answer one
-answer two
-answer three
-answer four
-3
-Q10 Question eleven
-answer one
-answer two
-answer three
-answer four
+Q3 It is impossible to use .Net on any operating system that isn't Windows. 
+True
+False
+------
+------
 2
-Q11 Question twelve
-answer one
-answer two
-answer three
-answer four
-1
-Q12 Question thirteen
-answer one
-answer two
-answer three
-answer four
-4
-Q13 Question fourteen
-answer one
-answer two
-answer three
-answer four
+Q4 A C# should start with
+Namespace Declaration
+Using system
+Main method
+Global variables
 2
-Q14 Question fiftheen
-answer one
-answer two
-answer three
-answer four
-1
-Q15 Question sixteen
-answer one
-answer two
-answer three
-answer four
+Q5 Wich of these keywords are part of c#
+class
+using
+null
+All of the above
 4
-Q16 Question seventeen
-answer one
-answer two
-answer three
-answer four
+Q6 Wich of these is not a C# variable type
+uint
+int
+dfloat
+float
 3
-Q17 Question eighteen
-answer one
-answer two
-answer three
-answer four
+Q7 Type conversion can be
+Implicit
+Explicit
+Both
+--------
+3
+Q8 Wich of these is not a conversion method
+ToChar
+ToDateTime
+ToInt
+ToInt16
+3
+Q9 ToBolean exists?
+Yes
+No
+------
+------
+1
+Q10 Wich of these isn't a Floating point type
+Decimal
+Float
+Double
+All of the above are
+1
+Q11 "integer i;" Is a valid declaration:
+True
+False
+-----
+-----
 2
-Q18 Question nineteen
-answer one
-answer two
-answer three
-answer four
-1
-Q19 Question twenty
-answer one
-answer two
-answer three
-answer four
-4
-Q20 Question twenty one
-answer one
-answer two
-answer three
-answer four
-3
-Q21 Question twenty two
-answer one
-answer two
-answer three
-answer four
+Q12 Variables of the same type can't be declared in the same expression
+True
+False
+-----
+-----
 2
-Q22 Question twenty three
-answer one
-answer two
-answer three
-answer four
-1
-Q23 Question twenty four
-answer one
-answer two
-answer three
-answer four
-4
-Q24 Question twenty five
-answer one
-answer two
-answer three
-answer four
-3
-Q25 Question twenty six
-answer one
-answer two
-answer three
-answer four
+Q13 Users insert values trough
+Console.WriteLine();
+Console.ReadLine();
+---------------
+---------------
 2
-Q26 Question twenty seven
-answer one
-answer two
-answer three
-answer four
+Q14 10 = 20 would result in an error
+True
+False
+-----
+-----
 1
-Q27 Question twenty eight
-answer one
-answer two
-answer three
-answer four
+Q15 Wich of these are Operators
+Arithmetic Operators
+Relational Operators
+Logical Operators
+All of the above
 4
-Q28 Question twenty nine
-answer one
-answer two
-answer three
-answer four
-3
-Q29 Question thirty 
-answer one
-answer two
-answer three
-answer four
+Q16 Wich of these is an Arithmetic Operator
+*
+++
+--
+All of the above
+4
+Q17 Wich of these is not a Logical Operator
+&&
+||
+!
+!=
+4
+Q18 Wich of these is not an Assigment Operator
++=
+&=
+%=
+==
+4
+Q19 All operators go from Left to Rigth
+True
+False
+-----
+-----
 2
-Q30 Question thirty one
-answer one
-answer two
-answer three
-answer four
-1
-Q31 Question 32
-answer one
-answer two
-answer three
-answer four
-4
-Q32 Question 33
-answer one
-answer two
-answer three
-answer four
+Q20 Wich if these is not an incapsulation method
+Internal
+Private
+Protected Public
+Protected Internal
 3
-Q33 Question 34
-answer one
-answer two
-answer three
-answer four
+Q21 A class variable always requires a function to alter it
+True
+False
+-----
+-----
 2
-Q34 Question 35
-answer one
-answer two
-answer three
-answer four
-1
-Q35 Question 36
-answer one
-answer two
-answer three
-answer four
-4
-Q36 Question 37
-answer one
-answer two
-answer three
-answer four
-3
-Q37 Question 38
-answer one
-answer two
-answer three
-answer four
+Q22 Get and Set functions are default of all class variables
+True
+False
+-----
+-----
 2
-Q38 Question 39
-answer one
-answer two
-answer three
-answer four
+Q23 Private members can only be used by functions of it's own class
+True
+False
+-----
+-----
 1
-Q39 Question 40
-answer one
-answer two
-answer three
-answer four
-4
-Q40 Question 41
-answer one
-answer two
-answer three
-answer four
-3
-Q41 Question 42
-answer one
-answer two
-answer three
-answer four
+Q24 Destructors are used to delete an object of that class when it goes out of scope
+True
+False
+-----
+-----
+1
+Q25 To use a method, you just have to define it:
+True
+False
+-----
+-----
 2
-Q42 Question 43
-answer one
-answer two
-answer three
-answer four
-1
-Q43 Question 44
-answer one
-answer two
-answer three
-answer four
-4
-Q44 Question 45
-answer one
-answer two
-answer three
-answer four
-3
-Q45 Question 46
-answer one
-answer two
-answer three
-answer four
+Q26 To define a method the syntax is:
+<Method Name> <Access Specifier> <Return Type>(Parameter List)
+<Access Specifier> <Return Type> <Method Name>(Parameter List)
+<Return Type> <Access Specifier> <Method Name>(Parameter List)
+<Access Specifier> <Method Name> <Return Type>(Parameter List)
 2
-Q46 Question 47
-answer one
-answer two
-answer three
-answer four
+Q27 All methods must have a return value
+True
+False
+-----
+-----
+2
+Q28 Method names are case sensitive
+True
+False
+-----
+-----
 1
-Q47 Question 48
-answer one
-answer two
-answer three
-answer four
-4
-Q48 Question 49
-answer one
-answer two
-answer three
-answer four
+Q29 Methods must have parameters
+True
+False
+-----
+-----
+2
+Q30 An array can store a infinte number of elements of a type
+True
+False
+-----
+-----
+2
+Q31 C# doesn't support multidemensional arrays
+True
+False
+-----
+-----
+2
+Q32 You can have an array of arrays
+True
+False
+-----
+-----
+1
+Q33 You can't create a string using concatenation:
+True
+False
+-----
+-----
+2
+Q34 You can create a string by assigning a string literal to a String variable
+True
+False
+-----
+-----
+1
+Q35 A structure is
+Reference type
+Pointer type
+Value type
+Method type
 3
-Q49 Question 50
-answer one
-answer two
-answer three
-answer four
-3
+Q36 A structure is only used to store various values of the same type
+True
+False
+-----
+-----
+2
+Q37 Strucutes in C# follow the same rules that C and C++ use
+True
+False
+-----
+-----
+2
+Q38 Structures have constructors and destructors
+True
+False
+-----
+-----
+2
+Q39 Structure members cannot be specified as abstract, virtual, or protected.
+True
+False
+-----
+-----
+1
+Q40 Inheritance is one of the most important concepts in object-oriented programming
+True
+False
+-----
+-----
+1
+Q41 The inherited class has only the same data members but different functions 
+True
+False
+-----
+-----
+2
+Q42 The inherited class can have new data members 
+True
+False
+-----
+-----
+1
+Q43 The inherited class is called base class
+True
+False
+-----
+-----
+2
+Q44 C# supports multiple inheritance
+True
+False
+-----
+-----
+2
+Q45 An interface is defined as a syntactical contract that all the classes inheriting the interface should follow.
+True
+False
+-----
+-----
+1
+Q46 Abstract classes to some extent serve the same purpose as interfaces
+True
+False
+-----
+-----
+1
+Q47 Interface declaration is different to class declaration.
+True
+False
+-----
+-----
+2
+Q48 A namespace definition begins with the keyword namespace followed by the namespace
+True
+False
+-----
+-----
+1
+Q49 You can access members of nested namespace by using the dot (.) operator
+True
+False
+-----
+-----
+1

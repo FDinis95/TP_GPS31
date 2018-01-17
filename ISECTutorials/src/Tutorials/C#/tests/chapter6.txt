@@ -1,78 +1,72 @@
-Q0 Question one
-answer one
-answer two
-answer three
-answer four
-4
-Q1 Question two
-answer one
-answer two
-answer three
-answer four
-3
-Q2 Question three
-answer one
-answer two
-answer three
-answer four
+Q0 An array can store a infinte number of elements of a type
+True
+False
+-----
+-----
 2
-Q3 Question four
-answer one
-answer two
-answer three
-answer four
-1
-Q4 Question five
-answer one
-answer two
-answer three
-answer four
-4
-Q5 Question six
-answer one
-answer two
-answer three
-answer four
-3
-Q6 Question seven
-answer one
-answer two
-answer three
-answer four
+Q1 C# doesn't support multidemensional arrays
+True
+False
+-----
+-----
 2
-Q7 Question eight
-answer one
-answer two
-answer three
-answer four
+Q2 You can have an array of arrays
+True
+False
+-----
+-----
 1
-Q8 Question nine
-answer one
-answer two
-answer three
-answer four
-4
-Q9 Question ten
-answer one
-answer two
-answer three
-answer four
-3
-Q10 Question eleven
-answer one
-answer two
-answer three
-answer four
+Q3 You can't create a string using concatenation:
+True
+False
+-----
+-----
 2
-Q11 Question twelve
-answer one
-answer two
-answer three
-answer four
+Q4 You can create a string by assigning a string literal to a String variable
+True
+False
+-----
+-----
 1
-Q12 Question thirteen
-answer one
-answer two
-answer three
-answer four
+Q5 The String class has the following two properties:
+Chars & End
+Start & End
+Length & Chars
+None of the above
+3
+Q6 You can only concatonate two strings at a time
+True
+False
+-----
+-----
+2
+Q7 Insert is another string method to concatonate
+True
+False
+-----
+-----
+2
+Q8 Wich of these is not valid
+IndexOf(char value)
+IndexOfAny(char[] anyOf)
+IndexOf(string value)
+IndexOfAny(string[] anyOf)
+4
+Q9 Wich of these is not valid
+Remove(int startIndex)
+Replace(char oldChar, char newChar)
+Add(int startIndex, string Word)
+----------
+3
+Q10 Wich of these is not valid
+LastIndexOf(char value)
+LastIndexOf(int value)
+LastIndexOf(string value)
+-----------
+2
+Q11 Trim removes
+A character
+Extra spaces
+The first word
+The last word
 2

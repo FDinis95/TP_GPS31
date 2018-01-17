@@ -1,78 +1,72 @@
-Q0 Question one
-answer one
-answer two
-answer three
-answer four
-4
-Q1 Question two
-answer one
-answer two
-answer three
-answer four
+Q0 A structure is
+Reference type
+Pointer type
+Value type
+Method type
 3
-Q2 Question three
-answer one
-answer two
-answer three
-answer four
+Q1 A structure is only used to store various values of the same type
+True
+False
+-----
+-----
 2
-Q3 Question four
-answer one
-answer two
-answer three
-answer four
+Q2 Strucutes in C# follow the same rules that C and C++ use
+True
+False
+-----
+-----
+2
+Q3 Structures have constructors and destructors
+True
+False
+-----
+-----
+2
+Q4 Structure members cannot be specified as abstract, virtual, or protected.
+True
+False
+-----
+-----
 1
-Q4 Question five
-answer one
-answer two
-answer three
-answer four
-4
-Q5 Question six
-answer one
-answer two
-answer three
-answer four
+Q5 Structures cannot be used as a base for other structures or classes.
+True
+False
+-----
+-----
+1
+Q6 Like classes, structures can inherit other structures or classes.
+True
+False
+-----
+-----
+2
+Q7 Structures can have a default constructor
+True
+False
+-----
+-----
+2
+Q8 Nullable types are values that can store null
+True
+False
+-----
+-----
+1
+Q9 An enumeration is a set of named integer constants.
+True
+False
+-----
+-----
+1
+Q10 Enumaration can inherit values
+True
+False
+-----
+-----
+2
+Q11 An enumeration is:
+Reference type
+Pointer type
+Value type
+Method type
 3
-Q6 Question seven
-answer one
-answer two
-answer three
-answer four
-2
-Q7 Question eight
-answer one
-answer two
-answer three
-answer four
-1
-Q8 Question nine
-answer one
-answer two
-answer three
-answer four
-4
-Q9 Question ten
-answer one
-answer two
-answer three
-answer four
-3
-Q10 Question eleven
-answer one
-answer two
-answer three
-answer four
-2
-Q11 Question twelve
-answer one
-answer two
-answer three
-answer four
-1
-Q12 Question thirteen
-answer one
-answer two
-answer three
-answer four
-2

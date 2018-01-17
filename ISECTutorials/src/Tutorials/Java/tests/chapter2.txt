@@ -1,50 +1,50 @@
-Q0 Which of these methods of string class can be used to test to strings for equality?
-isequal()
-isequals()
-equal()
-equals()
+Q0  Wich of these isn't a primitive datatype
+Decimal
+Float
+Double
+Byte
 1
-Q1 Which is a valid declaration of a string?
-String s1 = null;
-String s2 = 'null';
-String s3 = (String) 'abc';
-String s4 = (string) "\ufeed';
+Q1 Which is not a valid variable
+Local variables
+Instance variables
+Class/Static variables
+Default variables
+4
+Q2 Which of these is true
+Local variables are declared in methods, constructors, or blocks.
+Local variables are implemented at stack level internally.
+There is no default value for local variables
+All of the above
+4
+Q3 Which of these is true
+Instance variables are declared in methods, constructors, or blocks.
+Instance variables are declared in a class, but outside a method, constructor or any block.
+Instance variables are declared in methods and constructors only.
+Instance variables can be declared only before use.
 2
-Q2 Which of the following features is not supported by java?
-Multithreading
-Reflection
-Operator Overloading
-Garbage Collection
+Q4 Which of these is true
+Instance variables can be declared in class level before or after use.
+Access modifiers can be given for instance variables.
+Both
+None of the above
 3
-Q3 Which command is used to compile a java program ?
-javac
-java
-javad
-.javadoc
-1
-Q4 What does AWT stand for?
-Abstract windowing toolkit
-a web toolkit
-application with types
-absolutely wonderfull toolkit
-1
-Q5 Can we access private class outside the package?
-yes
-no
+Q5 Wich of these is false
+Instance variables don't have default values.
+Instance variables can be accessed directly
+Instance variables can be declared in class level before or after use.
 ---
----
+1
+Q6 Wich of these does not apply to Static variables
+There would only be one copy of each class variable per class, regardless of how many objects are created from it.
+There would obe many copies of each class variable per class, regardless of how many objects are created from it.
+----
+----
 2
-Q6 Which class can not be a subclass in java?
-Parent class
-Final class
-----
-----
-1
-Q7 The JDK command to compile a class in the file Test.java is :
-java Test
-javac Test.java
-javac Test
-----
+Q7 Primitive datatypes do not have a default value
+True
+False
+-----
+-----
 2
 Q8 Which of the following is not a primitive data type?
 byte
@@ -58,15 +58,15 @@ long
 byte
 short
 3
-Q10 Which value can not store character data type?
-digit
-special character
-string
-letter
-1
-Q11 Which of the following data types comes under floating data type?
-byte
-int
-float
-long
-4
+Q10 "integer i;" Is a valid declaration:
+True
+False
+-----
+-----
+2
+Q11 Boolean is not a primitive datatype
+True
+False
+-----
+-----
+2

@@ -1,72 +1,72 @@
-Q0 Question one
-answer one
-answer two
-answer three
-answer four
-4
-Q1 Question two
-answer one
-answer two
-answer three
-answer four
-3
-Q2 Question three
-answer one
-answer two
-answer three
-answer four
-2
-Q3 Question four
-answer one
-answer two
-answer three
-answer four
+Q0 A Java method is a collection of statements that are grouped together to perform an operation.
+True
+False
+------
+------
 1
-Q4 Question five
-answer one
-answer two
-answer three
-answer four
-4
-Q5 Question six
-answer one
-answer two
-answer three
-answer four
-3
-Q6 Question seven
-answer one
-answer two
-answer three
-answer four
+Q1 The System.out.println() method only executes one statement
+True
+False
+------
+------
 2
-Q7 Question eight
-answer one
-answer two
-answer three
-answer four
+Q2 Method definition consists of
+modifier returnType nameOfMethod (Parameter List)
+returnType modifier nameOfMethod (Parameter List)
+nameOfMethod modifier returnType (Parameter List)
+returnType nameOfMethod (Parameter List) modifier
 1
-Q8 Question nine
-answer one
-answer two
-answer three
-answer four
-4
-Q9 Question ten
-answer one
-answer two
-answer three
-answer four
-3
-Q10 Question eleven
-answer one
-answer two
-answer three
-answer four
+Q3 All methods require a return value:
+True
+False
+------
+------
 2
-Q11 Question twelve
-answer one
-answer two
-answer three
-answer four
+Q4 A method can be ended before it's ending brace using a return statement:
+True
+False
+------
+------
+1
+Q5 Methods can be used to assign a value to a variable
+True
+False
+------
+------
+1
+Q6 Wich of these is an Index method
+public int start()
+public int start(int group)
+public int end(int group)
+All of the above
+4
+Q7 public boolean lookingAt() is a Study method
+True
+False
+------
+------
+1
+Q8 public boolean find() is a Study method
+True
+False
+------
+------
+1
+Q9 public boolean start() is a Study method
+True
+False
+------
+------
+2
+Q10 public boolean matches() is not a Study method
+True
+False
+------
+------
+2
+Q11 public static String quoteReplacement(String s) is a Replacement method
+True
+False
+------
+------
 1

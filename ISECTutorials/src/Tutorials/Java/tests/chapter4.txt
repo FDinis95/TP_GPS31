@@ -1,72 +1,72 @@
-Q0 Question one
-answer one
-answer two
-answer three
-answer four
-4
-Q1 Question two
-answer one
-answer two
-answer three
-answer four
-3
-Q2 Question three
-answer one
-answer two
-answer three
-answer four
+Q0 dataType[] arrayRefVar; is the only valid array declaration
+True
+False
+-----
+-----
 2
-Q3 Question four
-answer one
-answer two
-answer three
-answer four
+Q1 dataType arrayRefVar[]; is the only valid array declaration
+True
+False
+-----
+-----
+2
+Q2 Wich of these is a valid array declaration
+dataType[] arrayRefVar;
+dataType arrayRefVar[];
+Both
+None of the above
+3
+Q3 dataType[] arrayRefVar = {value0, value1, ..., valuek}; is a valid array declaration
+True
+False
+-----
+-----
 1
-Q4 Question five
-answer one
-answer two
-answer three
-answer four
-4
-Q5 Question six
-answer one
-answer two
-answer three
-answer four
-3
-Q6 Question seven
-answer one
-answer two
-answer three
-answer four
-2
-Q7 Question eight
-answer one
-answer two
-answer three
-answer four
+Q4 Array indices in Java are 0-based;
+True
+False
+-----
+-----
 1
-Q8 Question nine
-answer one
-answer two
-answer three
-answer four
-4
-Q9 Question ten
-answer one
-answer two
-answer three
-answer four
-3
-Q10 Question eleven
-answer one
-answer two
-answer three
-answer four
+Q5 Array elements are accessed through the index.
+True
+False
+-----
+-----
+1
+Q6 In Java programming strings are treated like a basic datatype
+True
+False
+-----
+-----
 2
-Q11 Question twelve
-answer one
-answer two
-answer three
-answer four
+Q7 In Java programming strings are treated like an object
+True
+False
+-----
+-----
+1
+Q8 How many constructors does string have
+2
+5
+11
+12
+3
+Q9 A string object can be modified without using any other class
+True
+False
+-----
+-----
+2
+Q10 string1.concat(string2) function is to:
+Change string1 value to string2 value
+Create a new string with string2 followed by string1
+Create a new string with string1 followed by string 2
+None of the above
+3
+Q11 Concat can be replaced with the + operator
+True
+False
+-----
+-----
 1

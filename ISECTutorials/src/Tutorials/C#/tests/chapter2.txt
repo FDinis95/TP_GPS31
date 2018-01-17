@@ -1,78 +1,72 @@
-Q0 Question one
-answer one
-answer two
-answer three
-answer four
-4
-Q1 Question two
-answer one
-answer two
-answer three
-answer four
-3
-Q2 Question three
-answer one
-answer two
-answer three
-answer four
-2
-Q3 Question four
-answer one
-answer two
-answer three
-answer four
+Q0 Wich of these isn't a Floating point type
+Decimal
+Float
+Double
+All of the above are
 1
-Q4 Question five
-answer one
-answer two
-answer three
-answer four
-4
-Q5 Question six
-answer one
-answer two
-answer three
-answer four
-3
-Q6 Question seven
-answer one
-answer two
-answer three
-answer four
-2
-Q7 Question eight
-answer one
-answer two
-answer three
-answer four
+Q1 Syntax for variable definition in C# is:
+<data_type> <variable_list>;
+<variable_list> <data_type>;
+-----
+-----
 1
-Q8 Question nine
-answer one
-answer two
-answer three
-answer four
-4
-Q9 Question ten
-answer one
-answer two
-answer three
-answer four
-3
-Q10 Question eleven
-answer one
-answer two
-answer three
-answer four
+Q2 "integer i;" Is a valid declaration:
+True
+False
+-----
+-----
 2
-Q11 Question twelve
-answer one
-answer two
-answer three
-answer four
+Q3 Variables can be initialized at the time of definition
+True
+False
+-----
+-----
 1
-Q12 Question thirteen
-answer one
-answer two
-answer three
-answer four
+Q4 Variables of the same type can't be declared in the same expression
+True
+False
+-----
+-----
 2
+Q5 Initialization uses
+=
+==
++=
+----
+1
+Q6 Users insert values trough
+Console.WriteLine();
+Console.ReadLine();
+---------------
+---------------
+2
+Q7 Numerics are lvalues in an assigment
+True
+False
+-----
+-----
+2
+Q8 10 = 20 would result in an error
+True
+False
+-----
+-----
+1
+Q9 Constants are
+Predetermined variables that can be used in any way
+Fixed values that the program may not alter during its execution
+Regular variables that will not be assigned a new value again
+------------------------------------
+2
+Q10 0xFeeL is a valid Integer Literal
+True
+False
+----
+----
+1
+Q11 Wich of these is not an escape sequence
+\a
+\n
+\f
+\w
+4

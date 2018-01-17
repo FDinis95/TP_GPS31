@@ -1,72 +1,72 @@
-Q0 Question one
-answer one
-answer two
-answer three
-answer four
-4
-Q1 Question two
-answer one
-answer two
-answer three
-answer four
-3
-Q2 Question three
-answer one
-answer two
-answer three
-answer four
-2
-Q3 Question four
-answer one
-answer two
-answer three
-answer four
+Q0 Interfaces are similar to classes.
+True
+False
+-----
+-----
 1
-Q4 Question five
-answer one
-answer two
-answer three
-answer four
-4
-Q5 Question six
-answer one
-answer two
-answer three
-answer four
-3
-Q6 Question seven
-answer one
-answer two
-answer three
-answer four
-2
-Q7 Question eight
-answer one
-answer two
-answer three
-answer four
+Q1 Interface is a collection of abstract methods.
+True
+False
+-----
+-----
 1
-Q8 Question nine
-answer one
-answer two
-answer three
-answer four
-4
-Q9 Question ten
-answer one
-answer two
-answer three
-answer four
-3
-Q10 Question eleven
-answer one
-answer two
-answer three
-answer four
+Q2 If a class implements an interface, it does not inherit the abstract methods of the interface
+True
+False
+-----
+-----
 2
-Q11 Question twelve
-answer one
-answer two
-answer three
-answer four
+Q3 An interface can have attributes of an object
+True
+False
+-----
+-----
+2
+Q4 You can instantiate an interface.
+True
+False
+-----
+-----
+2
+Q5 An interface does not contain any constructors.
+True
+False
+-----
+-----
 1
+Q6 All of the methods in an interface are abstract.
+True
+False
+-----
+-----
+1
+Q7 An interface is extended by a class.
+True
+False
+-----
+-----
+2
+Q8 An interface it is implemented by a class.
+True
+False
+-----
+-----
+1
+Q9 The abstract keyword is necessary while declaring an interface.
+True
+False
+-----
+-----
+2
+Q10 Packages are used in Java in order to prevent naming conflicts
+True
+False
+-----
+-----
+1
+Q11 Programmers can't define their own packages to bundle group of classes/interfaces
+True
+False
+-----
+-----
+2

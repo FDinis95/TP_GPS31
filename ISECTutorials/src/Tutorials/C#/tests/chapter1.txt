@@ -1,78 +1,72 @@
-Q0 Question one
-answer one
-answer two
-answer three
-answer four
+Q0 Wich of these keywords are part of c#
+class
+using
+null
+All of the above
 4
-Q1 Question two
-answer one
-answer two
-answer three
-answer four
+Q1 Wich of these is not a C# variable type
+bool
+byte
+double byte
+char
 3
-Q2 Question three
-answer one
-answer two
-answer three
-answer four
+Q2 Wich of these is not a C# variable type
+uint
+int
+dfloat
+float
+3
+Q3 Wich of these is not a C# variable type
+short
+ubyte
+ushort
+long
 2
-Q3 Question four
-answer one
-answer two
-answer three
-answer four
-1
-Q4 Question five
-answer one
-answer two
-answer three
-answer four
+Q4 Type conversion can be
+Implicit
+Explicit
+Both
+--------
+3
+Q5 Wich of these is a Reference Type
+String
+Object
+Dynamic
+All of the above
 4
-Q5 Question six
-answer one
-answer two
-answer three
-answer four
+Q6 Wich of these is not a conversion method
+ToChar
+ToDateTime
+ToInt
+ToInt16
 3
-Q6 Question seven
-answer one
-answer two
-answer three
-answer four
+Q7 Wich of these is not a conversion method
+ToSbyte
+ToByte
+ToDouble
+ToSingle
 2
-Q7 Question eight
-answer one
-answer two
-answer three
-answer four
+Q8 ToBolean exists?
+Yes
+No
+------
+------
 1
-Q8 Question nine
-answer one
-answer two
-answer three
-answer four
-4
-Q9 Question ten
-answer one
-answer two
-answer three
-answer four
-3
-Q10 Question eleven
-answer one
-answer two
-answer three
-answer four
+Q9 ToUInt128 exists
+True
+False
+------
+------
 2
-Q11 Question twelve
-answer one
-answer two
-answer three
-answer four
+Q10 ToFloat exists
+True
+False
+------
+------
 1
-Q12 Question thirteen
-answer one
-answer two
-answer three
-answer four
-5
+Q11 Wich of these converts to a Float type
+ToFloat
+ToSingle
+ToShort
+None of the above
+2
